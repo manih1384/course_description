@@ -1,0 +1,13 @@
+{
+  "id": "logic_circuits",
+  "index": 13,
+  "title": "Logic Circuits",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "This course covers the design and analysis of digital logic circuits including combinatorial and\nsequential logic circuits.",
+  "syllabus": "Number systems, binary systems, binary codes, addition, subtraction, multiplication and division,\nBoolean algebra, theorems, logic functions, sum-of-products form, product-of-sums form,\nKarnaugh maps, logic minimization using K-maps, logic gates (RTL, DTL, TTL) and related\ntopics (FAN-IN, FAN-OUT), combinatorial circuits design, multiplexers, decoders, comparators,\nsequential circuits design, flip-flops, shift registers, counters, synchronous and asynchronous logic\ncircuits, finite state machines, the timing of sequential circuits\nProgramming language: Verilog",
+  "textbooks": "1. Morris Mano, Michael Ciletti, Digital Design. 4th ed. Prentice Hall, 2006.\n2. Victor Nelson, Troy Nagle, Bill Carroll, David Irwin, Digital Logic Circuit Analysis and Design.\n1st ed. Prentice Hall, 1995.",
+  "layout": "standalone"
+}

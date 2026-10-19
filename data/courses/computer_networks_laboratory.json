@@ -1,0 +1,13 @@
+{
+  "id": "computer_networks_laboratory",
+  "index": 30,
+  "title": "Computer Networks Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Computer Networks",
+  "hours": "32h Practical",
+  "objectives": "The objective of this lab course is to get practical knowledge of the working principles of various\ncommunication protocols. Analyse structure and formats of TCP/IP layer protocols using network\ntools such as Wireshark and network simulators.",
+  "syllabus": null,
+  "textbooks": "1. J. F. Kurose, Keith W. Ross, Computer Networking: A Top-Down Approach, 7th Edition,\nPearson, 2016",
+  "layout": "standalone"
+}

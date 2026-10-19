@@ -1,0 +1,13 @@
+{
+  "id": "operational_research",
+  "index": 39,
+  "title": "Operational Research",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Operations Research is a discipline that involves the development and application of advanced\nanalytical methods to aid complex decisions. This course will provide students with the skills to\nbe able to apply a variety of analytical methods to a diverse set of applications. By achieving these\nobjectives, students will be equipped with the necessary knowledge and skills to apply operational\nresearch techniques in a wide range of practical situations. They will be prepared to analyze\ncomplex systems, optimize decision-making processes, and contribute to organizational efficiency\nand effectiveness in various domains, including business, engineering, healthcare, logistics, and\nfinance.",
+  "syllabus": "1. Introduction to Operational Research\n2. Constraint Programming\n3. Dynamic Programming\n4. Unconstraint Non-Linear Programming\n5. Integer Programming\n6. Linear Programming",
+  "textbooks": null,
+  "layout": "standalone"
+}

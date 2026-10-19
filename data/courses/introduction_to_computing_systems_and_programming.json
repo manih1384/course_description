@@ -1,0 +1,13 @@
+{
+  "id": "introduction_to_computing_systems_and_programming",
+  "index": 11,
+  "title": "Introduction to Computing Systems and Programming",
+  "credits": "4",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "64h Theoretical",
+  "objectives": "Explanation of main computer parts, the concept of software and hardware, algorithms design, and\nan introduction to a structured computer programming language.",
+  "syllabus": "Computer fundamentals, including the role of computers in the modern world and their\napplications. Introduction to main computer parts and the concept of software and hardware.\nNative data types (Integrals and Floating points). Algorithm design and problem-solving principles\n(Flow, selection, and loops). Implanting the algorithm by Pseudo Code. An introduction to a\nstructured programming language. Constants, variables, computational and logical expressions.\nlanguage-specific instructions. Conditional structures. Loops, Arrays, vectors and matrices,\nfunctions, and procedures. I/O and files operations. Implementing simple algorithms by the\nprogramming language. Searching and sorting. Advanced program design.\nProgramming language: C/C++",
+  "textbooks": "1. Bjarne Stroustrup, \"The C++ Programming Language\", Addison Wesley, 2004.\n2. Stanley B Lippman, \"The C++ Primer\", Addison Wesley, 2005.\n3. Paul Deitel & Harvey Deitel, “C++ How to Program (Early Objects Version)”, Prentice Hall; 9\nedition, 2013.",
+  "layout": "standalone"
+}

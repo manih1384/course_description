@@ -1,0 +1,13 @@
+{
+  "id": "calculus_2",
+  "index": 5,
+  "title": "Calculus 2",
+  "credits": "3",
+  "type": "Basic | Theoretical",
+  "prerequisites": "Calculus 1",
+  "hours": "48h Theoretical",
+  "objectives": "The main scope of this course is to teach the students some topics in introductory linear algebra\nincluding matrix algebra and linear transformations and multivariable calculus including\nmultivariable functions, directional and partial derivatives, velocity and acceleration, tangent plane\nand normal gradient line, cylindrical and spherical coordinates, vector field and line integrals,\nsurface integral, Green's theorem, Divergence theorem, and Stoke's theorem.",
+  "syllabus": "Parametric equations; space coordinates; vector and space; numerical product; matrix 3x3 of threeindeterminate linear equations system; operation on lines; matrix reverse; solving equations\nsystem; linear independence; base in R2; R3 linear transform and its matrix; determinant 3x3 and\ncharacteristic value and vector; vector product; second order line and plane equations; two vector\nfunctions and its derivative; speed and acceleration; bending; normal vector to a curve;\nmultivariable function; directional and partial derivative; tangent plane and normal line to a curve;\nmultivariable function; directional and partial derivative; tangent plane and projecting line of\ngradient; chain of rule for partial derivative; exact differential; second kind and third kind integrals\nand their application in geometrical and physical problems; transform of integration arrangement\n(without accurate affirmation); cylindrical and spherical coordinates; vector field; curvilinear\nintegral; surface integral; divergence; curl; Laplacian; potential of green space and divergence and\nstochastic.",
+  "textbooks": "1. Tom M. Apostol, \"Calculus Vol. 2: Multi-Variable Calculus and Linear Algebra with\nApplications\nto\nDifferential\nEquations\nand\nProbability\",\n2012.\n2. George B. Thomas and Ross L. Finney, \"Calculus and Analytic Geometry (9th Edition)\", 1995.",
+  "layout": "standalone"
+}

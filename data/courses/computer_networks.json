@@ -1,0 +1,13 @@
+{
+  "id": "computer_networks",
+  "index": 26,
+  "title": "Computer Networks",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "The purpose of this course is to become familiar with the principles and practice of data\nnetworking; learn how to write applications that use the network; get some understanding of\nnetwork internals in a hands-on way; explain the OSI model; recognize the primary network\nprotocols and distinguish between centralized, client/server, and peer-to-peer systems; and\ndistinguish between Local Area Networks (LANs) and Wide Area Networks (WANs) and identify\nthe components used to expand a LAN into a WAN.\nUpon successful completion of the course, students will be able to:\n1. To master the terminology and concepts of the OSI reference model and the TCP‐IP reference\nmodel.",
+  "syllabus": "Review of fundamental concepts in networking and the Internet\n1. Internet protocols and components in the edge and the core of the network\n2. Performance concepts such as queue, delay, loss, and throughput\n3. Layered architecture\nApplication Layer\n1. Web and HTTP protocol\n2. Electronic Mail and SMTP protocol\n3. Internet’s Directory Service and DNS protocol\n4. P2P applications and P2P file distribution\n5. Video streaming and DASH protocol\n6. Content distribution and Cache\n7. Socket programming\nTransport Layer\n1. Multiplexing and demultiplexing\n2. UDP protocol\n3. Principles of reliable transfer and GBN and SR protocols\n4. TCP protocol, round-trip time estimation, and flow control\n5. Principles of congestion control\nNetwork Layer: Data Plane\n1. Data and control planes\n2. Router architecture\n3. Addressing, IPv4 and IPv6\n4. Network address translation and NAT protocol\n5. Generalized forwarding (SDN) and OpenFlow protocol\nNetwork Layer: Control Plane\n1. LS and DV routing algorithms\n\n2. Intra-AS routing and OSPF protocol\n3. Inter-AS routing and BGP protocol\n4. SDN control plane\n5. ICMP and SNMP protocols\nData Link Layer and LANs\n1. The data link layer services\n2. Error-Detection and –Correction techniques\n3. Multiple access protocols\n4. Local area networks, Ethernet, ARP protocol, and VLAN protocol\n5. Link virtualization and MPLS protocol\n6. Data center networking",
+  "textbooks": "1. Computer Networking: a top-down approach / James F. Kurose, Keith W. Ross.6th ed, 2013. 2.\nComputer networks / Andrew S. Tanenbaum, David J. Wetherall. 5th ed, 2011.",
+  "layout": "standalone"
+}

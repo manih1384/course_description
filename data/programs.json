@@ -1,0 +1,102 @@
+{
+  "institution": {
+    "university": "University of Tehran",
+    "city": "Tehran",
+    "school": "School of Electrical and Computer Engineering",
+    "document_title": "Course Description"
+  },
+  "default_program": "computer_engineering_bsc",
+  "programs": {
+    "computer_engineering_bsc": {
+      "program_name": "Computer Engineering",
+      "degree": "Bachelor’s Degree",
+      "degree_type": "bachelor",
+      "remarks": {
+        "instruction_hours": [
+          {
+            "type": "Theoretical",
+            "hours_per_credit": 16
+          },
+          {
+            "type": "Practical",
+            "hours_per_credit": 32
+          },
+          {
+            "type": "Workshop",
+            "hours_per_credit": 48
+          }
+        ],
+        "course_types": [
+          "Basic",
+          "Major",
+          "Specialized",
+          "Elective",
+          "General",
+          "Workshop",
+          "Internship",
+          "Project"
+        ],
+        "ministry_statement": "Each of these types contains some courses to be passed according to the educational regulations passed by the Ministry of Science, Research and Technology or the Ministry of Health & Medical Education of Iran.",
+        "grading_statement": "The grading system in this university is from 0 to 20. The minimum passing grade for a course leading to an Associate's Degree or a Bachelor's Degree is 10, for a course leading to a Master's Degree and Medical Sciences is 12, and for a course leading to a Ph.D. Degree is 14."
+      },
+      "courses": [
+        "physics_1",
+        "calculus_1",
+        "differential_equations",
+        "physics_2",
+        "calculus_2",
+        "engineering_probability_and_statistics",
+        "computer_workshop",
+        "discrete_mathematics",
+        "data_structures",
+        "algorithm_design_1",
+        "introduction_to_computing_systems_and_programming",
+        "advanced_programming",
+        "logic_circuits",
+        "electric_circuits",
+        "logic_circuits_laboratory",
+        "engineering_mathematics",
+        "technical_english",
+        "computer_architecture",
+        "machines_and_language_theory",
+        "operating_system",
+        "artificial_intelligence",
+        "operating_systems_laboratory",
+        "computer_aided_digital_system",
+        "signals_and_systems",
+        "compiler_design_and_programming_languages",
+        "computer_networks",
+        "electrical_measurement_and_circuit_laboratory",
+        "computer_architecture_laboratory",
+        "information_technology_project_management",
+        "computer_networks_laboratory",
+        "real_time_embedded_systems",
+        "research_and_technical_presentation",
+        "systems_analysis_and_design",
+        "database_design",
+        "internet_engineering",
+        "financial_literacy_and_personal_finance",
+        "software_engineering",
+        "parallel_programming",
+        "operational_research",
+        "computer_networks_security",
+        "knowledge_of_the_environment",
+        "database_laboratory",
+        "introduction_to_software_testing",
+        "project",
+        "industrial_training",
+        "islamic_revolution_in_iran",
+        "islamic_thoughts_1_beginning_and_resurrection",
+        "analytical_history_of_beginning_islam",
+        "thematic_interpretation_of_the_quran",
+        "persian_language",
+        "physical_education",
+        "english_language",
+        "family_schematization_and_population",
+        "islamic_thought_2_prophethood_and_imamat",
+        "islamic_ethics_principles_and_concepts",
+        "sport_1"
+      ]
+    }
+  }
+}

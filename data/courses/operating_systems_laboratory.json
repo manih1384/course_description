@@ -1,0 +1,13 @@
+{
+  "id": "operating_systems_laboratory",
+  "index": 22,
+  "title": "Operating Systems Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": null,
+  "hours": "32h Practical",
+  "objectives": "The goal of this course is to create the right understanding and to learn the techniques of designing\nand implementing system programs and operating systems based on an open-source operating\nsystem. Students will get familiar with the implementation of basic design concepts of the\noperating system, such as file management, process management, kernel-level programming, and\nprocess synchronization in an open-source operating system, and learn to install and manage an\nopen-source operating system.\nUpon successful completion of the course, students will be able to\n1. Compile, install, and manage an open-source operating system\n2. Implement the basic concepts of designing operating systems in an open-source operating\nsystem\n3. Program in kernel-level",
+  "syllabus": "1) Introduction: An overview of Linux including its history, versions, Posix, Graphical User\nInterface\n2) Install and compile a version of Linux: Disk partition, compile, boot load, and use the\napplication menu and system.\n3) Linux file system\n4) Standard and advanced Shell\n5) Managing Processes and Threads\n6) Processor scheduling in Linux\n7) Deadlock synchronization\n8) Memory management",
+  "textbooks": null,
+  "layout": "standalone"
+}

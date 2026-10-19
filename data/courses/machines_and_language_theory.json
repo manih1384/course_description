@@ -1,0 +1,13 @@
+{
+  "id": "machines_and_language_theory",
+  "index": 19,
+  "title": "Machines and Language Theory",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "A presentation of the theory of computing, including coverage of the theory of formal languages\nand automata, compatibility, computational complexity, and deterministic parsing of context-free\nlanguages.",
+  "syllabus": null,
+  "textbooks": "1. Sipser. Introduction to the Theory of Computation. PWS Publishing company, 1997.\n2. Linz, An Introduction to Formal Languages and Automata. 3rd edition ed., Jone,s and Bartlett\nPublishers, 2001.",
+  "layout": "standalone"
+}

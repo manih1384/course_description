@@ -1,0 +1,13 @@
+{
+  "id": "electrical_measurement_and_circuit_laboratory",
+  "index": 27,
+  "title": "Electrical Measurement and Circuit Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Electric Circuits",
+  "hours": "32h Practical",
+  "objectives": "In this laboratory, students are familiar with the electronic elements of resistors, capacitors, and\ninductors, and the operation of electrical measuring devices such as multimeters and oscilloscopes,\nas well as other devices used in electrical and electronic circuits such as power supply and signal\ngenerators, as well as measuring parameters such as current. They learn voltage, frequency,\nperiodicity, phase difference, and power.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "standalone"
+}

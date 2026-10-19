@@ -1,0 +1,13 @@
+{
+  "id": "engineering_probability_and_statistics",
+  "index": 6,
+  "title": "Engineering Probability and Statistics",
+  "credits": "3",
+  "type": "Basic | Theoretical",
+  "prerequisites": "Calculus 2",
+  "hours": "48h Theoretical",
+  "objectives": "All branches of engineering need powerful analytic tools to deal with uncertainty, model the\ndata/information, and predict and analyze underlying systems. Many of the tools necessary for\nthese analyses have their foundations in probability and statistics. With this in mind, this course\nprovides elementary probabilistic and statistical concepts and the methods to apply them to\nengineering problems.",
+  "syllabus": "- Probability (Axioms, Interpretations, and Properties), Counting Techniques, Conditional\nProbability, Independence, Bayes’ Rule\n- Discrete Random variables, Probability Mass Function, Probability Distribution Function,\nExpectation,\nand\nVariance\n- Especial Discrete Distributions (Uniform, Binomial, Negative Binomial, HyperGeometric,\nPoisson)\n- Continuous Random Variables, Probability Density Function, Probability Distribution Function,\nExpectation,\nand\nVariance,\nFunctions\nof\na\nRandom\nVariable\n- Especial Continuous Distributions (Uniform, Exponential, Gamma, Beta, Weibull, Normal)\n- Joint Probability Distributions (Discrete and Continuous Cases), Conditional Distributions,\nConditional Expectations, Independence\n- Sampling Distributions, Distributions of the Sample Mean, and Sample Variance\n- Point Estimation: Maximum Likelihood Method, Method of Moments, Evaluating of Estimators\n(Biasedness, Variance, Mean of Squared Errors)\n- Interval Estimation: Confidence Intervals for Mean, Variance, and proportion\n- Tests of Hypotheses based on a Single Sample (Tests for Mean, Variance, and Proportion, the\nConcept of P-Value)\n- Tests of Hypotheses Based on Two Samples (Test for a Difference between Two Means, Test\nfor a Difference between Two Proportions, Test for the ratio of Two Variances, T-Test for Paired\nData)\n- Determination of Sample Size in Confidence Intervals and Testing Hypotheses\n- Nonparametric Tests (Goodness-of-Fit Test, Test of Independence in Two-Way Contingency\nTables)\n- Regression (Simple Linear Regression, Normal Regression Analysis, Correlation)",
+  "textbooks": "1. Walpole and Mayers, Probability and Statistics for Engineering and Scientists, 6th\nedition, Prentice Hall. 1998\n2. R.V. Hogg and T. Elliot, Probability and Statistical Inference, 4th edition, Mac Millan, 1993\n\n3. Guttman, I., Wilks, S.S., Hunter, J.S. Introductory Engineering Statistics, J. Wiley, 3rd Ed.,\n1982.",
+  "layout": "standalone"
+}

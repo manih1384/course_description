@@ -1,0 +1,13 @@
+{
+  "id": "electric_circuits",
+  "index": 14,
+  "title": "Electric Circuits",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": null,
+  "syllabus": "Coulomb's, Ohm's, and Kirchhoff’s laws; electrostatics and electromagnetics; resistance,\ncapacitance, inductance; series and parallel circuits, independent and dependent voltage and\ncurrent sources; energy, power; Superposition, Thevenin, and Norton Theorems; DC and AC;\ninitial, steady state and transient conditions; frequency selective circuits and resonance; polyphase circuits and transformers.",
+  "textbooks": "1- W. H. Hayt, J. E. Kemmerly, and S. M. Durbin, Engineering Circuit Analysis, 8th Edition,\nMcGraw Hill, 2011.\n2- C. K. Alexander, M. N. O. Sadiku, Fundamentals of Electrical Circuits, 5th Edition, McGraw\nHill, 2012\n3- A. Agarwal, J. H. Lang, Foundations of Analog and Digital Electronic Circuits, Morgan\nKaufmann Publishers, Elsevier, 2005",
+  "layout": "standalone"
+}

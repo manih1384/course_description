@@ -1,0 +1,13 @@
+{
+  "id": "artificial_intelligence",
+  "index": 21,
+  "title": "Artificial Intelligence",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "AI is an introductory course in Artificial Intelligence. The goal is to acquire knowledge of\nintelligent systems and agents, formalization of knowledge, reasoning with and without\nuncertainty, machine learning, and applications at a basic level.",
+  "syllabus": "Intelligent agents | Problem-solving, complexity metrics | Uninformed search (BFS, DFS, Uniform\ncost, depth-limited, iterative deepening) | Informed search (Greedy, A*) | Another search\n(simulated annealing, genetic algorithms) | Game playing (minimax, alpha-beta pruning,\nnondeterministic games) | Knowledge-based agents | Propositional logic, syntax, semantics,\ninference, limitations | First-order logic (including inference, unification, Goedel’s theorem,\ngeneralized modus ponens, resolution, forward chaining, backward chaining, situation calculus) |\nBuilding a knowledge base (ontologies, translation between English and FOL, difficult cases like\nevents, substances, composite objects) | Logical reasoning systems (Implementing indexing,\nretrieval, and unification. Theorem provers. Frame systems and semantic networks) | Planning\n(including STRIPS) | Uncertainty | Decision Trees | Fuzzy logic | Neural networks (including\nHopfield, perceptrons, backpropagation)",
+  "textbooks": "1. Artificial Intelligence: a modern approach, S. Russell and P. Norvig, Prentice Hall.",
+  "layout": "standalone"
+}

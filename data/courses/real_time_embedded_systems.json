@@ -1,0 +1,13 @@
+{
+  "id": "real_time_embedded_systems",
+  "index": 31,
+  "title": "Real Time Embedded Systems",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "This course provides an overview of the unique concepts and techniques needed to design and\nimplement computer systems having real-time response requirements in an embedded\nenvironment. It contrasts the concepts and techniques of real-time and embedded systems with\nthose of more traditional computer systems. Topics include Basic concepts of real-time and\nembedded systems, hardware features, sensors and actuators, programming languages, real-time\noperating systems, synchronization techniques, performance optimization, and current trends in\nreal-time and embedded systems such as incorporating internet connectivity.",
+  "syllabus": null,
+  "textbooks": "1. E. A. Lee, S. A. Seshia, Introduction to Embedded Systems – A Cyber-Physical System\nApproach. MIT Press, 2016.\n2. P. Marwedel, Embedded System Design (Embedded System Foundation of Cyber-Physical\nSystem), Springer, 2011.\n3. R. Love, Linux Kernel Development, 2nd Edition, Novell, 2005.\n4. S. Seiwert, Real-Time Embedded System and Components, Thomson Learning Inc, Charles\nRiver Media, 2007.",
+  "layout": "standalone"
+}

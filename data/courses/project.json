@@ -1,0 +1,13 @@
+{
+  "id": "project",
+  "index": 44,
+  "title": "Project",
+  "credits": "3",
+  "type": "Specialized | Practical",
+  "prerequisites": null,
+  "hours": "120h Practical",
+  "objectives": "Students choose a professor of the computer engineering department and he/she defines a subject\nsuch as implementing a program on special scientific usage or a subject in computer engineering\nto research that, and students must provide an essay and submit their project result and present it.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "compact"
+}

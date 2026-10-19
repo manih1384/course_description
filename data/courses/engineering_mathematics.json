@@ -1,0 +1,13 @@
+{
+  "id": "engineering_mathematics",
+  "index": 16,
+  "title": "Engineering Mathematics",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Calculus 2",
+  "hours": "48h Theoretical",
+  "objectives": "This course provides mathematical techniques in the more advanced areas of mathematics that are\nof most relevance to engineering disciplines.",
+  "syllabus": "- Fourier Series, Integrals, and The Fourier Transform\nIntroduction to Fourier Series, Convergence of Fourier Series and Their Integration and\nDifferentiation, Fourier Sine and Cosine Series, Other Forms of Fourier Series, Frequency and\nAmplitude Spectra of a Function, Double Fourier Series. The Fourier Integral, The Fourier\nTransform, Fourier Cosine and Sine Transforms, Sturm–Liouville Problems, Eigenfunctions, and\nOrthogonality\n- Partial Differential Equations\nThe Method of Characteristics, Wave Propagation and First Order PDEs, Generalizing Solutions,\nConservation Laws and Shocks, The Three Fundamental Types of Linear Second Order PDE,\nClassiﬁcation and Reduction to Standard Form of a Second Order Constant Coefﬁcient Partial\nDifferential Equation, Boundary Conditions and Initial Conditions, Waves and the OneDimensional Wave Equation, The D’Alembert Solution of the Wave Equation and Applications,\nSeparation of Variables, Some General Results for the Heat and Laplace Equation, An\nIntroduction to Laplace and Fourier Transform Methods for PDEs\n- Complex Analysis\nComplex Functions and Mappings, Limits, Derivatives, and Analytic Functions, Harmonic\nFunctions and Laplace’s Equation, Elementary Functions, Inverse Functions and Branches,\nComplex Integrals, Contours, the Cauchy–Goursat Theorem, and Contour Integrals, The Cauchy\nIntegral Formulas, Some Properties of Analytic Functions, Complex Power Series and Taylor\nSeries, Uniform Convergence, Laurent Series and the Classiﬁcation of Singularities, Residues and\nthe Residue Theorem, Evaluation of Real Integrals using Residues, The Inversion Integral for the\nLaplace Transform, Conformal Mapping, Conformal Mapping, and Boundary Value Problems\n- Calculus of Variations\nMaximum or minimum of an Integral, Euler’s equations, Lagrange’s equations, Sturm–Liouville\nsystems, and Rayleigh-Ritz methods.",
+  "textbooks": "1. Michael Greenberg, Advanced Engineering Mathematics, 2nd edition, 1998\n2. Erwin Kreyszig, Advanced Engineering Mathematics, tenth edition, 2011",
+  "layout": "standalone"
+}

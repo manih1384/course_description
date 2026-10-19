@@ -1,0 +1,13 @@
+{
+  "id": "differential_equations",
+  "index": 3,
+  "title": "Differential Equations",
+  "credits": "3",
+  "type": "Basic | Theoretical",
+  "prerequisites": "Calculus 1",
+  "hours": "48h Theoretical",
+  "objectives": "In this course, the first and second levels of linear differential equations and some nonlinear\ndifferential equations will be introduced, in addition, students will learn about some numerical and\nanalytical ways to solve Mathematical Problems.",
+  "syllabus": "- Introduction\nSome Basic Mathematical Models, Direction Fields, Solutions of Some Differential Equations,\nClassification of Differential Equations, Historical Remarks\n- First Order Differential Equations\nLinear Equations with Variable Coefficients, Separable Equations, Modeling with First Order\nEquations, Differences between Linear and Nonlinear Equations, Autonomous Equations and\nPopulation Dynamics, Exact Equations and Integrating Factors, The Existence and Uniqueness\nTheorem, First Order Difference Equations\n- Second Order Linear Equations\nHomogeneous Equations with Constant Coefficients, Fundamental Solutions of Linear\nHomogeneous Equations, Linear Independence and the Wronskian, Complex Roots of the\nCharacteristic Equation, Repeated Roots, Reduction of Order, Nonhomogeneous Equations,\nMethod of Undetermined Coefficients, Variation of Parameters.\n- Higher Order Linear Equations\nGeneral Theory of nth Order Linear Equations, Homogeneous Equations with Constant\nCoefficients, The Method of Undetermined Coefficients, The Method of Variation of Parameters\n- Series Solutions of Second-Order Linear Equations\nReview of Power Series, Series Solutions near an Ordinary Point, Regular Singular Points, Euler\nEquations, Series Solutions near a Regular Singular Point, Bessel’s Equation\n- The Laplace Transform\nDefinition of the Laplace Transform, Solution of Initial Value Problems, Step Functions,\nDifferential Equations with Discontinuous Forcing Functions, Impulse Functions, and The\nConvolution Integral\n- Systems of First-Order Linear Equations\nIntroduction, Review of Matrices, Systems of Linear Algebraic Equations; Linear Independence,\nEigenvalues, Eigenvectors, Basic Theory of Systems of First Order Linear Equations\nHomogeneous Linear Systems with Constant Coefficients, Complex Eigenvalues, Fundamental\nMatrices, Repeated Eigenvalues,",
+  "textbooks": "1. E. Kreyszig, Advanced Engineering Mathematics, 1999\n\n2. P. Blanchard, R.L. Devaney, and Co. Hall, Differential Equations, 1st Edition, Brooks/ColePub,\n1998",
+  "layout": "standalone"
+}

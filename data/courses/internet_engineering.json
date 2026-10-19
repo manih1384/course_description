@@ -1,0 +1,13 @@
+{
+  "id": "internet_engineering",
+  "index": 35,
+  "title": "Internet Engineering",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": "Computer Networks",
+  "hours": "48h Theoretical",
+  "objectives": "The goal of this course is to cover the basic techniques in developing Web-based and Internetbased programs. Also, important points in the architectural design of a system on an Internet-scale\nare examined. In addition, creating Web services, Web 2 concepts and semantic web, social\nnetworks and cloud computing on the Web will also be the subject of this lesson. Another aspect\nof this lesson is the provision of web software’s quality requirements such as performance,\nscalability, portability, security, and usability.\nStudents who complete this lesson will be able to:\n1. Develop web-based software\n2. Respond to architectural challenges in creating Internet-scale applications\n3. Use the web as a platform for the development of applications\n4. Apply technology frameworks to meet the quality needs of web applications",
+  "syllabus": "1) An Introduction to Web- HTTP protocol - Web page design\n2) Create simple web applications (based on Servlet, PHP, or . NET)\n3) 3-tier architectural pattern\n4) Connection to Databases - Mapping Objects to Relations\n5) Domain logic organization\n6) Frameworks and layout patterns on the web\n7) Manage Sessions\n8) Concurrency control on web systems\n9) Distributed web systems\n10) Clustering and cloud computing\n11) Web application security\n12) Create Authenticated Web Sites\n13) Performance of Web-based systems\n14) Web services\n15) Semantic web, social networks\n16) User interface design on the web\n17) Mobile programming on the web",
+  "textbooks": null,
+  "layout": "standalone"
+}

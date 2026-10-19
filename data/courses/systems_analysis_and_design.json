@@ -1,0 +1,13 @@
+{
+  "id": "systems_analysis_and_design",
+  "index": 33,
+  "title": "Systems Analysis and Design",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Just as solving a mathematical problem requires first identifying its complexities and dimensions,\ndesigning appropriate strategies to solve the problem, and then proceeding to solve it, such as\nbuilding computer systems for a set of people (which in many cases may be more complex\nmathematical problems) also need to be analyzed and designed before implementation. In this\ncourse, students are introduced to analysis and design skills such as requirements analysis,\nfeasibility analysis, modeling, process analysis, architectural design, and UI / UX. In addition to\nthese skills, this course will include computer systems management and production planning skills\nsuch as production methods, process automation, and project management concepts in such\nprojects.",
+  "syllabus": null,
+  "textbooks": "1. L.D. Bentley, K.C. Dittman, and J.L. Whitten. Systems analysis and design methods.\nIrwin/McGraw Hill, 2007.\n2. K.S. Rubin. Essential Scrum: A practical guide to the most popular Agile process. AddisonWesley, 2012.\n3. M. Fowler, C. Kobryn, and K. Scott. UML distilled: A brief guide to the standard object\nmodeling language. Addison-Wesley Professional, 2004.",
+  "layout": "standalone"
+}

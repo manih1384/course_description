@@ -1,0 +1,13 @@
+{
+  "id": "database_laboratory",
+  "index": 42,
+  "title": "Database Laboratory",
+  "credits": "1",
+  "type": "Elective | Practical",
+  "prerequisites": "Database Design",
+  "hours": "32h Practical",
+  "objectives": "The course aims to cover the fundamentals of databases as seen from the perspective of application\nwriters. The course covers schema design techniques, SQL, data warehouses, and some aspects of\nthe NoSQL movement. Also, students will explain the client/server model, and describe the key\ncomponents used to implement internet database environments and perform basic database\nadministration tasks.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "standalone"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "introduction_to_software_testing",
+  "index": 43,
+  "title": "Introduction to Software Testing",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": "Computer Networks",
+  "hours": "48h Theoretical",
+  "objectives": "The purpose of this course is to acquaint students with test methods and especially test data\nproduction methods. Also in this course, the necessary tools for the software test are introduced.",
+  "syllabus": "Introduction to testing methods, Coverage criteria, Graph-based criteria, Criteria based on logic,\nCriteria are based on the separation of the input space, Syntax-based criteria, Practical\nconsiderations of software testing, Test tools and software setup for testing.",
+  "textbooks": "1. P. Ammann, J. Offutt, Introduction to software testing, Cambridge University Press, 2016.\n2. P. C. Jorgensen, Software Testing: A Craftsman's Approach, 2nd Edition, CRC Press, 2002.",
+  "layout": "standalone"
+}

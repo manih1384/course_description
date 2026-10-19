@@ -1,0 +1,13 @@
+{
+  "id": "software_engineering",
+  "index": 37,
+  "title": "Software Engineering",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "The purpose of this course is to study the techniques needed to produce valuable, high-quality\nhigh-productivity software. In this lesson, first, the differences between a product that is produced\nby the engineering method and a product that is produced by the artistic methods are expressed.\nThen the expectations that an engineering product has to meet are described. Afterward, we will\nhave an overview of scientific achievements in this field at all stages of software products with an\nemphasis on engineering methods of production, including modeling, measurability, evaluability,\nvalidation, and verification. Given the fact that in previous courses students have been less familiar\nwith the formal descriptions of requirements, measurements, estimates, and tests, this course\nfocuses more on these subjects. In the end, support activities such as project management,\nscheduling, risk management, configuration management, and quality assurance, with emphasis\non their impact on software products, are reviewed. Students who successfully pass this lesson will\nhave a good insight into\nthe following:\n1. Applying engineering methods to create a quality product\n2. Follow the well-known processes of software engineering\n3. Application of Software Architectural Design Methods\n4. Software Testing at Different Levels",
+  "syllabus": "1. An Introduction to Software Engineering\n2. Software Development Processes and Models – Iterative Development\n3. An overview of software analysis\n4. Software design: design principles, patterns, refactoring\n5. Software Architecture: Design, Documentation, and Evaluation\n6. Software testing\n7. Software Quality Management\n8. Cost and time estimation\n9. Project Management - Human Resources Management - Risk Management\n10. Life Cycle Management - Change Management – Configuration Management\n11. Agile methods",
+  "textbooks": "1. Roger S. Pressman and Bruce R. Maxim, Software Engineering: A Practitioner’s Approach. 8th\ned., McGraw-Hill, 2014.",
+  "layout": "standalone"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "algorithm_design_1",
+  "index": 10,
+  "title": "Algorithm Design 1",
+  "credits": "3",
+  "type": "Major | Theoretical",
+  "prerequisites": "Data Structures",
+  "hours": "48h Theoretical",
+  "objectives": "The main purpose of this course is to teach the basic concepts and common methods of analysis\nand design of algorithms. In this lesson, students learn how to analyze a given problem and find\nsome possible algorithms to solve it. Then analyze and compare those algorithms in terms of\ncomputational complexity and identify the best ones based on the characteristics of the input\nsamples. In this lesson, basic algorithms for solving some common problems will be introduced.",
+  "syllabus": "Review of essential points of Data Structures, problem-solving methods (for each method some\nproblems and a special algorithm for the problem shall be represented and analyzed), introduction\nto complexity, divide & conquer method (problems to be analyzed: max and min of an array,\nmultiplication of two n-bit number, Strassen method about matrix multiplication, round robin\nalgorithm, sorting with Quicksort algorithm), dynamic programming method (matrix\nmultiplication, traveling salesman problem, polygon triangulation), greedy algorithms(scheduling\nproblem, Huffman Code, making change), methods based on exhaustive search, alpha-beta\npruning (puzzle, tic-tac-tac), the revelation of methods for problems, graph algorithms(searching\nmethods of the graph, Dijkstra algorithms, minimum spanning tree, Floyd algorithm, topological\nsorting and…), maximum flow networks and other problems.",
+  "textbooks": "1. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein, Introduction to\nAlgorithms, Third Edition, The MIT Press, Cambridge, Massachusetts 2009.\n2. R.E. Neapolitan and K.Naimipour, Foundations of Algorithms using C++ Pseudo Codes, 2nd\nEdition,\nJohns\nand\nBartlett\nPublishers,\n1998.",
+  "layout": "standalone"
+}

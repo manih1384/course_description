@@ -1,0 +1,13 @@
+{
+  "id": "computer_workshop",
+  "index": 7,
+  "title": "Computer Workshop",
+  "credits": "3",
+  "type": "Basic | Practical",
+  "prerequisites": "Introduction to Computing Systems and Programming",
+  "hours": "48h Practical",
+  "objectives": "Familiarity with accessory systems such as card readers, printers, magnetic tape, discs, and\nconsoles, manner of work with terminals, familiarity with compilers and editors, familiarity with\nJCL language, familiarity with computer organization of a center, familiarity with prepared\nsoftware packages such as database, spreadsheet, lotus, familiarity with the important programs of\na system such as a sort, merge, creation and copy of files, etc., familiarity with usage manner of\nan operating system of microcomputer",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "standalone"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "computer_aided_digital_system",
+  "index": 23,
+  "title": "Computer Aided Digital System",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Students in the Computer Aided Digital System course will implement and test digital circuits\nranging in complexity from basic logic gates to state machines that perform useful functions like\ncalculations, counting, timing, and a host of other applications.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "standalone"
+}

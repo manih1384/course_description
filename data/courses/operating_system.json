@@ -1,0 +1,13 @@
+{
+  "id": "operating_system",
+  "index": 20,
+  "title": "Operating System",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Computer Architecture",
+  "hours": "48h Theoretical",
+  "objectives": "The course provides computer engineering students to understand the ways that applications\ninteract with the computer hardware as well as different methods of resource management and\ntheir respective algorithms. Further, they will learn of basic mechanisms which are used in the\nlow-level management of computer systems. Such a student will also learn how to design a system\nwith the consideration of both hardware and software characteristics and limitations and improve\nthe quality of programs. The course is a combination of both practice and theory.\nUpon successful completion of the course, students will have good insights\n1. in different types of computer systems and applications,\n2. to design, build, and manage system software,\n3. to better discover the reasons for the degraded performance of computer systems and solve the\nproblem,\n4. to propose and implement resource management policies.",
+  "syllabus": "1) Introduction (Basic terminologies and concepts as well as different computer systems\narchitectures and software systems, Interrupts, Dual-mode, …)\n2) Operating system structures (Different architectures for operating systems, system calls, APIs,\nvirtualization, and cloud computing)\n3) Processes (PCB, context switch, short-term, medium-term, and long-term schedulers, process\ncreation and communication)\n4) Threads (Multithreading models, thread management)\n5) Process synchronization (Critical sections and respective solutions, semaphores, monitors,\nclassic synchronization problems)\n6) CPU scheduling (Preemptive and non-preemptive scheduling, CPU scheduling algorithms,\nSMP, SMT, multicore scheduling, real-time scheduling)\n7) Deadlock handling (Necessary conditions for deadlock, resource-allocation graph, deadlock\nprevention, avoidance, detection, and recovery)\n8) Main memory management (Binding, physical and logical addresses, fragmentation, paging,\nTLB, shared pages, segmentation)\n9) Virtual memory management (Demand paging, page fault handling, copy-on-write, page\nreplacement policies, Belady’s anomaly, frame allocation, thrashing, memory-mapped I/O and\nfiles, kernel memory management)\n10) Storage management (File system structure, virtual file system, storage allocation methods)\n11) I/O management (Interrupts, I/O subsystem, I/O management and performance aspects)",
+  "textbooks": "1. W. Stallings, Operating Systems, 4th Edition, Prentice Hall, 2001\n\n2. Silberschatz, J.L. Peterson, Operating Systems Concepts, Addison Wesley, 2000 Course",
+  "layout": "standalone"
+}

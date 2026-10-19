@@ -1,0 +1,13 @@
+{
+  "id": "computer_networks_security",
+  "index": 40,
+  "title": "Computer Networks Security",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": "Computer Networks",
+  "hours": "48h Theoretical",
+  "objectives": "Computer networks security is a course designed to teach students about the fundamental concepts\nand techniques used in securing computer networks. With the increasing reliance on computer\nnetworks in modern society, network security has become a crucial aspect of information\ntechnology. This course provides an overview of the principles, practices, and technologies used\nin computer networks security. The course covers a variety of topics, including cryptography,\nauthentication, access control, firewalls, intrusion detection and prevention, virtual private\nnetworks (VPNs), and secure network design. Students will learn about the types of vulnerabilities\nand attacks that can affect computer networks and the ways to prevent and respond to such attacks.\nThe goals of this course are:\n1. Learning the fundamentals of cryptography\n2. Learning the security protocols used in computer networks\n3. Learning how security protocols are broken and hacked\nUpon successful completion of the course, students will be able to\n1. Do basic encryption/decryptions\n2. Design secure protocols\n3. Analyze the security of protocols\n4. Use existing standards to secure the computer networks",
+  "syllabus": "1- Fundamentals of Cryptography\n2- Fundamentals of Computer Networks\n3- Key Management\n4- Authentication\n5- Internet Security\n- Web\n- Firewall\n- Email\n- IDS\n- VPN / IPSec\n- DNS Security\n6- Wireless Security\n7- Access Control\n8- Malware and Attacks",
+  "textbooks": "1. “Network Security Essentials: Applications and Standards”, William Stallings, 6th ed., Pearson,\n2017",
+  "layout": "standalone"
+}

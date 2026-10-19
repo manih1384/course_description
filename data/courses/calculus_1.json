@@ -1,0 +1,13 @@
+{
+  "id": "calculus_1",
+  "index": 2,
+  "title": "Calculus 1",
+  "credits": "3",
+  "type": "Basic | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Calculus 1, consisted principally of one-variable Calculus, Functions, Derivatives, Integrals,\nIntegration Methods, Complex Numbers, and Infinite Series.",
+  "syllabus": "Cartesian coordinates; polar coordinates; complex numbers; addition, product, root & geometrical\nrepresentation of complex numbers; polar representation of complex numbers; function; functions\nalgebra; limit and relevant theorems; infinite limit and limit in infinite; left-hand and right-hand\nlimit; connectivity; derivative; derivation formula; inverse function and its derivative;\ntrigonometric functions derivative and their inverse functions; Rolle’s theorem; mean theorem;\nTaylor expansion; geometrical and physical applications of derivative; curves and acceleration in\npolar coordinates; application of derivative in approximation of equations roots; definition of\nintegral of continuous functions and piecewise continuous; basic theorems of differential &\nintegral arithmetic; primitive function; approximate methods of integral estimate; application of\nintegral in computation of area, length of curve, moment, center of gravity and labor ….(in\nCartesian and polar coordinates); logarithm and exponential function and their derivative;\nhyperbolic functions; integration methods such as change of variable, component and\ndecomposition of fractions; transform of special variables of sequence and numerical series and\nrelevant theorems; power series and Taylor theorem with remainder.",
+  "textbooks": "1. Tom M. Apostol, “Calculus, Vol. 1: One-Variable Calculus, with an Introduction to Linear\nAlgebra”, John Wiley, 2012.\n2. George B. Thomas Jr., Maurice D. Weir, Joel Hass, \"Thomas' Calculus (12th Edition)\", 2009",
+  "layout": "standalone"
+}

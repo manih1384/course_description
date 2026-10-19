@@ -1,0 +1,13 @@
+{
+  "id": "parallel_programming",
+  "index": 38,
+  "title": "Parallel Programming",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "This course is about writing effective programs to harness the unprecedented power provided by\nmodern parallel computers so that the programs attain the highest possible levels of performance\nthe machines are capable of. The parallel computers we focus on include multi-core processors as\nwell as clusters and supercomputers made from them. The programming systems and\nmethodologies we learn will include OpenMP, Pthreads and CUDA. However, the focus of the\ncourse is not so much on the mechanics of these programming systems as on how to use them to\nattain and improve high performance. This performance orientation pervades throughout the\ncourse and is enhanced by several case studies, small enough to understand the lecture format yet\ncomplex enough to illustrate performance issues and trade-offs. The course also teaches an\nadequate analytical framework for understanding performance, including performance models,\nscalability analysis, and iso-efficiency.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "standalone"
+}

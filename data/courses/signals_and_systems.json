@@ -1,0 +1,13 @@
+{
+  "id": "signals_and_systems",
+  "index": 24,
+  "title": "Signals and Systems",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Engineering Mathematics",
+  "hours": "48h Theoretical",
+  "objectives": "Introduction to the fundamentals of continuous and discrete time signal and system analysis. This\ncourse will cover linear system analysis including impulse response and convolution, Fourier\nseries, Fourier transforms, sampling, discrete-time signal and system analysis, and Z-transforms.\nThe student is expected to demonstrate the ability to:\n- Apply the convolution theorem for continuous-time signals\n- Evaluate the Fourier Series of periodic signals\n- Determine the Fourier Transform of energy signals\n- Make use of Fourier Transform Properties\n- Analyze a discrete-time LTI system using discrete linear convolution\n- Use Z-transform for analyzing discrete-time signals and systems\n- Convert a continuous-time signal to the discrete-time domain and reconstruct using the\nsampling theorem",
+  "syllabus": "- Introduction\nMotivation: Why signal processing is important, Mathematical preliminaries\n- Signal Basics\nTypes of signals, Elementary signals\n- Time-Domain Analysis of Continuous-Time Systems\nTypes of systems, Linear time-invariant (LTI) systems, Convolution\n- Continuous-Time Fourier Series (CTFS)\nCTFS derivation, CTFS properties, Convergence\n- Continuous-Time Fourier Transform (CTFT)\nCTFT derivation, CTFT properties, CTFT, convolution, and LTI systems, Convergence\n- Laplace Transform\nRegion of convergence, Implementing continuous-time systems\n- Time-Domain Analysis of Discrete-Time Systems\nTypes of systems, Linear time-invariant (LTI) systems, Convolution\n- Time-Domain Analysis of Discrete-Time Systems\nTypes of systems, Linear time-invariant (LTI) systems, Convolution\n- Discrete-Time Fourier Transform (DTFT)\nDTFT derivation, DTFT properties, DTFT, convolution, and LTI systems, Convergence\n- Discrete Fourier Transform (DFT)\nDFT, convolution, and LTI systems, Convergence, Fast Fourier Transform (FFT)\n- Sampling and Reconstruction\nSampling and the Nyquist theorem, Sinc interpolation, Practical reconstruction\n\n- Z-Transform\nRegion of convergence, Implementing discrete-time systems",
+  "textbooks": "1. Alan V. Oppenheim, A. S. Willsky and S. Hamid Nawab, Signals and Systems, 2nd ed.,\nPrentice-Hall, 1996.\n2. S. Haykin and B. Van Veen, Signals and Systems, 2nd ed., Wiley, 2003.",
+  "layout": "standalone"
+}

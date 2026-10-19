@@ -1,0 +1,13 @@
+{
+  "id": "database_design",
+  "index": 34,
+  "title": "Database Design",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "This course introduces relational database systems. In this course, the students will learn how to\ndesign and create relational databases and how to use them. They will also learn about the internals\nof database management systems: how such systems store data, optimize and execute queries, and\nprocess transactions.\nUpon successful completion of the course, students will be able\n1. to understand the basics of a database system and its architecture\n2. to design a database for an application: draw an entity-relationship (ER) diagram from a problem\nspecification, convert the ER diagram to relations, and normalize the relations\n3. to write database queries in SQL\n4. to write relational algebra and relational calculus expressions for queries\n5. to understand how the relations and indexes are stored in a database system\n6. to identify useful indexes for a specific database and workload\n7. to understand how the queries are optimized and executed in a DBMS\n8. to understand concurrency control and recovery in database systems",
+  "syllabus": "Foundations\n1. The relational model\n2. Relational Algebra and Relational Calculus\n3. SQL: Queries, Constraints, Triggers\n4. Schema Refinement and Normal Forms\nStorage and Indexing\n1. Storing Data: Disks and Files\n2. Tree-Structured Indexing\n3. Hash-Based Indexing\nQuery Evaluation\n1. External Sorting\n2. Evaluating Relational Operators\n3. A Typical Relational Query Optimizer\nTransaction Management\n1. Overview of Transaction Management",
+  "textbooks": "1. R. Ramakrishnan and J. Gehrke, Database Management Systems, McGraw-Hill 3rd Edition,\n2003.",
+  "layout": "standalone"
+}

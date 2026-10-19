@@ -1,0 +1,13 @@
+{
+  "id": "logic_circuits_laboratory",
+  "index": 15,
+  "title": "Logic Circuits Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Logic Circuits",
+  "hours": "32h Practical",
+  "objectives": "The logic circuits laboratory is provided with the logic circuits course and its purpose is to acquaint\nstudents with the practical components of logic circuits and how these circuits work and to acquire\nskills in the development of circuits and digital systems.",
+  "syllabus": null,
+  "textbooks": "1- C. Roth, L. Kinney, Fundamentals of Logic Design, 7th Edition, Cengage Learning, 2014.\n2- F. Vahid, Digital Design with RTL Design, VHDL, and Verilog, 2nd Edition, Wiley, 2011.",
+  "layout": "standalone"
+}

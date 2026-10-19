@@ -1,0 +1,13 @@
+{
+  "id": "computer_architecture",
+  "index": 18,
+  "title": "Computer Architecture",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Logic Circuits",
+  "hours": "48h Theoretical",
+  "objectives": "This course aims to give an understanding of the mechanisms for implementing the programmer's\nidealized computer. It builds on the introduction to hardware and simple processors in the Digital\nSystems course. The Computer Architecture course aims to describe a broad range of architectural\ndesigns and to contrast them, highlighting the design decisions they incorporate, and how these\ndesign decisions impact program performance.",
+  "syllabus": "C programming language; x86-64 assembly language; Machine representation of programs;\nControl structures for processors, register transfer level description of hardware; Hardware\ndescription languages and simulation in Verilog; Instruction set design, instruction formats,\naddressing modes, ISAs; A sequential x86-64 design; Processor pipelining, pipeline hazard\ndetection, stalling and forwarding; Out-of-order execution and program performance optimization;\nRISC and CISC instruction sets (x86-64 and MIPS); Memory hierarchy and memory caches;\nMicrocontrollers for embedded applications; Alternative architectures.",
+  "textbooks": "1. D A Patterson & J L Hennessy, Computer Organization and Design: The hardware/software\ninterface, Morgan-Kaufmann (Fifth edition) 2013.",
+  "layout": "standalone"
+}

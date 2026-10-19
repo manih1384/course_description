@@ -1,0 +1,13 @@
+{
+  "id": "compiler_design_and_programming_languages",
+  "index": 25,
+  "title": "Compiler Design and Programming Languages",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Machines and Language Theory",
+  "hours": "48h Theoretical",
+  "objectives": "Designing and building compilers is one of the basic concepts of computer science. Although there\nis little variety in the way compilers are made, a wide variety of languages and machines can be\nused to make interpreters and translators. In this lesson, the subject of building compilers is\nintroduced by describing the main components of a compiler, their tasks, and their relationship.\nAfter an introductory introduction to the components of a compiler and the types of grammar, the\nvarious stages of translation, such as lexical, syntactic, and semantic analysis, and code generation\nand payment, are described. Students who successfully pass this course will have a good insight\ninto the following: Familiarity with compiler components and various techniques for their\nimplementation, understanding of the implementation of programming language commands,\ngaining skills in producing optimal programs and fixing programming errors, familiarity and the\nuse of automated tools in compiler production.",
+  "syllabus": "An introduction to the design and implementation of programming language translators,\nTheoretical aspects of language design and translation are discussed, and practically demonstrated\nby developing a working compiler.",
+  "textbooks": "1. A. Aho, M. Lam, R. Sethi, and J. Ullman, Compilers: Principles, Techniques, and Tools (2nd\nEdition), Prentice Hall, 2006.",
+  "layout": "standalone"
+}

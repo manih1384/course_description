@@ -1,0 +1,13 @@
+{
+  "id": "industrial_training",
+  "index": 45,
+  "title": "Industrial Training",
+  "credits": "3",
+  "type": "Training | Practical",
+  "prerequisites": null,
+  "hours": "240h Practical",
+  "objectives": "Students must practically get involved in industry and market by working totally specific hours in\nan appropriate and defined company in either governmental or private sectors as an intern.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "compact"
+}

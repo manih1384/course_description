@@ -1,0 +1,13 @@
+{
+  "id": "data_structures",
+  "index": 9,
+  "title": "Data Structures",
+  "credits": "3",
+  "type": "Major | Theoretical",
+  "prerequisites": "Advanced Programming",
+  "hours": "48h Theoretical",
+  "objectives": "Familiarity with Information Structures, Effects of Structures in Produced Applications, Selecting\nOptimized Inside-Memory Structures, and Organizing Memory based on requirements.",
+  "syllabus": "Arrays, Vectors, matrices and their application, sparse matrices, heap and stack, queue, lists, linked\nlists (linear, cyclic, doubly and multiply linked lists), introduction to trees, binary trees (decisionmaking trees, gaming trees, search trees and …), graphs (representation, sweeping and\napplications), Spanning trees, Dynamic memory allocation methods, searching, sorting and\nmerging algorithms.",
+  "textbooks": "1. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein, Introduction to\nAlgorithms, Third Edition, The MIT Press, Cambridge, Massachusetts 2009\n2. A.V. Aho, J.E. Hopcroft, J.D. Ullman, Data Structures and Algorithms, Addison Wesley, 1983",
+  "layout": "standalone"
+}

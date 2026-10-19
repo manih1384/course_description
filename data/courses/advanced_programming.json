@@ -1,0 +1,13 @@
+{
+  "id": "advanced_programming",
+  "index": 12,
+  "title": "Advanced Programming",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Introduction to Computing Systems and Programming",
+  "hours": "48h Theoretical",
+  "objectives": "The purpose of this course is to study the principles and methods (Polymorphism, Inheritance,\nProgram Samples, and other paradigms of programming) necessary to produce a computer\nprogram with good-quality specifications. In this regard, after covering the top-down design\nmethod to solve the problem, students will be introduced to the concepts and techniques of objectoriented programming as a tool for managing complexity in medium and large-scale applications.\nProgram performance, testing, and debugging are focused on throughout the course. An objectoriented programming language (such as C++) is used to teach these principles and methods, and\nstudents are introduced to the concepts and techniques of object-oriented programming and\nmodule-based object design, advanced concepts such as graphical user interface design.",
+  "syllabus": "Introduction: Program life cycle, the importance of programming, programming paradigms,\nObjected orientation\nObject-oriented programming: Description of Objects, Object recognition, Finding implantable\nobjects in problems, Objects connection, Object-oriented programming language, an Introduction\nto C++ and its history\nA review of a functional programming language (C++), Polymorphism, inheritance, program\nsamples\nClass and Objects, encapsulation and abstract, C++ classes and their parts (private, public, and\nprotected), constructor and destructors, derived classes\nPolymorphism, polymorphism importance, function polymorphism, operator polymorphism\nInheritance: introduction to inheritance, single and multiple inheritances\nTemplates: template importance, function templates, derived data type templates\nOther programming paradigms: introduction to event-oriented and graphical programming,\nwindows programming, client-side programming\nProgram testing and documentation: the importance of testing and documentation, automatic\ntesting tools, in-line documentation, technical documentation, user manuals",
+  "textbooks": "1. Bjarne Stroustrup, \"The C++ Programming Language\", Addison Wesley, 2004.\n2. Stanley B Lippman, \"The C++ Primer\", Addison Wesley, 2005.\n3. Paul Deitel & Harvey Deitel, “C++ How to Program (Early Objects Version)”, Prentice Hall; 9\nedition, 2013.",
+  "layout": "standalone"
+}

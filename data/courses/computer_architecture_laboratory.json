@@ -1,0 +1,13 @@
+{
+  "id": "computer_architecture_laboratory",
+  "index": 28,
+  "title": "Computer Architecture Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Computer Architecture",
+  "hours": "32h Practical",
+  "objectives": "The purpose of this laboratory is to acquaint students with the concepts presented in the computer\narchitecture course such as designing digital circuits, how to analyze and debugging them,\ndesigning logic and arithmetic parts of a processor, designing memory units, input/output, data\npath, and control unit in a typical processor, Using hardware description languages such as Verilog\nand VHDL to describe their structure, synthesize and finally implement on FPGA boards.",
+  "syllabus": null,
+  "textbooks": "1. S. Brown, Z. Vranesic, Fundamentals of Digital Logic with Verilog Design, McGraw-Hill,\n2003.\n2. B. Parhami, Computer Arithmetic, Algorithms and Hardware Designs, Oxford University Press,\n2000.",
+  "layout": "standalone"
+}
