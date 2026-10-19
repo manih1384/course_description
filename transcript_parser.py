@@ -71,25 +71,83 @@ def load_catalog():
     return catalog
 
 
+def find_pdftotext_binary():
+    """Locate pdftotext binary dynamically across operating systems without hardcoded paths."""
+    found = shutil.which("pdftotext") or shutil.which("pdftotext.exe")
+    if found:
+        return found
+
+    candidates = [
+        Path("/usr/bin/pdftotext"),
+        Path("/usr/local/bin/pdftotext"),
+        Path("/opt/homebrew/bin/pdftotext"),
+        Path("/opt/local/bin/pdftotext"),
+        Path("C:/Program Files/poppler/bin/pdftotext.exe"),
+        Path("C:/Program Files (x86)/poppler/bin/pdftotext.exe"),
+        Path.home() / "poppler" / "bin" / "pdftotext.exe",
+    ]
+    if sys.prefix:
+        candidates.extend([
+            Path(sys.prefix) / "bin" / "pdftotext",
+            Path(sys.prefix) / "Library" / "bin" / "pdftotext.exe",
+        ])
+
+    for c in candidates:
+        if c.is_file() and (os.access(c, os.X_OK) or sys.platform == "win32"):
+            return str(c)
+
+    return None
+
+
 def extract_transcript_text(transcript_path):
-    """Extract text layout from transcript PDF or read text file."""
+    """
+    Extract text layout from transcript PDF or read plain text file.
+    Uses pdftotext (poppler) if available, with an automatic fallback to pypdf if installed.
+    """
     p = Path(transcript_path)
     if not p.exists():
         raise FileNotFoundError(f"Transcript file not found: {p}")
 
     if p.suffix.lower() == ".pdf":
-        pdftotext_bin = shutil.which("pdftotext") or "/usr/bin/pdftotext"
-        if not os.path.exists(pdftotext_bin):
-            raise EnvironmentError("pdftotext binary not found. Please install poppler-utils.")
-        res = subprocess.run(
-            [pdftotext_bin, "-layout", str(p), "-"],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True
+        pdftotext_bin = find_pdftotext_binary()
+        if pdftotext_bin:
+            res = subprocess.run(
+                [pdftotext_bin, "-layout", str(p), "-"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            if res.returncode == 0 and res.stdout.strip():
+                return res.stdout
+
+        # Fallback to pypdf if pdftotext is not installed or returned empty
+        try:
+            import pypdf
+            reader = pypdf.PdfReader(str(p))
+            pages = []
+            for page in reader.pages:
+                try:
+                    t = page.extract_text(extraction_mode="layout")
+                except Exception:
+                    t = page.extract_text() or ""
+                pages.append(t)
+            extracted = "\x0c".join(pages)
+            if extracted.strip():
+                return extracted
+        except ImportError:
+            pass
+
+        # If both methods failed, provide clear user-friendly instructions
+        raise EnvironmentError(
+            "\n[Error] No PDF text extractor found to read your transcript!\n"
+            "Please do ONE of the following to resolve this:\n"
+            "  1. (Recommended) Install poppler-utils for high-fidelity column layout extraction:\n"
+            "     • Ubuntu / Debian: sudo apt install poppler-utils\n"
+            "     • macOS:          brew install poppler\n"
+            "     • Windows:        choco install poppler  (or winget install poppler)\n"
+            "  2. Or install the Python pypdf library fallback:\n"
+            "     • pip install pypdf\n"
         )
-        if res.returncode != 0:
-            raise RuntimeError(f"pdftotext failed: {res.stderr}")
-        return res.stdout
     else:
         with open(p, "r", encoding="utf-8", errors="replace") as f:
             return f.read()

@@ -1,0 +1,10 @@
+# University of Tehran — Course Description Generator
+# Requirements & Dependencies
+#
+# Core scripts run on Python 3.8+ using ONLY the Python Standard Library.
+# No third-party packages are strictly required if system 'pdftotext' is installed.
+#
+# Optional Fallback:
+# If 'pdftotext' (from poppler-utils) is not installed on your machine,
+# pypdf allows reading transcript PDFs directly in Python:
+pypdf>=4.0.0

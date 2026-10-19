@@ -11,6 +11,8 @@ It allows you to **add, remove, edit, reorder, and filter courses and degree pro
 ```
 course_description/
 ├── build.py                  # CLI build manager (generate LaTeX & compile PDF)
+├── transcript_parser.py      # Transcript parser & fuzzy catalog course matcher
+├── requirements.txt          # Python dependencies (standard library core + optional pypdf)
 ├── main.tex                  # Active master LaTeX document (can also compile manually)
 ├── CourseDescription.pdf     # Compiled PDF output
 ├── templates/
@@ -21,13 +23,63 @@ course_description/
 │   └── watermark.png         # Centered page background watermark
 └── data/
     ├── programs.json         # Programs registry & curriculum course sequences
-    ├── courses.json          # Complete course catalog (all 56 courses)
+    ├── courses.json          # Complete course catalog (CE & EE courses)
+    ├── course_filters.json   # Configurable religious and general course filters
+    ├── aliases.json          # Course title aliases for fuzzy matching
     └── courses/              # Individual modular JSON files for each course
-        ├── physics_1.json
-        ├── calculus_1.json
-        ├── data_structures.json
-        ├── artificial_intelligence.json
-        └── ... (56 courses)
+```
+
+---
+
+## ⚙️ Prerequisites & Setup
+
+The tool is designed to work out-of-the-box on Linux, macOS, and Windows with **no hardcoded paths** and **no complex Python environments**.
+
+### 1. Check Your Environment
+Run the built-in diagnostic tool to verify your system setup:
+```bash
+./build.py --check-env
+```
+
+### 2. Requirements Overview
+| Component | Requirement | Details |
+| :--- | :--- | :--- |
+| **Python** | Python 3.8+ | Core scripts use **100% Python Standard Library** (zero mandatory pip packages). |
+| **PDF Extraction** | `pdftotext` *(Recommended)*<br>or `pypdf` *(Fallback)* | `pdftotext` (from Poppler) preserves transcript column layout.<br>If unavailable, run `pip install -r requirements.txt`. |
+| **LaTeX Engine** | `xelatex` *(Recommended)*<br>or `pdflatex` | XeLaTeX provides full UTF-8 Unicode, Liberation/Times typography, and microtype. |
+
+### 3. Quick OS Installation Commands
+
+#### Ubuntu / Debian:
+```bash
+sudo apt update
+sudo apt install -y poppler-utils texlive-xetex texlive-fonts-recommended
+```
+
+#### macOS (Homebrew):
+```bash
+brew install poppler
+brew install --cask mactex-no-gui   # or full MacTeX: brew install --cask mactex
+```
+
+#### Windows:
+Using Chocolatey or winget:
+```powershell
+# Using Chocolatey:
+choco install poppler miktex
+
+# Or using winget:
+winget install MiKTeX.MiKTeX
+```
+*(If you do not want to install Poppler on Windows, simply run: `pip install -r requirements.txt`)*
+
+#### Arch Linux / Fedora:
+```bash
+# Arch:
+sudo pacman -S poppler texlive-xetex
+
+# Fedora:
+sudo dnf install poppler-utils texlive-scheme-medium
 ```
 
 ---
@@ -39,7 +91,7 @@ To generate `main.tex` and compile `CourseDescription.pdf`:
 ```bash
 ./build.py
 ```
-*(Uses XeLaTeX from TinyTeX automatically)*
+*(Automatically detects your installed XeLaTeX compiler)*
 
 ### 2. View Programs and Courses
 - List all available degree programs:

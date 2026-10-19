@@ -92,17 +92,81 @@ def get_category_rank(course_type):
 
 
 def find_latex_compiler():
-    """Locate xelatex (preferred for unicode & Liberation/Times fonts) or pdflatex."""
-    candidates = [
-        "/home/manih/.TinyTeX/bin/x86_64-linux/xelatex",
-        shutil.which("xelatex"),
-        "/home/manih/.TinyTeX/bin/x86_64-linux/pdflatex",
-        shutil.which("pdflatex")
+    """
+    Locate xelatex (preferred for unicode & Liberation/Times fonts) or pdflatex dynamically.
+    Searches system PATH, user-level TinyTeX, MacTeX, TeX Live, and MiKTeX directories across OSes.
+    Returns executable path string or None if not found.
+    """
+    home = Path.home()
+
+    # Priority 1: xelatex (full unicode & fontspec support)
+    # Check system PATH first
+    which_xe = shutil.which("xelatex") or shutil.which("xelatex.exe")
+    if which_xe:
+        return which_xe
+
+    # Search user-level TinyTeX (cross-platform globbing)
+    try:
+        # Linux / macOS: ~/.TinyTeX/bin/*/xelatex
+        for p in home.glob(".TinyTeX/bin/*/xelatex*"):
+            if p.is_file() and (os.access(p, os.X_OK) or sys.platform == "win32") and "unsafe" not in p.name:
+                return str(p)
+        # Windows: %APPDATA%/TinyTeX/bin/*/xelatex.exe
+        appdata_tinytex = home / "AppData" / "Roaming" / "TinyTeX"
+        if appdata_tinytex.exists():
+            for p in appdata_tinytex.glob("bin/*/xelatex*"):
+                if p.is_file():
+                    return str(p)
+    except Exception:
+        pass
+
+    # Standard macOS paths (MacTeX / Homebrew)
+    for m in ["/Library/TeX/texbin/xelatex", "/opt/homebrew/bin/xelatex", "/usr/local/bin/xelatex"]:
+        p = Path(m)
+        if p.is_file() and os.access(p, os.X_OK):
+            return str(p)
+
+    # Standard Linux TeX Live paths
+    try:
+        for p in Path("/usr/local/texlive").glob("*/bin/*/xelatex"):
+            if p.is_file() and os.access(p, os.X_OK):
+                return str(p)
+    except Exception:
+        pass
+
+    # Windows MiKTeX & TeX Live
+    win_candidates = [
+        home / "AppData" / "Local" / "Programs" / "MiKTeX" / "miktex" / "bin" / "x64" / "xelatex.exe",
+        Path("C:/Program Files/MiKTeX/miktex/bin/x64/xelatex.exe"),
     ]
-    for c in candidates:
-        if c and os.path.isfile(c) and os.access(c, os.X_OK):
-            return c
-    return "xelatex"
+    for w in win_candidates:
+        if w.is_file():
+            return str(w)
+    try:
+        for p in Path("C:/texlive").glob("*/bin/*/xelatex.exe"):
+            if p.is_file():
+                return str(p)
+    except Exception:
+        pass
+
+    # Priority 2: Fallback to pdflatex if xelatex is absent
+    which_pdf = shutil.which("pdflatex") or shutil.which("pdflatex.exe")
+    if which_pdf:
+        return which_pdf
+
+    try:
+        for p in home.glob(".TinyTeX/bin/*/pdflatex*"):
+            if p.is_file() and (os.access(p, os.X_OK) or sys.platform == "win32"):
+                return str(p)
+    except Exception:
+        pass
+
+    for m in ["/Library/TeX/texbin/pdflatex", "/usr/bin/pdflatex", "/usr/local/bin/pdflatex"]:
+        p = Path(m)
+        if p.is_file() and os.access(p, os.X_OK):
+            return str(p)
+
+    return None
 
 
 def escape_latex(text):
@@ -469,32 +533,50 @@ def generate_latex(program_id=None, selected_course_ids=None, semesters_data=Non
 def compile_pdf(tex_file=MAIN_TEX, output_pdf=DEFAULT_OUTPUT_PDF):
     """Compile LaTeX to PDF using XeLaTeX (2 passes)."""
     compiler = find_latex_compiler()
+    if not compiler:
+        print("\n[Error] No LaTeX compiler (xelatex or pdflatex) was found on your system!", file=sys.stderr)
+        print("To compile the PDF, please install XeLaTeX (recommended for UTF-8 and typography):", file=sys.stderr)
+        print("  • Ubuntu / Debian: sudo apt install texlive-xetex texlive-fonts-recommended", file=sys.stderr)
+        print("  • macOS (Homebrew): brew install --cask mactex-no-gui  (or brew install mactex)", file=sys.stderr)
+        print("  • Windows:         choco install miktex  (or install MiKTeX from miktex.org)", file=sys.stderr)
+        print("\nTip: You can still generate 'main.tex' without compiling PDF using: ./build.py --no-pdf\n", file=sys.stderr)
+        return False
+
     print(f"Compiling with: {compiler} (Target: {output_pdf.name})...")
 
     # Pass 1
-    res1 = subprocess.run(
-        [compiler, "-interaction=nonstopmode", tex_file.name],
-        cwd=BASE_DIR,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        text=True
-    )
+    try:
+        res1 = subprocess.run(
+            [compiler, "-interaction=nonstopmode", tex_file.name],
+            cwd=BASE_DIR,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True
+        )
+    except FileNotFoundError:
+        print(f"\n[Error] Failed to execute compiler '{compiler}'. Binary not found or not executable.", file=sys.stderr)
+        return False
+
     if res1.returncode != 0:
         log_file = BASE_DIR / f"{tex_file.stem}.log"
         print(f"[Error] Compilation failed! Check log: {log_file}", file=sys.stderr)
-        with open(log_file, "r", encoding="utf-8", errors="replace") as lf:
-            lines = [l.strip() for l in lf.readlines() if l.startswith("!")]
-            for l in lines[:10]:
-                print(f"  {l}", file=sys.stderr)
+        if log_file.exists():
+            with open(log_file, "r", encoding="utf-8", errors="replace") as lf:
+                lines = [l.strip() for l in lf.readlines() if l.startswith("!")]
+                for l in lines[:10]:
+                    print(f"  {l}", file=sys.stderr)
         return False
 
     # Pass 2 for cross references & pagination
-    subprocess.run(
-        [compiler, "-interaction=nonstopmode", tex_file.name],
-        cwd=BASE_DIR,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE
-    )
+    try:
+        subprocess.run(
+            [compiler, "-interaction=nonstopmode", tex_file.name],
+            cwd=BASE_DIR,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+    except Exception:
+        pass
 
     built_pdf = BASE_DIR / f"{tex_file.stem}.pdf"
     if built_pdf.exists():
@@ -504,6 +586,90 @@ def compile_pdf(tex_file=MAIN_TEX, output_pdf=DEFAULT_OUTPUT_PDF):
         print(f"Successfully compiled PDF: {output_pdf}")
         return True
     return False
+
+
+def check_environment():
+    """Run an environment diagnostic check and display status with copy-paste recommendations."""
+    print("=" * 65)
+    print(" Course Description Generator — Environment Diagnostics")
+    print("=" * 65)
+
+    all_ok = True
+
+    # 1. Python Runtime
+    py_ver = f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+    print(f"\n[1] Python Environment:")
+    if sys.version_info >= (3, 8):
+        print(f"    ✓ Python {py_ver} (Standard Library core: OK)")
+    else:
+        print(f"    ! Python {py_ver} (Warning: Python 3.8+ recommended)")
+
+    # 2. PDF Text Extractor (pdftotext / pypdf)
+    print(f"\n[2] Transcript PDF Extractor (Poppler / PyPDF):")
+    pdftotext_bin = transcript_parser.find_pdftotext_binary()
+    if pdftotext_bin:
+        print(f"    ✓ Found 'pdftotext': {pdftotext_bin}")
+    else:
+        print(f"    ✗ 'pdftotext' not found in PATH or standard system directories.")
+
+    pypdf_found = False
+    try:
+        import pypdf
+        pypdf_found = True
+        print(f"    ✓ Found 'pypdf': version {getattr(pypdf, '__version__', 'installed')} (Python fallback)")
+    except ImportError:
+        print(f"    • Optional 'pypdf': not installed (run 'pip install -r requirements.txt' to install)")
+
+    if not pdftotext_bin and not pypdf_found:
+        all_ok = False
+        print("    ⚠️  ACTION NEEDED: To parse transcripts, install poppler-utils or pypdf:")
+        print("       • Ubuntu/Debian: sudo apt install poppler-utils")
+        print("       • macOS:         brew install poppler")
+        print("       • Windows:       choco install poppler  (or winget install poppler)")
+        print("       • Pip fallback:  pip install -r requirements.txt")
+
+    # 3. LaTeX Engine (xelatex / pdflatex)
+    print(f"\n[3] LaTeX Engine (XeLaTeX / pdfLaTeX):")
+    compiler = find_latex_compiler()
+    if compiler:
+        compiler_name = Path(compiler).stem.lower()
+        if "xelatex" in compiler_name:
+            print(f"    ✓ Found XeLaTeX: {compiler}")
+            print("      (Supports UTF-8, Times/Liberation fonts, and micro-typography)")
+        else:
+            print(f"    ! Found pdfLaTeX: {compiler} (Note: XeLaTeX is preferred for Unicode)")
+    else:
+        all_ok = False
+        print(f"    ✗ No LaTeX compiler found.")
+        print("    ⚠️  ACTION NEEDED: Install XeLaTeX to compile PDF output:")
+        print("       • Ubuntu/Debian: sudo apt install texlive-xetex texlive-fonts-recommended")
+        print("       • macOS:         brew install --cask mactex-no-gui  (or brew install mactex)")
+        print("       • Windows:       choco install miktex  (or download from miktex.org)")
+        print("       • TinyTeX:       tlmgr / TinyTeX standalone binary")
+
+    # 4. Project Assets & Templates
+    print(f"\n[4] Project Assets & Templates:")
+    checks = [
+        ("Master Template", TEMPLATES_DIR / "template.tex"),
+        ("Programs Registry", PROGRAMS_FILE),
+        ("Course Catalog", CATALOG_FILE),
+        ("Course Filters", COURSE_FILTERS_FILE),
+        ("Header Logo", ASSETS_DIR / "header_logo.png"),
+        ("Watermark", ASSETS_DIR / "watermark.png"),
+    ]
+    for label, path in checks:
+        if path.exists():
+            print(f"    ✓ {label}: {path.name}")
+        else:
+            all_ok = False
+            print(f"    ✗ {label} missing at: {path}")
+
+    print("\n" + "=" * 65)
+    if all_ok:
+        print("  STATUS: ALL PREREQUISITES MET! System ready to generate PDFs.")
+    else:
+        print("  STATUS: MISSING PREREQUISITES. Please follow the instructions above.")
+    print("=" * 65 + "\n")
 
 
 def clean_artifacts():
@@ -660,6 +826,7 @@ def main():
     parser.add_argument("--output", "-o", default=str(DEFAULT_OUTPUT_PDF), help="Output PDF path")
     parser.add_argument("--no-pdf", action="store_true", help="Generate main.tex only without compiling PDF")
     parser.add_argument("--clean", action="store_true", help="Clean auxiliary files")
+    parser.add_argument("--check-env", action="store_true", help="Diagnose environment and check required tools (Python, XeLaTeX, Poppler)")
     parser.add_argument("--list-programs", action="store_true", help="List all defined programs")
     parser.add_argument("--list-courses", action="store_true", help="List all courses")
     parser.add_argument("--add-course", action="store_true", help="Add or scaffold a new course")
@@ -681,6 +848,10 @@ def main():
     parser.add_argument("--degree", help="Degree name (for --add-program)")
 
     args = parser.parse_args()
+
+    if args.check_env:
+        check_environment()
+        return
 
     if args.clean:
         clean_artifacts()
