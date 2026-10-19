@@ -1,0 +1,12 @@
+{
+  "id": "linear_control_systems_laboratory",
+  "title": "Linear Control Systems Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Linear Control Systems",
+  "hours": "32h Practical",
+  "objectives": "The objective of this lab is to allow students to devise simple logic circuits, hence giving them an opportunity to\nreinforce the theoretical concepts taught in the course “Linear Control Systems”.",
+  "syllabus": "The experiments cover relevant topics prescribed in the syllabus.",
+  "textbooks": "1. Uday A. Bakshi, \"Linear Control Systems\", 2007.\n2. Richard C. Dorf, Robert H. Bishop, \"Modern Control Systems\", 2010.\n3. K. Ogata, Modern Centeral Engineering, 5th ed. Prentice – Hall, 2009.",
+  "layout": "compact"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "electrical_machines_1",
+  "title": "Electrical Machines 1",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Comprehend the process of converting electromechanical energy and electrical machines as energy\nconvertors.\nAnalyze generators of direct current, working principles, characteristics, and applications",
+  "syllabus": "Magnetic circuits\nMagnetic field energy\nElectromagnetic conversion of force and torque in electromagnetic systems\nDC machines\nMachine construction\nReview and determination of electromotive force (EMF)\nVarious types of windings\nArmature reaction\nCompensating windings\nTypes of machine excitations\nNo-load and on load conditions of DC machines and their characterizations (Generator, motor and\nbrake conditions)\nStarting and control of RPM of DC motors\nLoss and efficiency of machines\nParallel connection of DC generators\nVarious applications of DC machines",
+  "textbooks": "1. Electric machinery:Fitzgerald & Kingsley & Umans\n2. Electric machines:Selemon & Straughen\n3. Electric machinery fundamentals:S.T.Chapman\n4. Analysis of Electric machinery:P.C.Krause\n5. Direct Current Machines:M.G.Say",
+  "layout": "standalone"
+}

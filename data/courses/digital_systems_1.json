@@ -1,0 +1,12 @@
+{
+  "id": "digital_systems_1",
+  "title": "Digital Systems 1",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Discrete Math",
+  "hours": "48h Theoretical",
+  "objectives": "This course covers the design and analysis of digital logic circuits including combinatorial\nand sequential logic circuits.",
+  "syllabus": "Number systems, binary systems, binary codes, addition, substraction, multiplication and\ndivision, Boolean algebra, theorems, logic functions, sum-of-products form, product-of-sums\nform, Karnaugh maps, logic minimization using K-maps, logic gates (RTL, DTL, TTL) and\nrelated topics (FAN-IN, FAN-OUT), combinatorial circuits design, multiplexers, decoders,\ncomparators, sequential circuits design, flip-flops, shift registers, counters, synchronous and\nasynchronous logic circuits, finite state machines, timing of sequential circuits, Hamming and\nASCII codes, TTL and MOS technologies.\nEvaluation:",
+  "textbooks": "1. Morris Mano, Michael Ciletti, Digital Design. 4th ed. Prentice Hall, 2006.\n2. Victor Nelson, Troy Nagle, Bill Carroll, David Irwin, Digital Logic Circuit Analysis and\nDesign. 1st ed. Prentice Hall, 1995.\n3. A. P. Godse, Digital Logic Circuits. 2nd ed. Technical Publications, 2011.",
+  "layout": "standalone"
+}

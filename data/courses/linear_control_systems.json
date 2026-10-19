@@ -1,0 +1,12 @@
+{
+  "id": "linear_control_systems",
+  "title": "Linear Control Systems",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Systems",
+  "hours": "48h Theoretical",
+  "objectives": "The main scope of this course is to teach the students linear control systems in order to be familiar with to\nanalyze and design single-variable linear control systems in time and frequency domain.",
+  "syllabus": "Feedback applications, modeling feedback systems, stability of zero transfer function, poles\nof transfer function and its representation in coordinate systems, stability criterion for system\nefficiency, system types, P, PI and PID controllers, The Routh-Hurwitz, Stability Criterion,\nThe Root Locus Method, Frequency Response Methods, The Nyquist Criterion and its polar\ndiagrams, Approximation method for high-order linear systems, M-shaped curves, Control\nsystem design, Analog modeling and Discrete systems",
+  "textbooks": "1. Uday A. Bakshi, \"Linear Control Systems\", 2007.\n2. Richard C. Dorf, Robert H. Bishop, \"Modern Control Systems\", 2010.\n3. K. Ogata, Modern Centeral Engineering, 5th ed. Prentice – Hall, 2009.",
+  "layout": "standalone"
+}

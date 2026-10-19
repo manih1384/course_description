@@ -1,0 +1,12 @@
+{
+  "id": "digital_systems_2",
+  "title": "Digital Systems 2",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Digital Systems 1",
+  "hours": "48h Theoretical",
+  "objectives": "The main objective of Digital Systems 2 is to cover fundamental theoretical principles and practical applications.",
+  "syllabus": "Computer Arithmetic | Instruction Set Architecture (ISA) | MIPS Single-Cycle/Multi-Cycle\nImplementation | Performance Evaluation | MIPS Pipeline Implementation | Memory\nHierarchy (including Cache, Main Memory and Secondary Storage) | Input / Output System |\nMulticore Processors Architecture",
+  "textbooks": "D. A. Patterson, and J. L. Hennessy, “Computer Organization and Design: The\nHardware/Software Interface”, 4th Edition, Morgan Kaufmann Publishers, 2014",
+  "layout": "standalone"
+}

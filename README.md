@@ -72,10 +72,21 @@ To parse an official or unofficial University of Tehran transcript PDF and gener
   - `--omit-religion`: Omits religious courses from description pages.
   - Omitted courses remain listed on the Curriculum Overview table marked as `(Omitted from Syllabus)` to keep credit totals consistent with official transcripts.
   - Configurable and expandable via `data/course_filters.json`.
+- **Major Selector (`--major`):**
+  - `--major ce` (Computer Engineering): Cover Page sets program to *Computer Engineering*.
+  - `--major ee` (Electrical Engineering): Cover Page sets program to *Electrical Engineering*.
+  - School is uniformly set to *School of Electrical and Computer Engineering*.
+  - Auto-detected from transcript PDF when available, with CLI `--major` acting as an explicit override.
 - **Examples:**
   ```bash
-  # Standard semester-by-semester build
+  # Standard semester-by-semester build (auto-detects major)
   ./build.py --transcript unofficial_transcript.pdf
+
+  # Build with explicit major switch (e.g. Electrical Engineering)
+  ./build.py --transcript karname_eng.pdf --major ee
+
+  # Build full Electrical Engineering brochure (43 courses)
+  ./build.py --major ee --output EE_CourseDescription.pdf
 
   # Category-based ordering omitting religious courses
   ./build.py --transcript unofficial_transcript.pdf --style category --omit-religion

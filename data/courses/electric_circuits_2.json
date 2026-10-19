@@ -1,0 +1,12 @@
+{
+  "id": "electric_circuits_2",
+  "title": "Electric Circuits 2",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Electrical Circuits 1",
+  "hours": "48h Theoretical",
+  "objectives": "The main objective of Electric Circuits 2 is to cover fundamental theoretical principles and practical applications.",
+  "syllabus": "Network graphs, the concept of loop and cut set in terms of their matrix expression,\nTelegan's theorem, input impedance properties, mesh node analysis methods in general\nlinear circuits, including writing the mesh node equations in the form of a matrix with a\nregular, mental and shortcut method. Dual graphs and circuits, the concept of tree and\nbranch along with the tree and their relationship in determining disconnected loops and\ncutsets\nin a graph and determining disconnected variables of voltage and branch current in a\ncircuit. State space method, matrix representation of state equations, approximate\ndetermination of the path of state space and state equations in linear and nonlinear circuits,\nLaplace transform and its applications, frequency domain analysis of electrical circuits, basic\nproperties of linear circuits invariant with time, natural frequencies of a network and a\nvariable network and its determination both in time domain and in frequency domain,\nnetwork functions of its poles and zeros, determination of frequency response of drawing\nbrush, basic review of circuit theorems including substitution theorem, sum of effects\ntheorem, Tonen-Norten equivalent circuit theorem, co-response theorem in its different\nforms. Dipoles and how to specify bipolar circuits with Z, Y, H and T parameters, connecting\ndipoles and multipoles.",
+  "textbooks": "1- W. H. Hayt, J. E. Kemmerly, and S. M. Durbin, Engineering Circuit Analysis, 8th Edition,\nMcGraw Hill, 2011.\n2- C. K. Alexander, M. N. O. Sadiku, Fundamentals of Electrical Circuits, 5th Edition,\nMcGraw Hill, 2012\n3- A. Agarwal, J. H. Lang, Foundations of Analog and Digital Electronic Circuits, Morgan\nKaufmann Publishers, Elsevier, 2005",
+  "layout": "standalone"
+}

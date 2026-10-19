@@ -220,18 +220,27 @@ def format_course_latex(course, is_first_compact=False):
 
 
 def generate_latex(program_id=None, selected_course_ids=None, semesters_data=None, missing_courses=None,
-                   style="semester", omit_general=False, omit_religion=False):
+                   style="semester", omit_general=False, omit_religion=False, major=None):
     """Generate main.tex from templates/template.tex and course data."""
     config = load_programs()
     inst = config["institution"]
 
     if not program_id:
-        program_id = config.get("default_program", "computer_engineering_bsc")
+        if major == "ee":
+            program_id = "electrical_engineering_bsc"
+        else:
+            program_id = config.get("default_program", "computer_engineering_bsc")
 
     if program_id not in config["programs"]:
         raise ValueError(f"Unknown program '{program_id}'. Available: {list(config['programs'].keys())}")
 
-    prog = config["programs"][program_id]
+    prog = dict(config["programs"][program_id])
+
+    # If major is explicitly set, adjust program display name
+    if major == "ee":
+        prog["program_name"] = "Electrical Engineering"
+    elif major == "ce":
+        prog["program_name"] = "Computer Engineering"
 
     curriculum_overview = ""
     courses_tex_blocks = []
@@ -645,6 +654,7 @@ def main():
     parser.add_argument("--style", choices=["semester", "category"], help="Document style: 'semester' (chronological with divider pages) or 'category' (grouped by course classification)")
     parser.add_argument("--omit-general", action="store_true", help="Omit general courses from course description pages")
     parser.add_argument("--omit-religion", action="store_true", help="Omit religious courses from course description pages")
+    parser.add_argument("--major", choices=["ce", "ee"], type=str.lower, help="Major: 'ce' (Computer Engineering) or 'ee' (Electrical Engineering)")
     parser.add_argument("--program", "-p", help="Target program ID (e.g. computer_engineering_bsc)")
     parser.add_argument("--courses", "-c", nargs="+", help="Specific course IDs to include in order")
     parser.add_argument("--output", "-o", default=str(DEFAULT_OUTPUT_PDF), help="Output PDF path")
@@ -727,23 +737,44 @@ def main():
 
         chosen_style = args.style if args.style else "semester"
 
+        # Determine major (CLI override or auto-detected)
+        major = args.major
+        if not major:
+            detected = (res.get("major") or "").lower()
+            if "electrical" in detected:
+                major = "ee"
+            else:
+                major = "ce"
+
+        target_prog = args.program
+        if not target_prog:
+            target_prog = "electrical_engineering_bsc" if major == "ee" else "computer_engineering_bsc"
+
         tex_path = generate_latex(
-            program_id=args.program,
+            program_id=target_prog,
             semesters_data=semesters,
             missing_courses=missing,
             style=chosen_style,
             omit_general=args.omit_general,
-            omit_religion=args.omit_religion
+            omit_religion=args.omit_religion,
+            major=major
         )
     else:
         # Default action: Generate standard program or selected course list
         chosen_style = args.style if args.style else "category"
+
+        major = args.major or "ce"
+        target_prog = args.program
+        if not target_prog:
+            target_prog = "electrical_engineering_bsc" if major == "ee" else "computer_engineering_bsc"
+
         tex_path = generate_latex(
-            program_id=args.program,
+            program_id=target_prog,
             selected_course_ids=args.courses,
             style=chosen_style,
             omit_general=args.omit_general,
-            omit_religion=args.omit_religion
+            omit_religion=args.omit_religion,
+            major=major
         )
 
     if not args.no_pdf:

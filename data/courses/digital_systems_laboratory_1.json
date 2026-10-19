@@ -1,0 +1,12 @@
+{
+  "id": "digital_systems_laboratory_1",
+  "title": "Digital Systems Laboratory 1",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Logic Circuits",
+  "hours": "32h Practical",
+  "objectives": "The objective of this lab is to allow students to devise simple logic circuits, hence giving\nthem an opportunity to reinforce the theoretical concepts taught in the course “Logic\nCircuits”.",
+  "syllabus": "The experiments cover relevant topics prescribed in the syllabus.\nEvaluation:",
+  "textbooks": "1. Morris Mano, Michael Ciletti, Digital Design. 4th ed. Prentice Hall, 2006.\n2. Victor Nelson, Troy Nagle, Bill Carroll, David Irwin, Digital Logic Circuit Analysis and\nDesign. 1st ed. Prentice Hall, 1995.\n3. A. P. Godse, Digital Logic Circuits. 2nd ed. Technical Publications, 2011.",
+  "layout": "compact"
+}

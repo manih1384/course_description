@@ -1,0 +1,12 @@
+{
+  "id": "neural_networks",
+  "title": "Neural Networks",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "To familiarize students with the concepts of neural networks, their learning\nalgorithms, and their applications in classification and regression tasks, as well as\nspecific and general neural networks.\nTo provide the necessary skills to use and implement neural networks in major\napplications.\nStudents will become familiar with the basic concepts of neural networks.\nThe various classes of neural networks with an emphasis on their application in\nclassification and regression tasks will be introduced.\nConcepts such as multi-layer perceptron (MLP), convolutional neural networks\n(CNNs), and recurrent neural networks (RNNs) will be introduced.\nStudents will be familiarized with the basics of training algorithms and regularization\nmethods.\nThe advantages and disadvantages of different neural network models will be\ndiscussed, and students will be introduced to various training algorithms.\nStudents will learn to implement neural networks in real-world scenarios, focusing on\ntheir applications in classification, regression, and pattern generation.",
+  "syllabus": "Introduction to neural networks\nSingle-layer perceptrons\nMulti-layer perceptrons\nTraining algorithms for MLPs\nConvolutional neural networks (CNNs)\nRecurrent neural networks (RNNs)\nApplications in classification and regression tasks\nSpecial neural network architectures\nNeural network applications in pattern generation",
+  "textbooks": "L. Fausett, Fundamentals of Neural Networks, Pearson, 1993.\nI. Goodfellow, Y. Bengio, and A. Courville, Deep Learning, An MIT Press book,\n3. Convolutional Neural Network (UFLDL Tutorial), available online at July 2016:\nUFLDL Stanford\n4. Convolutional Neural Networks (LeNet), available online at July 2016:\nDeepLearning.net\n5. O. Nelles, Nonlinear System Identification: From Classical Approaches to Neural\nNetworks and Fuzzy Models, Springer, 2001.",
+  "layout": "standalone"
+}

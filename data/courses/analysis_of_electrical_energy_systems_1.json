@@ -1,0 +1,12 @@
+{
+  "id": "analysis_of_electrical_energy_systems_1",
+  "title": "Analysis of Electrical Energy Systems 1",
+  "credits": "1",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Electrical Machines 1",
+  "hours": "16h Theoretical",
+  "objectives": "Modelling and analysis of electric energy systems: single-phase and three-phase circuits (real\nand reactive power, per-unit systems); Electromechanical energy conversion (construction,\nmodelling and characteristics of transformers, DC, induction and synchronous machines);\nElectric energy transmission and distribution (modelling of transmission lines, system\nanalysis, control of voltage, power and frequency).",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "compact"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "real_time_digital_signal_processing_laboratory",
+  "title": "Real-time Digital Signal Processing Laboratory",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Digital signal processing",
+  "hours": "32h Practical",
+  "objectives": "This course concerns theory, algorithms, simulation and real-time implementation of digital\nsignal processing systems. This class emphasizes design tradeoffs in signal quality vs.\nimplementation complexity in signal processing algorithms.",
+  "syllabus": null,
+  "textbooks": null,
+  "layout": "compact"
+}

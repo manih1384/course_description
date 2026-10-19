@@ -1,0 +1,12 @@
+{
+  "id": "foundation_of_computer_vision",
+  "title": "Foundation of Computer Vision",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Signal and Systems",
+  "hours": "48h Theoretical",
+  "objectives": "Introduction to image processing principles, tools, techniques, and algorithms. Includes topics in\nimage representation, analysis, filtering, and segmentation, and pattern recognition. Use of image\nprocessing software tools for lab assignments and projects.",
+  "syllabus": "Introduction\nElements of digital image processing, Image model, Sampling and quantization, Relationships\nbetween pixels\nImage Transforms\nDiscrete Fourier Transform, Discrete Cosine Transform, Haar Transform, Hadamard Transform,\nKARHUNEN-LOEVE Transform, SVD\nImage Enhancement\nEnhancement by point processing, Spatial filtering, Enhancement in the frequency domain, Color\nImage Processing, Some basic morphological algorithms\nImage Segmentation\nDiscontinuity detection, Edge linking and boundary detection, Thresholding Region oriented\nsegmentation, Use of motion for segmentation\nImage restoration:\nDegradation and observation models, Inverse filtering. Wiener Filter.\nImage compression:\nFundamentals, information theory and entropy concept, Noisy and noiseless Coding.",
+  "textbooks": "1. Rafael C Gonzalez, Richard E. Woods, \"Digital Image Processing\", Third\nEdition, 2012.\n2. Anil K. Jain, \"Fundamentals of Digital Image Processing\", 1988.",
+  "layout": "standalone"
+}

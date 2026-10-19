@@ -1,0 +1,12 @@
+{
+  "id": "introduction_to_electrical_engineering",
+  "title": "Introduction to Electrical Engineering",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "An Introduction to basics of Electrical Engineering and its different fields and areas with presentations of leading\nprofessors in their specific area, coupled with experiments in General Workshop.",
+  "syllabus": "Introduction to basics of Electrical Engineering\nIntroduction to Communication Science\nIntroduction to Electronics\nIntroduction to Bio-Electronics\nIntroduction to Digital Systems\nIntroduction to Power and Energy\nIntroduction to Control and Systems",
+  "textbooks": "1. J. Hom, \"Hands – On Introduction to Electrical Engineering Lab Skills\", MIT Course Number 6.091, Level:\nUndergraduate, 2008.",
+  "layout": "standalone"
+}

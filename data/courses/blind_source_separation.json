@@ -1,0 +1,12 @@
+{
+  "id": "blind_source_separation",
+  "title": "Blind Source Separation (Special Topics in Communication Engineering)",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Introduce the framework of well-known Blind Source Separation (BSS) problems and\napply them to various scenarios in fields like telecommunication systems, biomedical\nengineering, and control.\nFamiliarize students with the main scenarios mentioned and appropriate methods for\nsolving problems within these scenarios.\nBy the end of the course, students will be familiar with real-world applications of BSS\nin fields like telecommunication and biomedical engineering. They will model\nproblems as mixtures of sources and answer posed questions.\nStudents will study BSS models in telecommunications, focusing on radio and audio\nsignals.\nStudents will study BSS models in biomedical data, including images and brain\nsignals.\nStudents will extract suitable features from data, categorize the data, and apply them\nin machine learning approaches.",
+  "syllabus": "Introduction to Blind Source Separation and its practical applications (3 sessions)\nLinear BSS models (4 sessions)\nNonlinear BSS models (3 sessions)\nStructured linear BSS models (4 sessions)\nSparse BSS models (3 sessions)\nBSS in underdetermined systems (4 sessions)\nMulti-way BSS models (2 sessions)\nSimilarity measures in BSS (2 sessions)\nBSS in spatio-temporal mixtures (2 sessions)",
+  "textbooks": "1. P. Comon, C. Jutten, Blind Source Separation: Independent component analysis and\napplications, Academic Press, 2010.\n2. Almeida, Luis B., Nonlinear source separation, Springer Nature, 2022.\n3. Naik, Ganesh R., and Wenwu Wang, Blind source separation, Springer, 2014.",
+  "layout": "standalone"
+}

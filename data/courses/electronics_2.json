@@ -1,0 +1,12 @@
+{
+  "id": "electronics_2",
+  "title": "Electronics 2",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Electronics I",
+  "hours": "48h Theoretical",
+  "objectives": "The main purpose of this course is to study the MOS transistors and their applications as\namplifiers and switches. This course also introduces the differential amplifiers, power amplifiers,\nand Feedback circuits.",
+  "syllabus": "MOS Transistors, NMOS and PMOS transistors, JFET transistors, D-Mode and E-Mode\nMOS transistors\nDC Bias, Regions of operation (triode, saturation, and cut-off), I-V curves\nAC Analysis, Small Signal Model, equivalent AC circuit, Amplification, Configurations\nof amplifiers (Common-Drain, Common-Source, and Common-Gate)\nDifferential Amplifiers, single-ended and double-ended differential amplifiers, small\nsignal model of Differential Amplifiers, Gain of Differential Amplifiers, Common Mode\nRejection Ratio\nCurrent Sources\nDifferent types of Power Amplifiers\nFeedback circuits, Operational Amplifiers in feedback circuits and their applications",
+  "textbooks": "1. Robert W. Lucky, \"The First Book of Electronics\", 2009.\n2. Ian Sinclair, John Dunton, \"Practical Electronics Handbook\", 2007.",
+  "layout": "standalone"
+}

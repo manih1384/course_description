@@ -1,0 +1,12 @@
+{
+  "id": "electromagnetics",
+  "title": "Electromagnetics",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Physics 2",
+  "hours": "48h Theoretical",
+  "objectives": "This course is an introductory subject on electromagnetics and includes fundamental concepts\nand applications of Maxwell equations.",
+  "syllabus": "Review of mathematical concepts, Electrostatics in vacuum, Magnetostatics in vacuum,\nInduced electromagnetic fields, Symmetries and conservation laws, Electromagnetic waves,\nInterference phenomena, The electromagnetic field of moving charges, Radiation from\nlocalized sources, Motion of charges and moments in external fields, Action formulation of\nelectromagnetism, Electromagnetic fields in material media, Electrostatics around\nconductors, Electrostatics of dielectrics, Magnetostatics in matter, Ohm’s law, emf, and\nelectrical circuits, Frequency-dependent response of materials, Quasistatic phenomena in\nconductors, Electromagnetic waves in insulators, Electromagnetic waves in and near\nconductors, Scattering of electromagnetic radiation, Formalism of special relativity, special\nrelativity and electromagnetism, Radiation from relativistic sources.",
+  "textbooks": "1. Anupam Kumar Garg, \"Classical Electromagnetism in Nutshell\", 2012.\n2. Tamer Becherrawy, \"Electromagnetism: Maxwell Equations, Wave\nPropagation and Emission\", 2012.\n3. John R. Reitz, \"Foundation of Electromagnetic Theory\", 4th Edition, 2009.",
+  "layout": "standalone"
+}

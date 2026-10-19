@@ -97,6 +97,84 @@
         "islamic_ethics_principles_and_concepts",
         "sport_1"
       ]
+    },
+    "electrical_engineering_bsc": {
+      "program_name": "Electrical Engineering",
+      "degree": "Bachelor’s Degree",
+      "degree_type": "bachelor",
+      "remarks": {
+        "instruction_hours": [
+          {
+            "type": "Theoretical",
+            "hours_per_credit": 16
+          },
+          {
+            "type": "Practical",
+            "hours_per_credit": 32
+          },
+          {
+            "type": "Workshop",
+            "hours_per_credit": 48
+          }
+        ],
+        "course_types": [
+          "Basic",
+          "Major",
+          "Specialized",
+          "Elective",
+          "General",
+          "Workshop",
+          "Internship",
+          "Project"
+        ],
+        "ministry_statement": "Each of these types contains some courses to be passed according to the educational regulations passed by the Ministry of Science, Research and Technology or the Ministry of Health & Medical Education of Iran.",
+        "grading_statement": "The grading system in this university is from 0 to 20. The minimum passing grade for a course leading to an Associate's Degree or a Bachelor's Degree is 10, for a course leading to a Master's Degree and Medical Sciences is 12, and for a course leading to a Ph.D. Degree is 14."
+      },
+      "courses": [
+        "calculus_1",
+        "calculus_2",
+        "differential_equations",
+        "introduction_to_computing_systems_and_programming",
+        "numerical_computation",
+        "engineering_probability_and_statistics",
+        "physics_1",
+        "physics_2",
+        "engineering_mathematics",
+        "engineering_economy",
+        "signals_and_systems",
+        "linear_control_systems",
+        "operational_research",
+        "digital_systems_1",
+        "digital_systems_laboratory_1",
+        "electromagnetics",
+        "principles_of_communication_systems",
+        "electronics_1",
+        "electronics_2",
+        "electronics_laboratory_1",
+        "digital_signal_processing",
+        "digital_systems_2",
+        "electrical_circuits_1",
+        "electric_circuits_2",
+        "physics_laboratory_1",
+        "physics_laboratory_2",
+        "electrical_measurement_and_circuit_laboratory",
+        "introduction_to_electrical_engineering",
+        "general_workshop",
+        "electrical_machines_laboratory_1",
+        "electrical_machines_1",
+        "fields_and_waves",
+        "linear_control_systems_laboratory",
+        "digital_communications",
+        "analysis_of_electrical_energy_systems_1",
+        "real_time_digital_signal_processing_laboratory",
+        "digital_communication_laboratory",
+        "microwave_1",
+        "antenna_1",
+        "wireless_communications",
+        "foundation_of_computer_vision",
+        "blind_source_separation",
+        "neural_networks"
+      ]
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "id": "microwave_1",
+  "title": "Microwave 1",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Field and Waves",
+  "hours": "48h Theoretical",
+  "objectives": "Understanding the fundamental concepts of electromagnetics, wave propagation, network\nanalysis, and design principles as applied to modern microwave engineering.",
+  "syllabus": "Transmission Lines and Waveguides\nGeneral Solutions for TEM, TE, and TM Waves, Parallel Plate Waveguide, Rectangular\nWaveguide, Circular Waveguide, Coaxial Line, Surface Waves on a Grounded Dielectric\nSheet, Stripline, Microstrip Line, The Transverse Resonance Technique, Wave Velocities and\nDispersion.\nMicrowave Network Analysis\nImpedance and Equivalent Voltages and Currents, Impedance and Admittance Matrices, The\nScattering Matrix, The Transmission (ABCD) Matrix, Signal Flow Graphs, Discontinuities\nand Modal Analysis, Excitation of Waveguides—Electric and Magnetic Currents, Excitation\nof Waveguides—Aperture Coupling, impedance matching and tuning.\nMicrowave Resonators\nSeries and Parallel Resonant Circuits, Transmission Line Resonators, Rectangular\nWaveguide Cavity Resonators, Circular Waveguide Cavity Resonators, Dielectric\nResonators, Excitation of Resonators, Cavity Perturbations.\nPower Dividers and Directional Couplers\nBasic Properties of Dividers and Couplers, The T-Junction Power Divider, The Wilkinson\nPower Divider, Waveguide Directional Couplers, The Quadrature (90◦) Hybrid, Coupled\nLine Directional Couplers, The Lange Coupler, The 180◦ Hybrid, An Introduction to\nMicrowave Filters.\nTheory and Design of Ferrimagnetic Components\nBasic Properties of Ferrimagnetic Materials, Plane Wave Propagation in a Ferrite Medium,\nPropagation in a Ferrite-Loaded Rectangular Waveguide, Ferrite Isolators, Ferrite Phase\nShifters, Ferrite Circulators.",
+  "textbooks": "1- R. E. Collin, Foundations for Microwave Engineering, 2nd ed. IEEE Press,\n2001.\n2- D.M. Pozar, Microwave Engineering, 4th ed. Wiley, 2011.",
+  "layout": "standalone"
+}

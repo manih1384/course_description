@@ -1,0 +1,12 @@
+{
+  "id": "general_workshop",
+  "title": "General Workshop",
+  "credits": "1",
+  "type": "General | Practical",
+  "prerequisites": null,
+  "hours": "48h Workshop",
+  "objectives": "The main purpose of this course is to train the relevant works in Introduction to Electrical Engineering.",
+  "syllabus": "- In accordance with course topics.",
+  "textbooks": "1. J. Hom, \"Hands – On Introduction to Electrical Engineering Lab Skills\", MIT Course Number 6.091, Level:\nUndergraduate, 2008.",
+  "layout": "compact"
+}

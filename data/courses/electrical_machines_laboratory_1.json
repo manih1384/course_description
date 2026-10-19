@@ -1,0 +1,12 @@
+{
+  "id": "electrical_machines_laboratory_1",
+  "title": "Electrical Machines Laboratory 1",
+  "credits": "1",
+  "type": "Specialized | Practical",
+  "prerequisites": "Electrical Machines 1",
+  "hours": "32h Practical",
+  "objectives": "The objective of this lab is to allow students to devise simple logic circuits, hence giving them an opportunity to\nreinforce the theoretical concepts taught in the course “Electrical Machines 1”.",
+  "syllabus": "The experiments cover relevant topics prescribed in the syllabus.",
+  "textbooks": "1. Electric machinery:Fitzgerald & Kingsley & Umans\n2. Electric machines:Selemon & Straughen\n3. Electric machinery fundamentals:S.T.Chapman\n4. Analysis of Electric machinery:P.C.Krause\n5. Direct Current Machines:M.G.Say",
+  "layout": "compact"
+}

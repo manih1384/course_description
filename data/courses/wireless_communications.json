@@ -1,0 +1,12 @@
+{
+  "id": "wireless_communications",
+  "title": "Wireless Communications",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Digital Communications",
+  "hours": "48h Theoretical",
+  "objectives": "The course is intended for senior undergraduate students. It provides an overview of wireless\ncommunications for efficient and robust multimedia transmission. An overview of source coding\n(compression) techniques for data and multimedia is presented. Methods of error correction and\ndetection for communications over wireless (noisy) channel are introduced. The characteristics of\nthe wireless channel and the concept of cellular communications are presented. Techniques\nformulti-user communication in cellular networks, i.e., Time Division Multiple Access,\nFrequency Division Multiple Access and Code Division Multiple Access are investigated. This\ncourse complements Digital Communications.",
+  "syllabus": "1. Introduction\n2. Source Coding 1: Data Compression\nHuffman codes, Arithmetic codes, Transform coding, Nonuniform quantization, Adaptive\nquantization, Differential and predictive quantization\n3. Source Coding 2: Multimedia Compression\nSpeech, image and video coding standards\n4. Error Control Coding\nLinear block codes and Syndrome decoding, Cyclic codes and error detection, Convolutional codes\nand Viterbi decoding, Retransmission mechanisms (Automatic Repeat reQuest)\n5. Wireless Channel\nSpectrum allocation and applications, path loss, shadowing, narrowband fading\n6. Multiple Access Techniques\nTDMA, FDMA, Spread spectrum communications, frequency-hopping spread spectrum, direct\nsequence code division multiple access, CDMA receivers\n7. Cellular Concept\nCellular architecture, Frequency planning, Channel Allocation, Hand-off, Interference, Wireless\ncellular standards",
+  "textbooks": "1. J. G. Proakis, M. Salehi, Digital Communications, M. Salehi, McGraw Hill,\n2008.\n2. K. Sayood, Introduction to Data Compression, Prentice Hall 2004.\n3. A. Goldsmith, Wireless Communications, Cambridge University Press,\n2005.",
+  "layout": "standalone"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "engineering_economy",
+  "title": "Engineering Economy",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Emphasizes the systematic evaluation of the costs and benefits associated\nwith proposed technical projects. The student will be exposed to the concepts of the “time\nvalue of money” and the methods of discounted cash flow. Students are prepared to make\ndecisions regarding money as capital within a technological or engineering environment.",
+  "syllabus": "Introduction, Engineering Costs & Estimating, Estimating Models & Cash Flow\nDiag, Time value of money, equivalence, compound interest, Uniform series & compound\ninterest factor, Arithmetic & geometric gradient, Nominal & effective, continuous,\ncompounding Economic criteria, PW technique, Economic analysis problems, Annual cash\nflow analysis, Analysis period, Rate of return, Rate of return analysis, Rate of return analysis,\nChoosing the best alternative, Incremental Analysis, Future worth analysis & B/C Ratio,\nSensitivity & breakeven analysis, Depreciation, Unit of Production, Depletion, Income\nTaxes, After tax RoR, Replacement analysis, Inflation & price change, Estimation of future\nevents, Risk & Exp, Value Money & Markets",
+  "textbooks": "1. Newman, Donald G., Eschenbach, Ted G., and Lavelle, Jerome P. (2012). Engineering\nEconomic Analysis. New York: Oxford University Press.",
+  "layout": "standalone"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "physics_laboratory_1",
+  "title": "Physics Laboratory 1",
+  "credits": "1",
+  "type": "Basic | Practical",
+  "prerequisites": "Physics 1",
+  "hours": "32h Practical",
+  "objectives": "The objective of this lab is to allow students to devise simple logic circuits, hence giving them an opportunity to\nreinforce the theoretical concepts taught in the course “Electronics III”.",
+  "syllabus": "The experiments cover relevant topics prescribed in the syllabus.",
+  "textbooks": "Hugh D. Young, Roger A. Freedman, A. Lewis Ford, \"Sears and Zemansky's university physics:\nwith modern physics\" (13th ed.), Addison-Wesley, 2012.\nDavid Halliday, Robert Resnick, Jearl Walker, \"Fundamentals of physics\" (9th ed), John Wiley &\nSons, Inc., 2011.\nPaul M. Fishbane, Stephen G. Gasiorowicz, Stephen T. Thornton, \"Physics: For Scientists and\nEngineers with Modern Physics\" (3rd ed.), Pearson Prentice Hall, 2005.",
+  "layout": "compact"
+}

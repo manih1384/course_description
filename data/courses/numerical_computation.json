@@ -1,0 +1,12 @@
+{
+  "id": "numerical_computation",
+  "title": "Numerical Computation",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Calculus I, Differential",
+  "hours": "48h Theoretical",
+  "objectives": "This course is an introduction to numerical methods for solving mathematical problems that\narise in Science and Engineering. The goal is to provide a basic understanding of the\nderivation, analysis and use of these numerical methods.",
+  "syllabus": "Error Analysis\nSome definitions for error, different sources of error, floating point arithmetic, error\npropagation\nNumerical solution of Nonlinear Equations\nBisection method, false position method, Newton-Raphson methos, secant method, fixedpoint method, convergence method\nInterpolation, Polynomial Approximation, Curve Fitting\nTaylor series, truncation error, difference operators, Lagrange interpolation, Newton\ninterpolation, spline interpolation, least squares\nNumerical Differentiation and Integration\nFinite differences, Newton cotes rules, trapezoidal rule, Simpson's rule, extrapolation,\nrecursive rules, Romberg integration, Gaussian quadrature\nNumerical Solution of Ordinary Differential Equations\nTaylor series method, Euler's method, Runge-Kutta methods, shooting method and finite\ndifference method for boundary value problems\nSolutions of Systems of Equations\nDirect and iterative methods including Gaussian elimination method with pivoting, Jacobi\niteration, Gauss-Seidel iteration, Newton's method for nonlinear systems, fixed-point method\nfor nonlinear systems",
+  "textbooks": "1. Numerical Methods Using Matlab (4th Edition) by John H. Mathews and Kurtis K. Fink\n(Jan 1, 2004)\n2. Applied Numerical Methods W/MATLAB: for Engineers & Scientists by Steven Chapra\n(Jan 27, 2011)\n3. Numerical Methods for Engineers and Scientists, Third Edition by Joe D. Hoffman and\nSteven Frankel (Apr 26, 2014)",
+  "layout": "standalone"
+}

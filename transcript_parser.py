@@ -175,16 +175,15 @@ def parse_transcript(transcript_path):
     cum_credits = 0
     regular_sem_idx = 0
     for s in semesters:
-        sem_credits = sum(c["credits"] for c in s["courses"])
-        cum_credits += sem_credits
-        s["semester_credits"] = sem_credits
-        s["cumulative_credits"] = cum_credits
-
         is_summer = "summer" in s["term_name"].lower() or "summer" in s.get("raw_term", "").lower()
         s["is_summer"] = is_summer
 
         if is_summer:
             s["semester_number"] = None
+            # Summer industrial training has 0 effect in transcript calculations
+            s["semester_credits"] = 0
+            s["cumulative_credits"] = cum_credits
+
             # e.g. "Summer Semester: Academic Year 2025–2026"
             year_match = re.search(r"(\d{4}[–\-]\d{4})", s["term_name"])
             year_str = f" ({year_match.group(1)})" if year_match else ""
@@ -192,6 +191,11 @@ def parse_transcript(transcript_path):
             s["divider_title"] = "SUMMER SEMESTER"
             s["divider_subtitle"] = f"Academic Year {year_match.group(1)}" if year_match else s["term_name"]
         else:
+            sem_credits = sum(c["credits"] for c in s["courses"])
+            cum_credits += sem_credits
+            s["semester_credits"] = sem_credits
+            s["cumulative_credits"] = cum_credits
+
             regular_sem_idx += 1
             s["semester_number"] = regular_sem_idx
             s["display_heading"] = f"Semester {regular_sem_idx}: {s['term_name']}"

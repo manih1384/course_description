@@ -1,0 +1,12 @@
+{
+  "id": "electronics_1",
+  "title": "Electronics 1",
+  "credits": "3",
+  "type": "Specialized | Theoretical",
+  "prerequisites": "Principles",
+  "hours": "48h Theoretical",
+  "objectives": "The main purpose of this course is to study the current equations, equivalent\ncircuit of transistors, BJT transistor and its applications, and characteristics of\ncurrent versus voltage.",
+  "syllabus": "- N-type and P-type semiconductors. Current and voltage equations in\ndiode.\n- Equivalent circuits for diodes.\n- Diode circuits: half-wave and full-wave rectifiers, Clipper circuits, and\nClamp circuits.\n- Transistor: Biasing, quiescent point, small signal and low-frequency\nequivalent circuits, application as an amplifier, and application as a\nswitch.\n- JFET transistors: Biasing, equivalent circuits, application as an amplifier,\napplication as a switch, an introduction to D-Mode and E-Mode MOS\ntransistors\n- 4-layer diodes",
+  "textbooks": "1. Robert W. Lucky, \"The First Book of Electronics\", 2009.\n2. Ian Sinclair, John Dunton, \"Practical Electronics Handbook\", 2007.",
+  "layout": "standalone"
+}
