@@ -55,6 +55,35 @@ To generate `main.tex` and compile `CourseDescription.pdf`:
   ./build.py --list-courses --program computer_engineering_bsc
   ```
 
+### 3. Generate a Personalized Course Description from a Transcript
+To parse an official or unofficial University of Tehran transcript PDF and generate a personalized document:
+```bash
+./build.py --transcript unofficial_transcript.pdf
+```
+- **Semester-by-Semester Curriculum Overview:** Inserts a structured table breakdown of all semesters (Semester 1–6, Summer Semester, Semester 7, etc.), course types, and credits.
+- **Accurate Semester Numbering:** Summer semesters are labeled separately (e.g., `Summer Semester (2025–2026)`) and do not increment the regular semester count.
+- **Large Semester Divider Pages:** In semester style, a dedicated title page is inserted before each term's courses (`SEMESTER 1`, `SUMMER SEMESTER`, etc.).
+- **Missing Course Handling:** Identifies courses in the transcript that are missing from the catalog, prints a warning, marks them as `(Not Included in Syllabus)` in the overview, and skips generating empty course pages.
+- **Document Styles (`--style`):**
+  - `--style semester` (default for transcript): Chronological by semester with semester divider pages.
+  - `--style category`: Grouped by classification (`Basic` $\rightarrow$ `Major` $\rightarrow$ `Specialized` $\rightarrow$ `Elective` $\rightarrow$ `General` $\rightarrow$ `Workshop` $\rightarrow$ `Internship` $\rightarrow$ `Project`).
+- **Omission Filters:**
+  - `--omit-general`: Omits general education courses from description pages.
+  - `--omit-religion`: Omits religious courses from description pages.
+  - Omitted courses remain listed on the Curriculum Overview table marked as `(Omitted from Syllabus)` to keep credit totals consistent with official transcripts.
+  - Configurable and expandable via `data/course_filters.json`.
+- **Examples:**
+  ```bash
+  # Standard semester-by-semester build
+  ./build.py --transcript unofficial_transcript.pdf
+
+  # Category-based ordering omitting religious courses
+  ./build.py --transcript unofficial_transcript.pdf --style category --omit-religion
+
+  # Technical-only syllabus omitting all general courses
+  ./build.py --transcript unofficial_transcript.pdf --omit-general --output Technical_Syllabus.pdf
+  ```
+
 ---
 
 ## 🛠 Adding, Removing, and Modifying Courses

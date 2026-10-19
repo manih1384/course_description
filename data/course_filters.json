@@ -1,0 +1,38 @@
+{
+  "religious_courses": {
+    "course_ids": [
+      "islamic_thoughts_1_beginning_and_resurrection",
+      "analytical_history_of_beginning_islam",
+      "islamic_thought_2_prophethood_and_imamat",
+      "islamic_revolution_in_iran",
+      "thematic_interpretation_of_the_quran",
+      "islamic_ethics_principles_and_concepts"
+    ],
+    "keywords": [
+      "islamic",
+      "quran",
+      "qur'an",
+      "prophethood",
+      "imamat",
+      "nahj al-balagha"
+    ]
+  },
+  "general_courses": {
+    "course_ids": [
+      "persian_language",
+      "english_language",
+      "physical_education",
+      "sport_1",
+      "family_schematization_and_population",
+      "knowledge_of_the_environment"
+    ],
+    "keywords": [
+      "persian language",
+      "physical education",
+      "sport 1",
+      "family schematization",
+      "knowledge of the environment"
+    ],
+    "include_religious": true
+  }
+}

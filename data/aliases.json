@@ -1,0 +1,22 @@
+{
+  "aliases": {
+    "data structures and algorithms": "data_structures",
+    "algorithm design": "algorithm_design_1",
+    "islamic thought 1 (origins and resurrection)": "islamic_thoughts_1_beginning_and_resurrection",
+    "islamic thoughts 1": "islamic_thoughts_1_beginning_and_resurrection",
+    "islamic thought 1": "islamic_thoughts_1_beginning_and_resurrection",
+    "islamic thought 2 (prophethood and imamat)": "islamic_thought_2_prophethood_and_imamat",
+    "islamic thoughts 2": "islamic_thought_2_prophethood_and_imamat",
+    "islamic thought 2": "islamic_thought_2_prophethood_and_imamat",
+    "electrical measurment and circuit laboratory": "electrical_measurement_and_circuit_laboratory",
+    "electrical measurement and circuits laboratory": "electrical_measurement_and_circuit_laboratory",
+    "basucs of machine learning": "basucs_of_machine_learning",
+    "basics of machine learning": "basucs_of_machine_learning",
+    "foundations of data science": "foundations_of_data_science",
+    "principles of cognitive science": "principles_of_cognitive_science",
+    "generative models": "generative_models",
+    "compiler design and programming languages": "compiler_design_and_programming_languages",
+    "introduction to computing systems and programming": "introduction_to_computing_systems_and_programming",
+    "digital systems laboratory 1": "logic_circuits_laboratory"
+  }
+}
