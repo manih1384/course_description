@@ -1,0 +1,13 @@
+{
+  "id": "basics_of_machine_learning",
+  "index": null,
+  "title": "Basics of Machine Learning",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "Understanding fundamental concepts of machine learning and pattern recognition, including probabilistic modeling, statistical decision theory, parameter estimation, supervised and unsupervised learning. Developing the ability to formulate classification and regression problems, select and optimize learning models, and apply neural networks, feature selection, dimensionality reduction, and clustering methods.",
+  "syllabus": "Introduction to machine learning concepts and fundamentals of data; Bayesian decision theory, Bayesian classifiers, risk minimization and decision boundaries; Naive Bayes classification; maximum likelihood estimation (MLE) and maximum a posteriori (MAP) estimation; optimization methods; linear, logistic and nonlinear regression; decision trees; support vector machines (SVM); introduction to neural networks and their applications; introduction to deep vision; principal component analysis (PCA), linear discriminant analysis (LDA), and feature selection; clustering and unsupervised learning.",
+  "textbooks": "1. Christopher M. Bishop, Pattern Recognition and Machine Learning, Springer.\n2. Richard O. Duda, Peter E. Hart, and David G. Stork, Pattern Classification, Wiley, 2001.\n3. Sergios Theodoridis and Konstantinos Koutroumbas, Pattern Recognition, Academic Press, 2009.\n4. Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition.",
+  "layout": "standalone"
+}

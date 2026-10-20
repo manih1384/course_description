@@ -1110,5 +1110,29 @@
     "syllabus": "Introduction to neural networks\nSingle-layer perceptrons\nMulti-layer perceptrons\nTraining algorithms for MLPs\nConvolutional neural networks (CNNs)\nRecurrent neural networks (RNNs)\nApplications in classification and regression tasks\nSpecial neural network architectures\nNeural network applications in pattern generation",
     "textbooks": "L. Fausett, Fundamentals of Neural Networks, Pearson, 1993.\nI. Goodfellow, Y. Bengio, and A. Courville, Deep Learning, An MIT Press book,\n2016.\n3. Convolutional Neural Network (UFLDL Tutorial), available online at July 2016:\nUFLDL Stanford\n4. Convolutional Neural Networks (LeNet), available online at July 2016:\nDeepLearning.net\n5. O. Nelles, Nonlinear System Identification: From Classical Approaches to Neural\nNetworks and Fuzzy Models, Springer, 2001.",
     "layout": "standalone"
+  },
+  "basics_of_machine_learning": {
+    "id": "basics_of_machine_learning",
+    "title": "Basics of Machine Learning",
+    "credits": "3",
+    "type": "Elective | Theoretical",
+    "prerequisites": null,
+    "hours": "48h Theoretical",
+    "objectives": "Understanding fundamental concepts of machine learning and pattern recognition, including probabilistic modeling, statistical decision theory, parameter estimation, supervised and unsupervised learning. Developing the ability to formulate classification and regression problems, select and optimize learning models, and apply neural networks, feature selection, dimensionality reduction, and clustering methods.",
+    "syllabus": "Introduction to machine learning concepts and fundamentals of data; Bayesian decision theory, Bayesian classifiers, risk minimization and decision boundaries; Naive Bayes classification; maximum likelihood estimation (MLE) and maximum a posteriori (MAP) estimation; optimization methods; linear, logistic and nonlinear regression; decision trees; support vector machines (SVM); introduction to neural networks and their applications; introduction to deep vision; principal component analysis (PCA), linear discriminant analysis (LDA), and feature selection; clustering and unsupervised learning.",
+    "textbooks": "1. Christopher M. Bishop, Pattern Recognition and Machine Learning, Springer.\n2. Richard O. Duda, Peter E. Hart, and David G. Stork, Pattern Classification, Wiley, 2001.\n3. Sergios Theodoridis and Konstantinos Koutroumbas, Pattern Recognition, Academic Press, 2009.\n4. Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition.",
+    "layout": "standalone"
+  },
+  "foundations_of_data_science": {
+    "id": "foundations_of_data_science",
+    "title": "Foundations of Data Science",
+    "credits": "3",
+    "type": "Elective | Theoretical",
+    "prerequisites": null,
+    "hours": "48h Theoretical",
+    "objectives": "Introduction to the data science lifecycle and the principles of collecting, processing, analyzing, visualizing, and modeling data. Developing an understanding of statistical inference, exploratory data analysis, predictive and unsupervised learning, model evaluation, and responsible data-driven decision-making. Familiarity with modern data systems, machine learning operations, neural networks, large language models, and interpretable AI.",
+    "syllabus": "Data science lifecycle; sampling, sampling bias, observational and experimental studies, confounding variables; statistical charts; probability theory, conditional probability, Bayes theorem, random variables, expectation and variance, normal and binomial distributions, Monte Carlo simulation; central limit theorem, confidence intervals, hypothesis testing and statistical power; data visualization design principles, preattentive attributes, dashboards and storytelling; data preprocessing, exploratory data analysis and feature engineering; SQL, NoSQL, graph databases and MongoDB; big data systems including Hadoop, Spark, Kafka, HBase and Cassandra; modeling principles, prediction versus explanation, training and evaluation splits; linear regression, loss functions and gradient descent; logistic regression; decision trees, random forests, boosting, support vector machines and k-nearest neighbors; regression, classification and clustering evaluation; MLOps, Docker, Kubernetes, MLflow, data and model drift, retraining; unsupervised learning, dimensionality reduction and k-means clustering; feedforward neural networks, convolutional neural networks and recurrent neural networks; image classification and time series; natural language processing, embeddings, transformers and large language models; retrieval-augmented generation and AI agents; model interpretability and explainability; privacy and ethics in data science.",
+    "textbooks": "1. Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, An Introduction to Statistical Learning: with Applications in R/Python (ISLR).\n2. Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The Elements of Statistical Learning (ESL).\n3. Jake VanderPlas, Python Data Science Handbook: Essential Tools for Working with Data.\n4. Joel Grus, Data Science from Scratch: First Principles with Python.\n5. Aurélien Géron, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow.",
+    "layout": "standalone"
   }
 }
