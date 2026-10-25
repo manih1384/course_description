@@ -13,6 +13,7 @@ import json
 import shutil
 import argparse
 import subprocess
+import re
 from pathlib import Path
 
 import transcript_parser
@@ -811,7 +812,277 @@ def add_program_cli(args):
         "courses": []
     }
     save_programs(config)
-    print(f"Created new program '{pid}'. Add courses using --add-course or editing data/programs.json.")
+def get_next_term_info(last_sem, regular_count):
+    """Calculate the next chronological semester number and academic term name."""
+    term_str = last_sem.get("term_name", "") if last_sem else "Academic Year 2025–2026"
+    is_summer = last_sem.get("is_summer", False) if last_sem else False
+
+    # Extract academic years: e.g. "2025-2026" or "2025–2026"
+    m_year = re.search(r"(\d{4})[–\-](\d{4})", term_str)
+    if m_year:
+        y1, y2 = int(m_year.group(1)), int(m_year.group(2))
+    else:
+        y1, y2 = 2025, 2026
+
+    if "1st" in term_str and not is_summer:
+        next_term = f"Academic Year {y1}–{y2} (2nd Semester)"
+    else:
+        next_term = f"Academic Year {y1 + 1}–{y2 + 1} (1st Semester)"
+
+    next_sem_num = regular_count + 1
+    return next_sem_num, next_term
+
+
+def plan_final_semester(semesters, res, target_prog, no_prompt=False, cli_future_courses=None, force_graduating=False):
+    """
+    Check if the student is eligible to graduate next semester (remaining credits <= 24).
+    If eligible, prompt them to configure their final semester from untaken curriculum courses.
+    Enforces that 'project' is included (if untaken), final semester credits <= 24,
+    and cumulative degree credits equal 140–142 credits.
+    """
+    total_credits = res.get("total_credits", 0)
+    remaining_for_140 = 140 - total_credits
+
+    # In Iranian universities, a graduating student in their final semester (ترم فراغت از تحصیل)
+    # can register for up to 24 credits. If remaining <= 24, they can graduate next term.
+    is_eligible = (0 < remaining_for_140 <= 24) or force_graduating
+
+    if not is_eligible and not cli_future_courses:
+        return semesters, False
+
+    config = load_programs()
+    prog_courses = config.get("programs", {}).get(target_prog, {}).get("courses", [])
+    catalog = transcript_parser.load_catalog()
+
+    # Identify courses already taken across completed semesters
+    taken_ids = set()
+    for s in semesters:
+        for c in s.get("courses", []):
+            cid = c.get("course_id")
+            if cid:
+                taken_ids.add(cid)
+
+    untaken_cids = [cid for cid in prog_courses if cid not in taken_ids]
+
+    # Categorize into 3 groups:
+    # 1. Practical Laboratories & Workshops
+    # 2. General Education Courses
+    # 3. Specialized & Elective Theory Courses
+    labs = []
+    general = []
+    theory = []
+    has_project = ("project" in taken_ids)
+
+    for cid in untaken_cids:
+        if cid in ("project", "industrial_training"):
+            continue
+        c = catalog.get(cid)
+        if not c:
+            continue
+        ctype = (c.get("type") or "").lower()
+        ctitle = (c.get("title") or "").lower()
+
+        if "general" in ctype:
+            general.append((cid, c))
+        elif "practical" in ctype or "laboratory" in ctitle or "workshop" in ctype:
+            labs.append((cid, c))
+        else:
+            theory.append((cid, c))
+
+    selected_courses = []
+
+    # Case A: Non-interactive CLI flag (--future-courses <cid1> <cid2> ...)
+    if cli_future_courses is not None:
+        # Mandatory requirement: Project must be included if not already taken
+        if not has_project and "project" not in cli_future_courses:
+            if "project" in catalog:
+                selected_courses.append(catalog["project"])
+
+        for cid in cli_future_courses:
+            if cid in catalog:
+                c_obj = catalog[cid]
+                if c_obj not in selected_courses:
+                    selected_courses.append(c_obj)
+            else:
+                print(f"⚠️  [Warning] Future course '{cid}' not found in catalog, skipping.")
+
+        selected_credits = sum(int(c.get("credits", 0)) for c in selected_courses)
+        new_total = total_credits + selected_credits
+
+        if selected_credits > 24:
+            print(f"[Error] Final semester has {selected_credits} credits, which exceeds the 24-credit ceiling!", file=sys.stderr)
+            sys.exit(1)
+        if new_total < 140:
+            print(f"[Error] Cumulative credits {new_total} < 140. Not enough credits to graduate!", file=sys.stderr)
+            sys.exit(1)
+        if new_total > 142:
+            print(f"[Error] Cumulative credits {new_total} > 142. Too much credit for degree completion!", file=sys.stderr)
+            sys.exit(1)
+
+    # Case B: Interactive Terminal Prompting
+    else:
+        if no_prompt or not sys.stdin.isatty():
+            return semesters, False
+
+        print("\n" + "=" * 68)
+        print(" 🎓 Final Semester Graduation Planner (Degree Completion)")
+        print("=" * 68)
+        print(f"  • Current Passed Credits:    {total_credits} credits")
+        print(f"  • Degree Completion Window:  140–142 credits (Remaining: {140 - total_credits}–{142 - total_credits} cr)")
+        print("  • Max Final-Semester Cap:    24 credits")
+        print("-" * 68)
+        print("You are eligible to graduate next semester! In case you are applying")
+        print("for graduate programs, would you like to build your complete curriculum")
+        print("by adding your planned final semester?")
+
+        try:
+            ans = input("\nBuild full curriculum including final semester? [y/N]: ").strip().lower()
+        except EOFError:
+            return semesters, False
+
+        if ans not in ("y", "yes"):
+            print("Skipping final semester builder.\n")
+            return semesters, False
+
+        while True:
+            selected_courses = []
+            current_term_credits = 0
+
+            # Mandatory requirement: Project must be included if not already taken
+            if not has_project and "project" in catalog:
+                proj = catalog["project"]
+                selected_courses.append(proj)
+                p_cr = int(proj.get("credits", 3))
+                current_term_credits += p_cr
+                print(f"\n📌 [Mandatory Requirement] B.Sc. Project ({p_cr} cr) has been automatically included.")
+
+            # ---------------------------------------------------------
+            # Group 1: Practical Laboratories
+            # ---------------------------------------------------------
+            print("\n" + "-" * 68)
+            print(f" [Group 1/3] Practical Laboratories & Workshops:  [Selected so far: {current_term_credits} cr]")
+            print("-" * 68)
+            if labs:
+                for idx, (cid, c) in enumerate(labs, 1):
+                    print(f"  {idx:2d}. {c['title']} ({c.get('credits', 1)} cr)")
+                val1 = input("\nSelect lab numbers (e.g. 1, 2) or press Enter to skip: ").strip()
+                if val1:
+                    for part in re.split(r"[,.\s]+", val1):
+                        part = part.strip()
+                        if part.isdigit() and 1 <= int(part) <= len(labs):
+                            c_obj = labs[int(part) - 1][1]
+                            if c_obj not in selected_courses:
+                                selected_courses.append(c_obj)
+                                current_term_credits += int(c_obj.get("credits", 1))
+            else:
+                print("  (All curriculum laboratories have already been passed!)")
+
+            # ---------------------------------------------------------
+            # Group 2: General Education Courses
+            # ---------------------------------------------------------
+            print("\n" + "-" * 68)
+            print(f" [Group 2/3] General Education Courses:  [Selected so far: {current_term_credits} cr]")
+            print("-" * 68)
+            if general:
+                for idx, (cid, c) in enumerate(general, 1):
+                    print(f"  {idx:2d}. {c['title']} ({c.get('credits', 2)} cr)")
+                val2 = input("\nSelect general course numbers (e.g. 1) or press Enter to skip: ").strip()
+                if val2:
+                    for part in re.split(r"[,.\s]+", val2):
+                        part = part.strip()
+                        if part.isdigit() and 1 <= int(part) <= len(general):
+                            c_obj = general[int(part) - 1][1]
+                            if c_obj not in selected_courses:
+                                selected_courses.append(c_obj)
+                                current_term_credits += int(c_obj.get("credits", 2))
+            else:
+                print("  (All curriculum general courses have already been passed!)")
+
+            # ---------------------------------------------------------
+            # Group 3: Core & Elective Theory Courses
+            # ---------------------------------------------------------
+            print("\n" + "-" * 68)
+            print(f" [Group 3/3] Specialized & Elective Theory Courses:  [Selected so far: {current_term_credits} cr]")
+            print("-" * 68)
+            if theory:
+                for idx, (cid, c) in enumerate(theory, 1):
+                    print(f"  {idx:2d}. {c['title']} ({c.get('credits', 3)} cr)")
+                val3 = input("\nSelect theory course numbers (e.g. 1, 3, 5) or press Enter to skip: ").strip()
+                if val3:
+                    for part in re.split(r"[,.\s]+", val3):
+                        part = part.strip()
+                        if part.isdigit() and 1 <= int(part) <= len(theory):
+                            c_obj = theory[int(part) - 1][1]
+                            if c_obj not in selected_courses:
+                                selected_courses.append(c_obj)
+                                current_term_credits += int(c_obj.get("credits", 3))
+            else:
+                print("  (No untaken theory courses remaining in curriculum!)")
+
+            # ---------------------------------------------------------
+            # Strict Validation: Semester <= 24 and Total in [140, 142]
+            # ---------------------------------------------------------
+            selected_credits = sum(int(c.get("credits", 0)) for c in selected_courses)
+            new_total = total_credits + selected_credits
+
+            print("\n" + "=" * 68)
+            print(f"  📋 Planned Final Semester: {len(selected_courses)} course(s), {selected_credits} credit(s)")
+            print("=" * 68)
+            for sc in selected_courses:
+                print(f"    • {sc['title']} ({sc.get('credits', 3)} cr)")
+            print(f"\n  Current: {total_credits} cr  +  Final Term: {selected_credits} cr  =  Total: {new_total} cr")
+            print("  Degree Requirement: 140–142 credits | Final Term Limit: Max 24 credits")
+            print("=" * 68)
+
+            if selected_credits > 24:
+                print(f"\n❌ [ERROR] Final semester has {selected_credits} credits, which EXCEEDS the 24-credit maximum cap!")
+            elif new_total < 140:
+                print(f"\n❌ [ERROR] Total cumulative credits is {new_total} (< 140). This is NOT enough credits to graduate!")
+            elif new_total > 142:
+                print(f"\n❌ [ERROR] Total cumulative credits is {new_total} (> 142). This is TOO MUCH credit! (Must be 140–142).")
+            else:
+                cf = input("\n✓ Credits within 140–142 range. Confirm this final semester plan? [Y/n]: ").strip().lower()
+                if cf in ("", "y", "yes"):
+                    break
+
+            retry = input("\nWould you like to try selecting your courses again? [Y/n]: ").strip().lower()
+            if retry not in ("", "y", "yes"):
+                print("Skipping final semester builder.\n")
+                return semesters, False
+
+    # Construct and append the final semester
+    last_sem = semesters[-1] if semesters else None
+    reg_count = res.get("regular_semesters_count", len(semesters))
+    next_sem_num, next_term = get_next_term_info(last_sem, reg_count)
+
+    new_sem = {
+        "term_name": next_term,
+        "raw_term": next_term,
+        "is_summer": False,
+        "semester_number": next_sem_num,
+        "semester_credits": selected_credits,
+        "cumulative_credits": new_total,
+        "display_heading": f"Semester {next_sem_num}: {next_term}",
+        "divider_title": f"SEMESTER {next_sem_num}",
+        "divider_subtitle": next_term,
+        "courses": []
+    }
+
+    for sc in selected_courses:
+        new_sem["courses"].append({
+            "title": sc["title"],
+            "credits": int(sc.get("credits", 3)),
+            "course_id": sc["id"],
+            "course_data": sc,
+            "is_missing": False,
+            "type": sc.get("type", "Specialized | Theoretical")
+        })
+
+    semesters.append(new_sem)
+    res["total_credits"] = new_total
+    res["regular_semesters_count"] = next_sem_num
+    print(f"\n✓ Successfully added Semester {next_sem_num} ({selected_credits} cr) bringing degree total to {new_total} credits!\n")
+    return semesters, True
 
 
 def main():
@@ -846,6 +1117,11 @@ def main():
     parser.add_argument("--layout", choices=["standalone", "compact"], help="Layout style")
     parser.add_argument("--name", help="Program display name (for --add-program)")
     parser.add_argument("--degree", help="Degree name (for --add-program)")
+
+    # Final semester graduation planning options
+    parser.add_argument("--no-prompt", action="store_true", help="Disable interactive prompts (e.g. for automated test suites or CI)")
+    parser.add_argument("--future-courses", nargs="+", help="List of untaken course IDs to include as the final graduation semester")
+    parser.add_argument("--graduating", action="store_true", help="Force trigger final-semester graduation planning even if remaining credits calculation differs")
 
     args = parser.parse_args()
 
@@ -920,6 +1196,16 @@ def main():
         target_prog = args.program
         if not target_prog:
             target_prog = "electrical_engineering_bsc" if major == "ee" else "computer_engineering_bsc"
+
+        # Check and plan final graduation semester if eligible (or CLI configured)
+        semesters, added_future = plan_final_semester(
+            semesters=semesters,
+            res=res,
+            target_prog=target_prog,
+            no_prompt=args.no_prompt,
+            cli_future_courses=args.future_courses,
+            force_graduating=args.graduating
+        )
 
         tex_path = generate_latex(
             program_id=target_prog,

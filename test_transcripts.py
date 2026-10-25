@@ -92,8 +92,77 @@ def find_test_directories(tests_dir: Path, requested_names=None):
     return test_dirs
 
 
+def auto_select_final_courses(semesters, total_credits, target_prog="computer_engineering_bsc"):
+    """
+    Automatically select a valid set of untaken curriculum courses to reach 140-142 total credits
+    for simulated graduation testing.
+    Rules:
+    1. Project (3 cr) is mandatory if not already taken.
+    2. Prefer untaken practical laboratories & workshops.
+    3. Fill remaining credits with untaken theory & elective courses.
+    4. Exclude industrial_training (0 graduation credit impact).
+    5. Term credits must be <= 24 and total credits must fall in [140, 142].
+    """
+    catalog = transcript_parser.load_catalog()
+    config = build.load_programs()
+    prog_courses = config.get("programs", {}).get(target_prog, {}).get("courses", [])
+
+    taken_ids = set()
+    for s in semesters:
+        for c in s.get("courses", []):
+            cid = c.get("course_id")
+            if cid:
+                taken_ids.add(cid)
+
+    needed_credits = 140 - total_credits
+    if needed_credits <= 0 or needed_credits > 24:
+        return None
+
+    selected = []
+    current_cr = 0
+
+    # 1. Mandatory capstone: B.Sc. Project
+    if "project" not in taken_ids and "project" in catalog:
+        selected.append("project")
+        current_cr += int(catalog["project"].get("credits", 3))
+
+    # 2. Practical Laboratories & Workshops
+    for cid in prog_courses:
+        if cid in taken_ids or cid in selected or cid in ("project", "industrial_training"):
+            continue
+        c = catalog.get(cid)
+        if not c:
+            continue
+        cr = int(c.get("credits", 0))
+        ctype = (c.get("type") or "").lower()
+        ctitle = (c.get("title") or "").lower()
+        if "practical" in ctype or "laboratory" in ctitle or "workshop" in ctype:
+            if current_cr + cr <= 24 and total_credits + current_cr + cr <= 142:
+                selected.append(cid)
+                current_cr += cr
+
+    # 3. Core & Elective Theory courses
+    for cid in prog_courses:
+        if cid in taken_ids or cid in selected or cid in ("project", "industrial_training"):
+            continue
+        c = catalog.get(cid)
+        if not c:
+            continue
+        cr = int(c.get("credits", 0))
+        if current_cr + cr <= 24 and total_credits + current_cr + cr <= 142:
+            selected.append(cid)
+            current_cr += cr
+            if total_credits + current_cr >= 140:
+                break
+
+    if 140 <= total_credits + current_cr <= 142 and current_cr <= 24:
+        return selected
+    return None
+
+
 def run_single_test(student_dir: Path, transcript_pdf: Path, no_pdf: bool = False,
-                    style: str = "semester", omit_general: bool = False, omit_religion: bool = False):
+                    style: str = "semester", omit_general: bool = False, omit_religion: bool = False,
+                    simulate_graduation: bool = False):
     """
     Run parsing, validation, and PDF generation for a single student transcript.
     Returns result dictionary.
@@ -114,6 +183,9 @@ def run_single_test(student_dir: Path, transcript_pdf: Path, no_pdf: bool = Fals
         "total_courses": 0,
         "missing_courses_count": 0,
         "missing_courses": [],
+        "graduating_simulated": False,
+        "graduating_courses": [],
+        "graduating_note": None,
         "pdf_compiled": False,
         "pdf_path": None,
         "semesters": []
@@ -134,6 +206,35 @@ def run_single_test(student_dir: Path, transcript_pdf: Path, no_pdf: bool = Fals
         res_dict["total_courses"] = total_courses
         res_dict["missing_courses_count"] = len(missing)
         res_dict["missing_courses"] = missing
+
+        # Determine major and program
+        detected_major = (res_dict["major"] or "").lower()
+        major = "ee" if "electrical" in detected_major else "ce"
+        program_id = "electrical_engineering_bsc" if major == "ee" else "computer_engineering_bsc"
+
+        # 2b. Optional Graduation Simulation
+        if simulate_graduation:
+            rem = 140 - res_dict["total_credits"]
+            if 0 < rem <= 24:
+                planned = auto_select_final_courses(semesters, res_dict["total_credits"], program_id)
+                if planned:
+                    semesters, added = build.plan_final_semester(
+                        semesters=semesters,
+                        res=parse_res,
+                        target_prog=program_id,
+                        no_prompt=True,
+                        cli_future_courses=planned
+                    )
+                    if added:
+                        res_dict["graduating_simulated"] = True
+                        res_dict["graduating_courses"] = planned
+                        res_dict["total_credits"] = parse_res.get("total_credits", res_dict["total_credits"])
+                        res_dict["regular_semesters_count"] = parse_res.get("regular_semesters_count", res_dict["regular_semesters_count"])
+                        res_dict["total_semesters"] = len(semesters)
+                        res_dict["total_courses"] = sum(len(s["courses"]) for s in semesters)
+            else:
+                res_dict["graduating_simulated"] = False
+                res_dict["graduating_note"] = f"Remaining credits ({rem} cr) outside next-semester window (<= 24 cr)."
 
         # Serialize semesters for inspection (clean dicts without non-serializable objects)
         serialized_semesters = []
@@ -221,10 +322,10 @@ def run_single_test(student_dir: Path, transcript_pdf: Path, no_pdf: bool = Fals
     return res_dict
 
 
-def render_terminal_table(results: list, no_pdf: bool):
+def render_terminal_table(results: list, no_pdf: bool, simulate_graduation: bool = False):
     """Print an aesthetic, color-coded summary table in the terminal."""
     headers = ["Test Name", "Major", "Semesters", "Courses", "Credits", "Missing Courses", "PDF", "Status"]
-    col_widths = [16, 8, 11, 9, 9, 28, 12, 10]
+    col_widths = [16, 8, 11, 9, 13, 28, 12, 10]
 
     def truncate(s, length):
         s = str(s)
@@ -242,7 +343,11 @@ def render_terminal_table(results: list, no_pdf: bool):
         major = "EE" if "electrical" in (r["major"] or "").lower() else "CE"
         semesters = f"{r['total_semesters']} ({r['regular_semesters_count']} reg)"
         courses = str(r["total_courses"])
-        credits = str(r["total_credits"])
+        
+        if simulate_graduation and r.get("graduating_simulated"):
+            credits_str = f"{r['total_credits']} (Grad)"
+        else:
+            credits_str = str(r["total_credits"])
 
         if r["missing_courses_count"] == 0:
             missing_str = "None (100% matched)"
@@ -278,7 +383,7 @@ def render_terminal_table(results: list, no_pdf: bool):
             f"| {major:^{col_widths[1]}} "
             f"| {semesters:^{col_widths[2]}} "
             f"| {courses:^{col_widths[3]}} "
-            f"| {credits:^{col_widths[4]}} "
+            f"| {credits_str:^{col_widths[4]}} "
             f"| {missing_disp} "
             f"| {pdf_disp} "
             f"| {status_disp} |"
@@ -291,34 +396,41 @@ def render_terminal_table(results: list, no_pdf: bool):
     passed = sum(1 for r in results if r["status"] == "PASS")
     warnings = sum(1 for r in results if r["status"] == "WARNING")
     failed = sum(1 for r in results if r["status"] == "FAIL")
+    graduated = sum(1 for r in results if r.get("graduating_simulated"))
     total = len(results)
 
     print(f"\n{Colors.BOLD}Test Execution Summary:{Colors.RESET}")
     print(f"  • Total Tests:    {total}")
     print(f"  • {Colors.GREEN}Passed:{Colors.RESET}         {passed}")
     print(f"  • {Colors.YELLOW}With Warnings:{Colors.RESET}  {warnings} (missing catalog entries)")
-    print(f"  • {Colors.RED}Failed:{Colors.RESET}         {failed}\n")
+    print(f"  • {Colors.RED}Failed:{Colors.RESET}         {failed}")
+    if simulate_graduation:
+        print(f"  • {Colors.CYAN}Simulated Degree Completions:{Colors.RESET} {graduated}/{total} student(s) graduated\n")
+    else:
+        print()
 
 
-def generate_markdown_report(results: list, report_file: Path, no_pdf: bool):
+def generate_markdown_report(results: list, report_file: Path, no_pdf: bool, simulate_graduation: bool = False):
     """Generate a clean, professional markdown report for human checking."""
     passed = sum(1 for r in results if r["status"] == "PASS")
     warnings = sum(1 for r in results if r["status"] == "WARNING")
     failed = sum(1 for r in results if r["status"] == "FAIL")
+    graduated = sum(1 for r in results if r.get("graduating_simulated"))
 
     lines = [
         "# 📋 Transcript Verification & Test Suite Report",
         "",
         f"**Generated On:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  ",
         f"**Total Test Transcripts:** {len(results)} | **Passed:** {passed} | **Warnings:** {warnings} | **Failed:** {failed}  ",
-        f"**PDF Compilation Mode:** {'Skipped (--no-pdf)' if no_pdf else 'Enabled (XeLaTeX)'}",
+        f"**PDF Compilation Mode:** {'Skipped (--no-pdf)' if no_pdf else 'Enabled (XeLaTeX)'}  ",
+        f"**Graduation Planner Simulation:** {'Enabled (--simulate-graduation)' if simulate_graduation else 'Disabled (Raw Transcripts)'}",
         "",
         "---",
         "",
         "## 📊 Executive Summary Table",
         "",
-        "| Test / Student | Major | Semesters | Courses | Total Credits | Missing Courses | PDF Status | Overall Status |",
-        "| :--- | :---: | :---: | :---: | :---: | :--- | :---: | :---: |"
+        "| Test / Student | Major | Semesters | Courses | Total Credits | Graduated? | Missing Courses | PDF Status | Overall Status |",
+        "| :--- | :---: | :---: | :---: | :---: | :---: | :--- | :---: | :---: |"
     ]
 
     for r in results:
@@ -326,10 +438,11 @@ def generate_markdown_report(results: list, report_file: Path, no_pdf: bool):
         pdf_badge = "✅ Built" if r["pdf_compiled"] else ("⏸️ Skipped" if no_pdf else "❌ Failed")
         missing_label = "None" if r["missing_courses_count"] == 0 else f"{r['missing_courses_count']} missing"
         test_link = f"[{r['test_name']}](#{r['test_name'].lower().replace('_', '-')})"
+        grad_badge = f"🎓 Yes ({len(r.get('graduating_courses', []))} crses)" if r.get("graduating_simulated") else ("In Progress" if simulate_graduation else "—")
 
         lines.append(
             f"| **{test_link}** | {r['major']} | {r['total_semesters']} | {r['total_courses']} | "
-            f"{r['total_credits']} | {missing_label} | {pdf_badge} | {status_badge} |"
+            f"{r['total_credits']} | {grad_badge} | {missing_label} | {pdf_badge} | {status_badge} |"
         )
 
     lines.extend([
@@ -351,6 +464,12 @@ def generate_markdown_report(results: list, report_file: Path, no_pdf: bool):
             lines.append(f"- **Generated Master TeX:** [`main.tex`](file://{TESTS_DIR / tname / 'main.tex'})")
         lines.append(f"- **Detected Academic Context:** {r['degree_level']} in {r['major']}")
         lines.append(f"- **Total Registered/Passed Credits:** {r['total_credits']} credits across {r['total_semesters']} terms ({r['total_courses']} courses)")
+
+        if r.get("graduating_simulated"):
+            lines.append(f"- **Degree Completion Status:** 🎓 **Simulated Graduation Successful!** ({len(r['graduating_courses'])} final courses added, bringing cumulative total to {r['total_credits']} credits)")
+            lines.append(f"  - **Planned Courses:** {', '.join(f'`{cid}`' for cid in r['graduating_courses'])}")
+        elif r.get("graduating_note"):
+            lines.append(f"- **Degree Completion Status:** ⏳ {r['graduating_note']}")
 
         if r["error_message"]:
             lines.append(f"\n> [!CAUTION]\n> **Error:** {r['error_message']}\n")
@@ -441,6 +560,11 @@ def main():
         action="store_true",
         help="Omit religious courses from course description pages"
     )
+    parser.add_argument(
+        "--simulate-graduation",
+        action="store_true",
+        help="Simulate degree completion by adding a final graduation semester (140–142 credits) for eligible students"
+    )
 
     args = parser.parse_args()
 
@@ -458,6 +582,7 @@ def main():
     print("=" * 68)
     print(f"• Found {len(test_cases)} test case(s) in {TESTS_DIR.name}/")
     print(f"• Mode: {'Fast Validation (No PDF)' if args.no_pdf else 'Full Build (XeLaTeX PDF Generation)'}")
+    print(f"• Graduation Simulation: {'Enabled' if args.simulate_graduation else 'Disabled'}")
     print(f"• Style: {args.style}")
     print("=" * 68 + "\n")
 
@@ -476,24 +601,26 @@ def main():
             no_pdf=args.no_pdf,
             style=args.style,
             omit_general=args.omit_general,
-            omit_religion=args.omit_religion
+            omit_religion=args.omit_religion,
+            simulate_graduation=args.simulate_graduation
         )
         results.append(res)
 
         # Brief status line
         if res["status"] == "PASS":
-            print(f"     {Colors.GREEN}✓ PASSED{Colors.RESET}: {res['total_courses']} courses across {res['total_semesters']} semesters. All catalog courses matched.")
+            grad_note = f" [Graduated: {res['total_credits']} cr]" if res.get("graduating_simulated") else ""
+            print(f"     {Colors.GREEN}✓ PASSED{Colors.RESET}: {res['total_courses']} courses across {res['total_semesters']} semesters.{grad_note}")
         elif res["status"] == "WARNING":
             print(f"     {Colors.YELLOW}⚠ WARNING{Colors.RESET}: {res['total_courses']} courses ({res['missing_courses_count']} missing from catalog).")
         else:
             print(f"     {Colors.RED}✗ FAILED{Colors.RESET}: {res.get('error_message')}")
 
     # Render terminal table
-    render_terminal_table(results, no_pdf=args.no_pdf)
+    render_terminal_table(results, no_pdf=args.no_pdf, simulate_graduation=args.simulate_graduation)
 
     # Save markdown report
     report_path = Path(args.report)
-    generate_markdown_report(results, report_path, no_pdf=args.no_pdf)
+    generate_markdown_report(results, report_path, no_pdf=args.no_pdf, simulate_graduation=args.simulate_graduation)
 
 
 if __name__ == "__main__":

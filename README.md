@@ -149,6 +149,52 @@ To parse an official or unofficial University of Tehran transcript PDF and gener
 
 ---
 
+## 🎓 Final Semester Graduation Planner (Degree Completion)
+
+When applying for graduate programs or master's admissions, students who are finishing their studies in the upcoming semester often need a **complete Course Description document** that includes their planned final semester courses to reflect a finished bachelor's degree.
+
+### 📌 Eligibility & Credit Rules
+1. **Graduation Eligibility:** A student can register for up to **24 credits** in their final graduation semester (ترم فراغت از تحصیل). If remaining credits to reach 140 are $\le 24$, the graduation planner activates.
+2. **Degree Completion Window:** Total cumulative credits across all semesters must fall strictly in the **140–142 credit range** (anything $< 140$ is incomplete, anything $> 142$ exceeds degree requirements).
+3. **Mandatory Capstone:** If `B.Sc. Project` (3 cr) has not been taken in earlier semesters, it is **strictly forced** into the final semester.
+4. **0-Credit Internship Rule:** Industrial Training is a 0-credit graduation requirement and is excluded from regular semester load.
+5. **Seamless Styling:** The final semester is rendered seamlessly as a standard regular semester (e.g., `Semester 8: Academic Year 2026–2027 (2nd Semester)`) with identical divider pages and course description formatting.
+
+### 💻 Interactive Terminal Mode
+When running `./build.py --transcript transcript.pdf`, if the student is eligible, the tool prompts:
+```
+🎓 Final Semester Graduation Planner (Degree Completion)
+  • Current Passed Credits:    124 credits
+  • Degree Completion Window:  140–142 credits (Remaining: 16–18 cr)
+  • Max Final-Semester Cap:    24 credits
+--------------------------------------------------------------------
+You are eligible to graduate next semester! In case you are applying
+for graduate programs, would you like to build your complete curriculum
+by adding your planned final semester?
+
+Build full curriculum including final semester? [y/N]: y
+```
+The user is then guided group-by-group through their untaken courses:
+- **Group 1/3: Practical Laboratories & Workshops** (e.g. Computer Networks Lab, Computer Architecture Lab)
+- **Group 2/3: General Education Courses** (e.g. Financial Literacy, Environmental Knowledge)
+- **Group 3/3: Specialized & Elective Theory Courses** (e.g. Distributed Systems, Internet Engineering, Real-Time Embedded Systems)
+
+### ⚡ Non-Interactive CLI Automation
+For scripts, CI/CD, or automated builds, you can pass planned courses directly:
+```bash
+# Add specific future courses to reach graduation
+./build.py --transcript tests/mani/transcript.pdf \
+  --future-courses project distributed_systems internet_engineering real_time_embedded_systems computer_networks_laboratory computer_architecture_laboratory research_and_technical_presentation
+
+# Force graduation planning prompt regardless of remaining credit check
+./build.py --transcript transcript.pdf --graduating
+
+# Disable prompts (for headless / batch usage)
+./build.py --transcript transcript.pdf --no-prompt
+```
+
+---
+
 ## 🛠 Adding, Removing, and Modifying Courses
 
 ### Option A: Via the CLI
@@ -290,6 +336,10 @@ tests/
 - **Run a single test case (e.g. `amir_barari`):**
   ```bash
   ./test_transcripts.py amir_barari
+  ```
+- **Run all tests and simulate degree completion for eligible students:**
+  ```bash
+  ./test_transcripts.py --simulate-graduation
   ```
 - **Clean previous outputs before running:**
   ```bash
