@@ -169,36 +169,6 @@ def parse_transcript(transcript_path):
     level_match = re.search(r"Level\s*:\s*([^\n\r]+)", pages[0])
     degree_level = level_match.group(1).strip() if level_match else "Bachelor"
 
-    # Collect left and right column lines across all pages continuously
-    header_footer_keywords = [
-        "In The Name Of God",
-        "University of Tehran",
-        "Transcript of University Grades",
-        "Student No :",
-        "Faculty :",
-        "First Name :",
-        "Last Name :",
-        "ID.No :",
-        "GPA :",
-        "Date of Birth :",
-        "Level :",
-        "Workshop Titles:",
-        "GENERAL DIRECTOR OF ACADEMIC AFFAIRS",
-        "signed and sealed",
-        "NOT VALID WITHOUT SIGNATURE",
-        "Academic Status",
-        "Full mark is 20",
-        "Last Status :",
-        "END OF TRANSCRIPT",
-        "NOTE:",
-        "Indicates that",
-        "abbreviations are used:",
-        "Emergency Drop",
-        "Incomplete",
-        "Reported",
-        "Not Reported"
-    ]
-
     all_col1 = []
     all_col2 = []
 
@@ -206,14 +176,25 @@ def parse_transcript(transcript_path):
         lines = page.split("\n")
         if not lines:
             continue
+
+        # Dynamically determine the boundary index between column 1 and column 2 for this page.
+        # Transcripts have layout variations across pages where column 2 begins at 77 vs 83.
+        col2_starts = []
         for line in lines:
-            l_strip = line.strip()
-            if not l_strip:
+            idx = line.find("Course Title", 10)
+            if idx != -1:
+                col2_starts.append(idx)
+            idx2 = line.find("Academic Year", 10)
+            if idx2 != -1:
+                col2_starts.append(idx2)
+
+        split_pos = min(col2_starts) if col2_starts else 76
+
+        for line in lines:
+            if not line.strip():
                 continue
-            if any(kw in l_strip for kw in header_footer_keywords):
-                continue
-            all_col1.append(line[:76].rstrip())
-            all_col2.append(line[76:].rstrip())
+            all_col1.append(line[:split_pos].rstrip())
+            all_col2.append(line[split_pos:].rstrip())
 
     s1 = _parse_column(all_col1)
     s2 = _parse_column(all_col2)

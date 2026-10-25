@@ -1134,5 +1134,17 @@
     "syllabus": "Data science lifecycle; sampling, sampling bias, observational and experimental studies, confounding variables; statistical charts; probability theory, conditional probability, Bayes theorem, random variables, expectation and variance, normal and binomial distributions, Monte Carlo simulation; central limit theorem, confidence intervals, hypothesis testing and statistical power; data visualization design principles, preattentive attributes, dashboards and storytelling; data preprocessing, exploratory data analysis and feature engineering; SQL, NoSQL, graph databases and MongoDB; big data systems including Hadoop, Spark, Kafka, HBase and Cassandra; modeling principles, prediction versus explanation, training and evaluation splits; linear regression, loss functions and gradient descent; logistic regression; decision trees, random forests, boosting, support vector machines and k-nearest neighbors; regression, classification and clustering evaluation; MLOps, Docker, Kubernetes, MLflow, data and model drift, retraining; unsupervised learning, dimensionality reduction and k-means clustering; feedforward neural networks, convolutional neural networks and recurrent neural networks; image classification and time series; natural language processing, embeddings, transformers and large language models; retrieval-augmented generation and AI agents; model interpretability and explainability; privacy and ethics in data science.",
     "textbooks": "1. Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, An Introduction to Statistical Learning: with Applications in R/Python (ISLR).\n2. Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The Elements of Statistical Learning (ESL).\n3. Jake VanderPlas, Python Data Science Handbook: Essential Tools for Working with Data.\n4. Joel Grus, Data Science from Scratch: First Principles with Python.\n5. Aurélien Géron, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow.",
     "layout": "standalone"
+  },
+  "history_of_islamic_culture_and_civilization": {
+    "id": "history_of_islamic_culture_and_civilization",
+    "title": "History of Islamic Culture and Civilization",
+    "credits": "2",
+    "type": "General | Theoretical",
+    "prerequisites": null,
+    "hours": "32h Theoretical",
+    "objectives": "Familiarizing students with the foundations, flourishing, and scientific heritage of Islamic and Iranian civilization, the intellectual traditions of Muslim and Shia scholars and philosophers, and their lasting contributions to science, medicine, philosophy, art, and world civilization.",
+    "syllabus": null,
+    "textbooks": null,
+    "layout": "compact"
   }
 }

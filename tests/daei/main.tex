@@ -1,0 +1,1083 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper, left=20mm, right=22mm, top=32mm, bottom=22mm, headheight=28mm, headsep=6mm, footskip=12mm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Liberation Serif}}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+
+% Background watermark centered on every page
+\setlength{\unitlength}{1pt}
+\AddToHook{shipout/background}{%
+  \put(65,-653){%
+    \includegraphics[width=466pt,height=465pt]{assets/watermark.png}%
+  }%
+}
+
+% Header and Footer configuration
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{%
+  \raisebox{-0.35\height}{\includegraphics[width=22mm,height=22mm,keepaspectratio]{assets/header_logo.png}}%
+  \hspace{4mm}%
+  \parbox[b]{120mm}{%
+    {\fontsize{11.5pt}{14pt}\selectfont \textbf{School of Electrical and Computer Engineering}}\par\vspace{2pt}%
+    {\fontsize{11.5pt}{14pt}\selectfont University of Tehran}%
+  }%
+}
+\fancyfoot[R]{\fontsize{11pt}{13pt}\selectfont Page | \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\linespread{1.15}
+
+\begin{document}
+
+% ================= PAGE 1: COVER =================
+\thispagestyle{empty}
+\begin{center}
+  \vspace*{10mm}
+  \includegraphics[width=85mm,height=85mm,keepaspectratio]{assets/cover_logo.png}\par\vspace{12mm}
+  {\fontsize{24pt}{28pt}\selectfont \textbf{University of Tehran}}\par\vspace{8mm}
+  {\fontsize{18pt}{22pt}\selectfont \textbf{Tehran}}\par\vspace{14mm}
+  {\fontsize{18pt}{22pt}\selectfont \textbf{School of Electrical and Computer Engineering}}\par\vspace{8mm}
+  {\fontsize{18pt}{22pt}\selectfont \textbf{Course Description}}\par\vspace{8mm}
+  {\fontsize{18pt}{22pt}\selectfont \textbf{\textit{Computer Engineering}}}\par\vspace{8mm}
+  {\fontsize{18pt}{22pt}\selectfont \textbf{Bachelor’s Degree}}
+\end{center}
+\newpage
+
+% ================= PAGE 2: REMARKS =================
+\setcounter{page}{1}
+\textbf{Remarks:}\par\vspace{4pt}
+According to the Academic Instruction of the University, in the academic system, each Theoretical credit is presented in 16 hours, each Practical credit in 32 hours, and each Workshop credit in 48 hours.\par\vspace{8pt}
+There are some different types of courses passed by a bachelor/master/Ph.D. student at this university, as listed below:
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \item Basic
+  \item Major
+  \item Specialized
+  \item Elective
+  \item General
+  \item Workshop
+  \item Internship
+  \item Project
+\end{enumerate}
+\vspace{4pt}
+Each of these types contains some courses to be passed according to the educational regulations passed by the Ministry of Science, Research and Technology or the Ministry of Health \& Medical Education of Iran.\par\vspace{8pt}
+The grading system in this university is from 0 to 20. The minimum passing grade for a course leading to an Associate's Degree or a Bachelor's Degree is 10, for a course leading to a Master's Degree and Medical Sciences is 12, and for a course leading to a Ph.D. Degree is 14.
+\newpage
+
+% ================= CURRICULUM OVERVIEW =================
+\textbf{\LARGE Curriculum Overview: Semester-by-Semester Study Plan}\par\vspace{6pt}
+The following study plan outlines the curriculum courses undertaken across all academic semesters, including course categories and credit allocations. This document provides official course descriptions and syllabi for all included courses.\par\vspace{10pt}
+\noindent{\large\textbf{Semester 1: Academic Year 2024–2025 (1st Semester)}}\par\vspace{4pt}
+\noindent\begin{tabularx}{\textwidth}{@{} X l r @{}}
+\toprule
+\textbf{Course Title} & \textbf{Course Type} & \textbf{Credits} \\
+\midrule
+Introduction to Computing Systems and Programming & Specialized | Theoretical & 4 \\
+Physics 1 & Basic | Theoretical & 3 \\
+Calculus 1 & Basic | Theoretical & 3 \\
+Islamic Ethics (Principles and concepts) & General | Theoretical & 2 \\
+Islamic Revolution in Iran & General | Theoretical & 2 \\
+Persian Language & General | Theoretical & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total Semester Credits: 17}} & \textbf{Cumulative: 17} \\
+\bottomrule
+\end{tabularx}\par\vspace{14pt}
+\noindent{\large\textbf{Semester 2: Academic Year 2024–2025 (2nd Semester)}}\par\vspace{4pt}
+\noindent\begin{tabularx}{\textwidth}{@{} X l r @{}}
+\toprule
+\textbf{Course Title} & \textbf{Course Type} & \textbf{Credits} \\
+\midrule
+Advanced Programming & Specialized | Theoretical & 3 \\
+Differential Equations & Basic | Theoretical & 3 \\
+Physics 2 & Basic | Theoretical & 3 \\
+Calculus 2 & Basic | Theoretical & 3 \\
+Discrete Mathematics & Major | Theoretical & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total Semester Credits: 15}} & \textbf{Cumulative: 32} \\
+\bottomrule
+\end{tabularx}\par\vspace{14pt}
+\noindent{\large\textbf{Semester 3: Academic Year 2025–2026 (1st Semester)}}\par\vspace{4pt}
+\noindent\begin{tabularx}{\textwidth}{@{} X l r @{}}
+\toprule
+\textbf{Course Title} & \textbf{Course Type} & \textbf{Credits} \\
+\midrule
+Engineering Probability and Statistics & Basic | Theoretical & 3 \\
+Logic Circuits & Specialized | Theoretical & 3 \\
+Electric Circuits & Specialized | Theoretical & 3 \\
+Islamic Thought 1 (Origins and Resurrection) & General | Theoretical & 2 \\
+History of Islamic culture and & General | Theoretical & 2 \\
+Physical Education & General | Practical & 1 \\
+Data Structures and Algorithms & Major | Theoretical & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total Semester Credits: 17}} & \textbf{Cumulative: 49} \\
+\bottomrule
+\end{tabularx}\par\vspace{14pt}
+\noindent{\large\textbf{Semester 4: Academic Year 2025–2026 (2nd Semester)}}\par\vspace{4pt}
+\noindent\begin{tabularx}{\textwidth}{@{} X l r @{}}
+\toprule
+\textbf{Course Title} & \textbf{Course Type} & \textbf{Credits} \\
+\midrule
+Logic Circuits Laboratory & Specialized | Practical & 1 \\
+Engineering Mathematics & Specialized | Theoretical & 3 \\
+Artificial Intelligence & Specialized | Theoretical & 3 \\
+Computer Architecture & Specialized | Theoretical & 3 \\
+Machines and Language Theory & Specialized | Theoretical & 3 \\
+Islamic Thought 2 (Prophethood and Imamat) & General | Theoretical & 2 \\
+English Language & General | Theoretical & 3 \\
+Electrical Measurment and Circuit Laboratory & Specialized | Practical & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total Semester Credits: 19}} & \textbf{Cumulative: 68} \\
+\bottomrule
+\end{tabularx}\par\vspace{14pt}
+\noindent{\large\textbf{Semester 5: Academic Year 2026–2027 (1st Semester)}}\par\vspace{4pt}
+\noindent\begin{tabularx}{\textwidth}{@{} X l r @{}}
+\toprule
+\textbf{Course Title} & \textbf{Course Type} & \textbf{Credits} \\
+\midrule
+Operating Systems Laboratory & Specialized | Practical & 1 \\
+Operating System & Specialized | Theoretical & 3 \\
+Computer Aided Digital System & Specialized | Theoretical & 3 \\
+Signals and Systems & Specialized | Theoretical & 3 \\
+Sport 1 & General | Practical & 1 \\
+Compiler design and programming languages & Specialized | Theoretical & 3 \\
+Basucs of Machine Learning & Elective | Theoretical & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total Semester Credits: 17}} & \textbf{Cumulative: 85} \\
+\bottomrule
+\end{tabularx}\par\vspace{14pt}
+\newpage
+
+% ================= COURSES BODY =================
+\newpage
+\vspace*{\fill}
+\begin{center}
+  {\fontsize{28pt}{34pt}\selectfont \textbf{SEMESTER 1}}\par\vspace{12pt}
+  {\fontsize{13pt}{17pt}\selectfont Academic Year 2024–2025 (1st Semester)}
+\end{center}
+\vspace*{\fill}
+
+\newpage
+\textbf{Title of the Course:} Introduction to Computing Systems and Programming\\
+\textbf{Number of Credits:} 4\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Training hours:} 64h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Explanation of main computer parts, the concept of software and hardware, algorithms design, and
+an introduction to a structured computer programming language.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Computer fundamentals, including the role of computers in the modern world and their\par
+applications. Introduction to main computer parts and the concept of software and hardware.\par
+Native data types (Integrals and Floating points). Algorithm design and problem-solving principles\par
+(Flow, selection, and loops). Implanting the algorithm by Pseudo Code. An introduction to a\par
+structured programming language. Constants, variables, computational and logical expressions.\par
+language-specific instructions. Conditional structures. Loops, Arrays, vectors and matrices,\par
+functions, and procedures. I/O and files operations. Implementing simple algorithms by the\par
+programming language. Searching and sorting. Advanced program design.\par
+Programming language: C/C++\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Bjarne Stroustrup, "The C++ Programming Language", Addison Wesley, 2004.\par
+2. Stanley B Lippman, "The C++ Primer", Addison Wesley, 2005.\par
+3. Paul Deitel \& Harvey Deitel, “C++ How to Program (Early Objects Version)”, Prentice Hall; 9\par
+edition, 2013.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Physics 1\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Basic | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The main goal of fundamental courses in physics is to provide tools by which students can learn
+how to read scientific material effectively, identify fundamental concepts, reason through scientific
+questions, and solve quantitative problems. Physics 1 is the first course of this set. This course
+covers the fundamental concepts in Classical Mechanics and Thermodynamics.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Units, Physical Quantities, and Vectors:}\par
+The Nature of Physics, Solving Physics Problems, Standards and Units, Unit Consistency and\par
+Conversions, Uncertainty and Significant Figures, Estimates and Orders of Magnitude, Vectors\par
+and Vector Addition, Components of Vectors, Unit Vectors, Products of Vectors\par
+\vspace{2pt}\textbf{- Motion along a Straight Line:}\par
+Displacement, Time, and Average Velocity, Instantaneous Velocity, Average and Instantaneous\par
+Acceleration, Motion with Constant Acceleration, Freely Falling Bodies, Velocity and Position by\par
+Integration\par
+\vspace{2pt}\textbf{- Motion in Two or Three Dimensions:}\par
+Position and Velocity Vectors, The Acceleration Vector, Projectile Motion, Motion in a Circle,\par
+Relative Velocity\par
+\vspace{2pt}\textbf{- Newton’s Laws of Motion:}\par
+Force and Interactions, Newton’s First Law, Newton’s Second Law, Mass and Weight, Newton’s\par
+Third Law, Free-Body Diagrams\par
+\vspace{2pt}\textbf{- Applying Newton’s Laws:}\par
+Using Newton’s First Law: Particles in Equilibrium, Using Newton’s Second Law: Dynamics of\par
+Particles, Frictional Forces, Dynamics of Circular Motion, The Fundamental Forces of Nature\par
+\vspace{2pt}\textbf{- Work and Kinetic Energy:}\par
+Work, Kinetic Energy, and the Work-Energy Theorem, Work and Energy with Varying Forces,\par
+Power\par
+\vspace{2pt}\textbf{- Potential Energy and Energy Conservation:}\par
+Gravitational Potential Energy, Elastic Potential Energy, Conservative and Non-conservative\par
+Forces, Force and Potential Energy, Energy Diagrams\par
+\vspace{2pt}\textbf{- Momentum, Impulse, and Collisions:}\par
+Momentum and Impulse, Conservation of Momentum, Momentum Conservation and Collisions,\par
+Elastic Collisions, Center of Mass, Rocket Propulsion\par
+\vspace{2pt}\textbf{- Rotation of Rigid Bodies:}\par
+Angular Velocity and Acceleration, Rotation with Constant Angular Acceleration, Relating Linear\par
+and Angular Kinematics, Energy in Rotational Motion, Parallel-Axis Theorem, Moment-of-Inertia\par
+Calculations\par
+\vspace{2pt}\textbf{- Dynamics of Rotational Motion:}\par
+Torque, Torque and Angular Acceleration for a Rigid-Body, Rigid-Body Rotation About a Moving\par
+Axis, Work and Power in Rotational Motion, Angular Momentum, Conservation of Angular\par
+Momentum, Gyroscopes, and Precession\par
+\vspace{2pt}\textbf{- Equilibrium and Elasticity:}\par
+Conditions for Equilibrium, Center of Gravity, Solving Rigid-Body Equilibrium Problems, Stress,\par
+Strain, Elastic Moduli, Elasticity, and Plasticity\par
+\vspace{2pt}\textbf{- Fluid Mechanics:}\par
+Density, Pressure in a Fluid, Buoyancy, Fluid Flow, Bernoulli’s Equation, Viscosity, and\par
+Turbulence\par
+\vspace{2pt}\textbf{- Gravitation:}\par
+Newton’s Law of Gravitation, Weight, Gravitational Potential Energy, The Motion of Satellites,\par
+Kepler’s Laws and the Motion of Planets, Spherical Mass Distributions, Apparent Weight and the\par
+Earth’s Rotation, Black Holes\par
+\vspace{2pt}\textbf{- Periodic Motion:}\par
+Describing Oscillation, Simple Harmonic Motion, Energy in Simple Harmonic Motion,\par
+Applications of Simple Harmonic Motion, The Simple Pendulum, The Physical Pendulum,\par
+Damped Oscillations, Forced Oscillations, and Resonance\par
+\vspace{2pt}\textbf{- Temperature and Heat:}\par
+Temperature and Thermal Equilibrium, Thermometers and Temperature Scales, Gas\par
+Thermometers and the Kelvin Scale, Thermal Expansion, Quantity of Heat, Calorimetry and Phase\par
+Changes, Mechanisms of Heat Transfer\par
+\vspace{2pt}\textbf{- Thermal Properties of Matter:}\par
+Equations of State, Molecular Properties of Matter, Kinetic-Molecular Model of an Ideal Gas,\par
+Heat Capacities, Molecular Speeds, Phases of Matter\par
+\vspace{2pt}\textbf{- The First Law of Thermodynamics:}\par
+Thermodynamic Systems, Work Done During Volume Changes, Paths Between Thermodynamic\par
+States, Internal Energy and the First Law of Thermodynamics, Kinds of Thermodynamic\par
+Processes, Internal Energy of an Ideal Gas, Heat Capacities of an Ideal Gas, Adiabatic Processes\par
+for an Ideal Gas\par
+\vspace{2pt}\textbf{- The Second Law of Thermodynamics:}\par
+Directions of Thermodynamic Processes, Heat Engines, Internal-Combustion Engines,\par
+Refrigerators, The Second Law of Thermodynamics, The Carnot Cycle, Entropy, Microscopic\par
+Interpretation of Entropy\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Fundamentals of Physics, David Halliday, Jearl Walker, Robert Resnick, 10th edition\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Calculus 1\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Basic | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Calculus 1, consisted principally of one-variable Calculus, Functions, Derivatives, Integrals,
+Integration Methods, Complex Numbers, and Infinite Series.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Cartesian coordinates; polar coordinates; complex numbers; addition, product, root \& geometrical\par
+representation of complex numbers; polar representation of complex numbers; function; functions\par
+algebra; limit and relevant theorems; infinite limit and limit in infinite; left-hand and right-hand\par
+limit; connectivity; derivative; derivation formula; inverse function and its derivative;\par
+trigonometric functions derivative and their inverse functions; Rolle’s theorem; mean theorem;\par
+Taylor expansion; geometrical and physical applications of derivative; curves and acceleration in\par
+polar coordinates; application of derivative in approximation of equations roots; definition of\par
+integral of continuous functions and piecewise continuous; basic theorems of differential \&\par
+integral arithmetic; primitive function; approximate methods of integral estimate; application of\par
+integral in computation of area, length of curve, moment, center of gravity and labor ….(in\par
+Cartesian and polar coordinates); logarithm and exponential function and their derivative;\par
+hyperbolic functions; integration methods such as change of variable, component and\par
+decomposition of fractions; transform of special variables of sequence and numerical series and\par
+relevant theorems; power series and Taylor theorem with remainder.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Tom M. Apostol, “Calculus, Vol. 1: One-Variable Calculus, with an Introduction to Linear\par
+Algebra”, John Wiley, 2012.\par
+2. George B. Thomas Jr., Maurice D. Weir, Joel Hass, "Thomas' Calculus (12th Edition)", 2009\par
+\vspace{4pt}
+
+\newpage
+\nopagebreak
+\textbf{Title of the Course:} Islamic Ethics (Principles and Concepts)\\
+\textbf{Number of Credits:} 2\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 32h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Familiarity of students with the principles and concepts of Islamic ethics in the field of moral
+virtues and vices, to acquire virtues and avoid moral vices.\par\vspace{4pt}
+
+\par\vspace{14pt}
+\nopagebreak
+\textbf{Title of the Course:} Islamic Revolution in Iran\\
+\textbf{Number of Credits:} 2\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 32h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Theoretical acquaintance with the causes and factors of the Islamic Revolution and analytical study
+of cultural, social, and political developments of the Islamic Revolution and subsequent issues.\par\vspace{4pt}
+
+\par\vspace{14pt}
+\nopagebreak
+\textbf{Title of the Course:} Persian Language\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Familiarity with the Persian language and reading literary texts, poetry, and prose in Iranian
+Persian literature.\par\vspace{4pt}
+
+\newpage
+\vspace*{\fill}
+\begin{center}
+  {\fontsize{28pt}{34pt}\selectfont \textbf{SEMESTER 2}}\par\vspace{12pt}
+  {\fontsize{13pt}{17pt}\selectfont Academic Year 2024–2025 (2nd Semester)}
+\end{center}
+\vspace*{\fill}
+
+\newpage
+\textbf{Title of the Course:} Advanced Programming\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Pre-requisite:} Introduction to Computing Systems and Programming\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The purpose of this course is to study the principles and methods (Polymorphism, Inheritance,
+Program Samples, and other paradigms of programming) necessary to produce a computer
+program with good-quality specifications. In this regard, after covering the top-down design
+method to solve the problem, students will be introduced to the concepts and techniques of objectoriented programming as a tool for managing complexity in medium and large-scale applications.
+Program performance, testing, and debugging are focused on throughout the course. An objectoriented programming language (such as C++) is used to teach these principles and methods, and
+students are introduced to the concepts and techniques of object-oriented programming and
+module-based object design, advanced concepts such as graphical user interface design.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Introduction: Program life cycle, the importance of programming, programming paradigms,\par
+Objected orientation\par
+Object-oriented programming: Description of Objects, Object recognition, Finding implantable\par
+objects in problems, Objects connection, Object-oriented programming language, an Introduction\par
+to C++ and its history\par
+A review of a functional programming language (C++), Polymorphism, inheritance, program\par
+samples\par
+Class and Objects, encapsulation and abstract, C++ classes and their parts (private, public, and\par
+protected), constructor and destructors, derived classes\par
+Polymorphism, polymorphism importance, function polymorphism, operator polymorphism\par
+Inheritance: introduction to inheritance, single and multiple inheritances\par
+Templates: template importance, function templates, derived data type templates\par
+Other programming paradigms: introduction to event-oriented and graphical programming,\par
+windows programming, client-side programming\par
+Program testing and documentation: the importance of testing and documentation, automatic\par
+testing tools, in-line documentation, technical documentation, user manuals\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Bjarne Stroustrup, "The C++ Programming Language", Addison Wesley, 2004.\par
+2. Stanley B Lippman, "The C++ Primer", Addison Wesley, 2005.\par
+3. Paul Deitel \& Harvey Deitel, “C++ How to Program (Early Objects Version)”, Prentice Hall; 9\par
+edition, 2013.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Differential Equations\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Basic | Theoretical\\
+\textbf{Pre-requisite:} Calculus 1\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+In this course, the first and second levels of linear differential equations and some nonlinear
+differential equations will be introduced, in addition, students will learn about some numerical and
+analytical ways to solve Mathematical Problems.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Introduction}\par
+Some Basic Mathematical Models, Direction Fields, Solutions of Some Differential Equations,\par
+Classification of Differential Equations, Historical Remarks\par
+\vspace{2pt}\textbf{- First Order Differential Equations}\par
+Linear Equations with Variable Coefficients, Separable Equations, Modeling with First Order\par
+Equations, Differences between Linear and Nonlinear Equations, Autonomous Equations and\par
+Population Dynamics, Exact Equations and Integrating Factors, The Existence and Uniqueness\par
+Theorem, First Order Difference Equations\par
+\vspace{2pt}\textbf{- Second Order Linear Equations}\par
+Homogeneous Equations with Constant Coefficients, Fundamental Solutions of Linear\par
+Homogeneous Equations, Linear Independence and the Wronskian, Complex Roots of the\par
+Characteristic Equation, Repeated Roots, Reduction of Order, Nonhomogeneous Equations,\par
+Method of Undetermined Coefficients, Variation of Parameters.\par
+\vspace{2pt}\textbf{- Higher Order Linear Equations}\par
+General Theory of nth Order Linear Equations, Homogeneous Equations with Constant\par
+Coefficients, The Method of Undetermined Coefficients, The Method of Variation of Parameters\par
+\vspace{2pt}\textbf{- Series Solutions of Second-Order Linear Equations}\par
+Review of Power Series, Series Solutions near an Ordinary Point, Regular Singular Points, Euler\par
+Equations, Series Solutions near a Regular Singular Point, Bessel’s Equation\par
+\vspace{2pt}\textbf{- The Laplace Transform}\par
+Definition of the Laplace Transform, Solution of Initial Value Problems, Step Functions,\par
+Differential Equations with Discontinuous Forcing Functions, Impulse Functions, and The\par
+Convolution Integral\par
+\vspace{2pt}\textbf{- Systems of First-Order Linear Equations}\par
+Introduction, Review of Matrices, Systems of Linear Algebraic Equations; Linear Independence,\par
+Eigenvalues, Eigenvectors, Basic Theory of Systems of First Order Linear Equations\par
+Homogeneous Linear Systems with Constant Coefficients, Complex Eigenvalues, Fundamental\par
+Matrices, Repeated Eigenvalues,\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. E. Kreyszig, Advanced Engineering Mathematics, 1999\par
+2. P. Blanchard, R.L. Devaney, and Co. Hall, Differential Equations, 1st Edition, Brooks/ColePub,\par
+1998\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Physics 2\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Basic | Theoretical\\
+\textbf{Pre-requisite:} Physics 1\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The main goal of fundamental courses in physics is to provide tools by which students can learn
+how to read scientific material effectively, identify fundamental concepts, reason through scientific
+questions, and solve quantitative problems. Physics 2 is the second course of this set. This course
+covers the fundamental concepts of Electromagnetism.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Electric Charge and Electric Field:}\par
+Electric Charge, Conductors, Insulators, and Induced Charges, Coulomb’s Law, Electric Field and\par
+Electric Forces, Electric-Field Calculations, Electric Field Lines, Electric Dipoles\par
+\vspace{2pt}\textbf{- Gauss’s Law:}\par
+Charge and Electric Flux, Calculating Electric Flux, Gauss’s Law, Applications of Gauss’s Law,\par
+Charges on Conductors\par
+\vspace{2pt}\textbf{- Electric Potential:}\par
+Electric Potential Energy, Electric Potential, Calculating Electric Potential, Equipotential\par
+Surfaces, Potential Gradient\par
+\vspace{2pt}\textbf{- Capacitance and Dielectrics:}\par
+Capacitors and Capacitance, Capacitors in Series and Parallel, Energy Storage in Capacitors and\par
+Electric-Field Energy, Dielectrics, Molecular Model of Induced Charge, Gauss’s Law in\par
+Dielectrics\par
+\vspace{2pt}\textbf{- Current, Resistance, and Electromotive Force:}\par
+Current, Resistivity, Resistance, Electromotive Force and Circuits, Energy, and Power in Electric\par
+Circuits, Theory of Metallic Conduction\par
+\vspace{2pt}\textbf{- Direct-Current Circuits:}\par
+Resistors in Series and Parallel, Kirchhoff’s Rules, Electrical Measuring Instruments, R-C\par
+Circuits, Power Distribution Systems\par
+\vspace{2pt}\textbf{- Magnetic Field and Magnetic Forces:}\par
+Magnetism, Magnetic Field, Magnetic Field Lines, and Magnetic Flux, Motion of Charged\par
+Particles in a Magnetic Field, Applications of Motion of Charged Particles, Magnetic Force on a\par
+Current-Carrying Conductor, Force and Torque on a Current Loop, The Direct-Current Motor, The\par
+Hall Effect\par
+\vspace{2pt}\textbf{- Sources of Magnetic Field:}\par
+Magnetic Field of a Moving Charge, Magnetic Field of a Current Element, Magnetic Field of a\par
+Straight Current-Carrying Conductor, Force Between Parallel Conductors, Magnetic Field of a\par
+Circular Current Loop, Ampere’s Law, Applications of Ampere’s Law, Magnetic Materials\par
+\vspace{2pt}\textbf{- Electromagnetic Induction:}\par
+Induction Experiments, Faraday’s Law, Lenz’s Law, Motional Electromotive Force, Induced\par
+Electric Fields, Eddy Currents, Displacement Current and Maxwell’s Equations,\par
+Superconductivity\par
+\vspace{2pt}\textbf{- Inductance:}\par
+Mutual Inductance, Self-Inductance, Inductors, Magnetic-Field Energy, The R-L Circuit, The LC Circuit, The L-R-C Series Circuit\par
+\vspace{2pt}\textbf{- Alternating Current:}\par
+Phasors and Alternating Currents, Resistance and Reactance, The L-R-C Series Circuit, Power in\par
+Alternating-Current Circuits, Resonance in Alternating-Current Circuits, Transformers\par
+\vspace{2pt}\textbf{- Electromagnetic Waves:}\par
+Maxwell’s Equations and Electromagnetic Waves, Plane Electromagnetic Waves and the Speed\par
+of Light, Sinusoidal Electromagnetic Waves, Energy and Momentum in Electromagnetic Waves,\par
+Standing Electromagnetic Waves\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. D. Holliday, R. Resnick and J. Walker, Fundamentals of Physics, 6th edition, John Wiley, 2000\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Calculus 2\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Basic | Theoretical\\
+\textbf{Pre-requisite:} Calculus 1\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The main scope of this course is to teach the students some topics in introductory linear algebra
+including matrix algebra and linear transformations and multivariable calculus including
+multivariable functions, directional and partial derivatives, velocity and acceleration, tangent plane
+and normal gradient line, cylindrical and spherical coordinates, vector field and line integrals,
+surface integral, Green's theorem, Divergence theorem, and Stoke's theorem.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Parametric equations; space coordinates; vector and space; numerical product; matrix 3x3 of threeindeterminate linear equations system; operation on lines; matrix reverse; solving equations\par
+system; linear independence; base in R2; R3 linear transform and its matrix; determinant 3x3 and\par
+characteristic value and vector; vector product; second order line and plane equations; two vector\par
+functions and its derivative; speed and acceleration; bending; normal vector to a curve;\par
+multivariable function; directional and partial derivative; tangent plane and normal line to a curve;\par
+multivariable function; directional and partial derivative; tangent plane and projecting line of\par
+gradient; chain of rule for partial derivative; exact differential; second kind and third kind integrals\par
+and their application in geometrical and physical problems; transform of integration arrangement\par
+(without accurate affirmation); cylindrical and spherical coordinates; vector field; curvilinear\par
+integral; surface integral; divergence; curl; Laplacian; potential of green space and divergence and\par
+stochastic.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Tom M. Apostol, "Calculus Vol. 2: Multi-Variable Calculus and Linear Algebra with\par
+Applications\par
+to\par
+Differential\par
+Equations\par
+and\par
+Probability",\par
+2012.\par
+2. George B. Thomas and Ross L. Finney, "Calculus and Analytic Geometry (9th Edition)", 1995.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Discrete Mathematics\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Major | Theoretical\\
+\textbf{Pre-requisite:} Calculus 1\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Combinatorial reasoning underlies all analysis of a computer system and a discrete mathematics
+course seeks to develop proficiency in basic discrete math problem-solving in the way that a
+calculus course develops proficiency in basic analysis problem-solving. This course should teach
+students to think logically and mathematically, reason and model combinatorially, and use discrete
+structures. Some important themes interwoven in this course are mathematical reasoning and
+mathematical induction, combinatorial analysis and enumeration, discrete structures, graphs, and
+modeling the problems using them.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Induction and Recursion}\par
+Mathematical Reasoning, Mathematical Induction, Strong Induction and Well-Ordering,\par
+Recursive Definitions and Structural Induction, Recursive Algorithms\par
+\vspace{2pt}\textbf{- Logics and Proofs}\par
+Propositional Logic, Propositional Equivalences, Predicates and Quantifiers, Nested Quantifiers,\par
+Rules of Inference, Introduction to Proofs, Proof Methods, and Strategy\par
+\vspace{2pt}\textbf{- Counting}\par
+The Basics of Counting, The Product Rule, The Sum Rule, the Tree Diagram, The Pigeonhole\par
+Principle, Permutations and Combinations, Binomial Coefficients, Binomial Theorem, Pascal’s\par
+Identities and Triange, Vander monde's Identity, Generalized Permutations and Combinations,\par
+Permutations with Repetitions, Combinations with Repetitions, Distributing Objects into Boxes,\par
+Algorithms For Generating Permutations and Combinations\par
+\vspace{2pt}\textbf{- Advanced Counting Techniques}\par
+Recurrence Relations, Modeling with Recurrence Relations, Fibonacci Numbers, The Tower of\par
+Hanoi, Catalan Numbers, Solving Linear Recurrence Relations, Linear Homogeneous Recurrence\par
+Relations with Constant Coefficients, Linear Nonhomogeneous Recurrence Relations with\par
+Constant Coefficients, Divide-and-Conquer Algorithms, and Recurrence Relations, Formal Power\par
+Series, Generating Functions, Counting Problems and Generating Functions, Inclusion-Exclusion,\par
+Applications of Inclusion-Exclusion\par
+\vspace{2pt}\textbf{- Relations}\par
+Relations and Their Properties, n-ary Relations and Their Applications, Representing Relations,\par
+Closures of Relations, Equivalence Relations, Partial Orderings.\par
+\vspace{2pt}\textbf{- Graphs}\par
+Graphs and Graph Models, Incidence and Adjacency Matrices of a Graph, Graph Terminology\par
+and Special Types of Graphs, Complete graphs, Bipartite Graphs, Representing Graphs and Graph\par
+Isomorphism, Connectivity, Euler and Hamilton Paths and Circuits, Algorithm to Construct Euler\par
+Circuits, Ore’s Theorem, Dirac’s Theorem, Shortest-Path Problems, Dijkstra’s Algorithm, Planar\par
+Graphs, Euler’s Formula, Kuratowski’s Theorem, Graph Coloring\par
+\vspace{2pt}\textbf{- Trees}\par
+Introduction to Trees, Rooted Trees, m-ary Trees, Applications of Trees, Huffman Coding, Tree\par
+Traversal, Traversal Algorithms: Preorder, Inorder, Postorder, Spanning Trees, Depth First Search\par
+and Breadth First Search Algorithms, Minimum Spanning Trees, Prim’s Algorithm, Kruskal’s\par
+Algorithm\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. R. P. Grimaldi, Discrete and Combinatorial Mathematics: An Applied Introduction, 5th Edition,\par
+Pearson, 2017.\par
+2. K. H. Rosen, Discrete Mathematics and Its Applications, 7th Edition, McGraw-Hill, 2011.\par
+3. S. S. Epp, Discrete Mathematics with Applications, 4th Edition, Brooks Cole, 2010.\par
+\vspace{4pt}
+
+\newpage
+\vspace*{\fill}
+\begin{center}
+  {\fontsize{28pt}{34pt}\selectfont \textbf{SEMESTER 3}}\par\vspace{12pt}
+  {\fontsize{13pt}{17pt}\selectfont Academic Year 2025–2026 (1st Semester)}
+\end{center}
+\vspace*{\fill}
+
+\newpage
+\textbf{Title of the Course:} Engineering Probability and Statistics\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Basic | Theoretical\\
+\textbf{Pre-requisite:} Calculus 2\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+All branches of engineering need powerful analytic tools to deal with uncertainty, model the
+data/information, and predict and analyze underlying systems. Many of the tools necessary for
+these analyses have their foundations in probability and statistics. With this in mind, this course
+provides elementary probabilistic and statistical concepts and the methods to apply them to
+engineering problems.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Probability (Axioms, Interpretations, and Properties), Counting Techniques, Conditional}\par
+Probability, Independence, Bayes’ Rule\par
+\vspace{2pt}\textbf{- Discrete Random variables, Probability Mass Function, Probability Distribution Function,}\par
+Expectation,\par
+and\par
+Variance\par
+\vspace{2pt}\textbf{- Especial Discrete Distributions (Uniform, Binomial, Negative Binomial, HyperGeometric,}\par
+Poisson)\par
+\vspace{2pt}\textbf{- Continuous Random Variables, Probability Density Function, Probability Distribution Function,}\par
+Expectation,\par
+and\par
+Variance,\par
+Functions\par
+of\par
+a\par
+Random\par
+Variable\par
+\vspace{2pt}\textbf{- Especial Continuous Distributions (Uniform, Exponential, Gamma, Beta, Weibull, Normal)}\par
+\vspace{2pt}\textbf{- Joint Probability Distributions (Discrete and Continuous Cases), Conditional Distributions,}\par
+Conditional Expectations, Independence\par
+\vspace{2pt}\textbf{- Sampling Distributions, Distributions of the Sample Mean, and Sample Variance}\par
+\vspace{2pt}\textbf{- Point Estimation: Maximum Likelihood Method, Method of Moments, Evaluating of Estimators}\par
+(Biasedness, Variance, Mean of Squared Errors)\par
+\vspace{2pt}\textbf{- Interval Estimation: Confidence Intervals for Mean, Variance, and proportion}\par
+\vspace{2pt}\textbf{- Tests of Hypotheses based on a Single Sample (Tests for Mean, Variance, and Proportion, the}\par
+Concept of P-Value)\par
+\vspace{2pt}\textbf{- Tests of Hypotheses Based on Two Samples (Test for a Difference between Two Means, Test}\par
+for a Difference between Two Proportions, Test for the ratio of Two Variances, T-Test for Paired\par
+Data)\par
+\vspace{2pt}\textbf{- Determination of Sample Size in Confidence Intervals and Testing Hypotheses}\par
+\vspace{2pt}\textbf{- Nonparametric Tests (Goodness-of-Fit Test, Test of Independence in Two-Way Contingency}\par
+Tables)\par
+\vspace{2pt}\textbf{- Regression (Simple Linear Regression, Normal Regression Analysis, Correlation)}\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Walpole and Mayers, Probability and Statistics for Engineering and Scientists, 6th\par
+edition, Prentice Hall. 1998\par
+2. R.V. Hogg and T. Elliot, Probability and Statistical Inference, 4th edition, Mac Millan, 1993\par
+3. Guttman, I., Wilks, S.S., Hunter, J.S. Introductory Engineering Statistics, J. Wiley, 3rd Ed.,\par
+1982.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Logic Circuits\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+This course covers the design and analysis of digital logic circuits including combinatorial and
+sequential logic circuits.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Number systems, binary systems, binary codes, addition, subtraction, multiplication and division,\par
+Boolean algebra, theorems, logic functions, sum-of-products form, product-of-sums form,\par
+Karnaugh maps, logic minimization using K-maps, logic gates (RTL, DTL, TTL) and related\par
+topics (FAN-IN, FAN-OUT), combinatorial circuits design, multiplexers, decoders, comparators,\par
+sequential circuits design, flip-flops, shift registers, counters, synchronous and asynchronous logic\par
+circuits, finite state machines, the timing of sequential circuits\par
+Programming language: Verilog\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Morris Mano, Michael Ciletti, Digital Design. 4th ed. Prentice Hall, 2006.\par
+2. Victor Nelson, Troy Nagle, Bill Carroll, David Irwin, Digital Logic Circuit Analysis and Design.\par
+1st ed. Prentice Hall, 1995.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Electric Circuits\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Coulomb's, Ohm's, and Kirchhoff’s laws; electrostatics and electromagnetics; resistance,\par
+capacitance, inductance; series and parallel circuits, independent and dependent voltage and\par
+current sources; energy, power; Superposition, Thevenin, and Norton Theorems; DC and AC;\par
+initial, steady state and transient conditions; frequency selective circuits and resonance; polyphase circuits and transformers.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1- W. H. Hayt, J. E. Kemmerly, and S. M. Durbin, Engineering Circuit Analysis, 8th Edition,\par
+McGraw Hill, 2011.\par
+2- C. K. Alexander, M. N. O. Sadiku, Fundamentals of Electrical Circuits, 5th Edition, McGraw\par
+Hill, 2012\par
+3- A. Agarwal, J. H. Lang, Foundations of Analog and Digital Electronic Circuits, Morgan\par
+Kaufmann Publishers, Elsevier, 2005\par
+\vspace{4pt}
+
+\newpage
+\nopagebreak
+\textbf{Title of the Course:} Islamic Thoughts 1 (Beginning and Resurrection)\\
+\textbf{Number of Credits:} 2\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 32h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Explain the necessity of Muslim students to pay attention to religion and religious categories,
+deepen and expand information and strengthen students' theism and faith in the field of theology
+and resurrection.\par\vspace{4pt}
+
+\par\vspace{14pt}
+\nopagebreak
+\textbf{Title of the Course:} History of Islamic Culture and Civilization\\
+\textbf{Number of Credits:} 2\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 32h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Familiarizing students with the foundations, flourishing, and scientific heritage of Islamic and Iranian civilization, the intellectual traditions of Muslim and Shia scholars and philosophers, and their lasting contributions to science, medicine, philosophy, art, and world civilization.\par\vspace{4pt}
+
+\par\vspace{14pt}
+\nopagebreak
+\textbf{Title of the Course:} Physical Education\\
+\textbf{Number of Credits:} 1\\
+\textbf{Type of the Course:} General | Practical\\
+\textbf{Training hours:} 32h Practical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Physical Education classes are designed to practice and develop skills in activities that will help
+you maintain fitness throughout your life. During the year, you will set and monitor personal
+fitness goals that will aid in the development of a personal fitness plan.\par\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Data Structures\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Major | Theoretical\\
+\textbf{Pre-requisite:} Advanced Programming\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Familiarity with Information Structures, Effects of Structures in Produced Applications, Selecting
+Optimized Inside-Memory Structures, and Organizing Memory based on requirements.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Arrays, Vectors, matrices and their application, sparse matrices, heap and stack, queue, lists, linked\par
+lists (linear, cyclic, doubly and multiply linked lists), introduction to trees, binary trees (decisionmaking trees, gaming trees, search trees and …), graphs (representation, sweeping and\par
+applications), Spanning trees, Dynamic memory allocation methods, searching, sorting and\par
+merging algorithms.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein, Introduction to\par
+Algorithms, Third Edition, The MIT Press, Cambridge, Massachusetts 2009\par
+2. A.V. Aho, J.E. Hopcroft, J.D. Ullman, Data Structures and Algorithms, Addison Wesley, 1983\par
+\vspace{4pt}
+
+\newpage
+\vspace*{\fill}
+\begin{center}
+  {\fontsize{28pt}{34pt}\selectfont \textbf{SEMESTER 4}}\par\vspace{12pt}
+  {\fontsize{13pt}{17pt}\selectfont Academic Year 2025–2026 (2nd Semester)}
+\end{center}
+\vspace*{\fill}
+
+\newpage
+\textbf{Title of the Course:} Logic Circuits Laboratory\\
+\textbf{Number of Credits:} 1\\
+\textbf{Type of the Course:} Specialized | Practical\\
+\textbf{Pre-requisite:} Logic Circuits\\
+\textbf{Training hours:} 32h Practical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The logic circuits laboratory is provided with the logic circuits course and its purpose is to acquaint
+students with the practical components of logic circuits and how these circuits work and to acquire
+skills in the development of circuits and digital systems.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1- C. Roth, L. Kinney, Fundamentals of Logic Design, 7th Edition, Cengage Learning, 2014.\par
+2- F. Vahid, Digital Design with RTL Design, VHDL, and Verilog, 2nd Edition, Wiley, 2011.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Engineering Mathematics\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Pre-requisite:} Calculus 2\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+This course provides mathematical techniques in the more advanced areas of mathematics that are
+of most relevance to engineering disciplines.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Fourier Series, Integrals, and The Fourier Transform}\par
+Introduction to Fourier Series, Convergence of Fourier Series and Their Integration and\par
+Differentiation, Fourier Sine and Cosine Series, Other Forms of Fourier Series, Frequency and\par
+Amplitude Spectra of a Function, Double Fourier Series. The Fourier Integral, The Fourier\par
+Transform, Fourier Cosine and Sine Transforms, Sturm–Liouville Problems, Eigenfunctions, and\par
+Orthogonality\par
+\vspace{2pt}\textbf{- Partial Differential Equations}\par
+The Method of Characteristics, Wave Propagation and First Order PDEs, Generalizing Solutions,\par
+Conservation Laws and Shocks, The Three Fundamental Types of Linear Second Order PDE,\par
+Classiﬁcation and Reduction to Standard Form of a Second Order Constant Coefﬁcient Partial\par
+Differential Equation, Boundary Conditions and Initial Conditions, Waves and the OneDimensional Wave Equation, The D’Alembert Solution of the Wave Equation and Applications,\par
+Separation of Variables, Some General Results for the Heat and Laplace Equation, An\par
+Introduction to Laplace and Fourier Transform Methods for PDEs\par
+\vspace{2pt}\textbf{- Complex Analysis}\par
+Complex Functions and Mappings, Limits, Derivatives, and Analytic Functions, Harmonic\par
+Functions and Laplace’s Equation, Elementary Functions, Inverse Functions and Branches,\par
+Complex Integrals, Contours, the Cauchy–Goursat Theorem, and Contour Integrals, The Cauchy\par
+Integral Formulas, Some Properties of Analytic Functions, Complex Power Series and Taylor\par
+Series, Uniform Convergence, Laurent Series and the Classiﬁcation of Singularities, Residues and\par
+the Residue Theorem, Evaluation of Real Integrals using Residues, The Inversion Integral for the\par
+Laplace Transform, Conformal Mapping, Conformal Mapping, and Boundary Value Problems\par
+\vspace{2pt}\textbf{- Calculus of Variations}\par
+Maximum or minimum of an Integral, Euler’s equations, Lagrange’s equations, Sturm–Liouville\par
+systems, and Rayleigh-Ritz methods.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Michael Greenberg, Advanced Engineering Mathematics, 2nd edition, 1998\par
+2. Erwin Kreyszig, Advanced Engineering Mathematics, tenth edition, 2011\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Artificial Intelligence\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+AI is an introductory course in Artificial Intelligence. The goal is to acquire knowledge of
+intelligent systems and agents, formalization of knowledge, reasoning with and without
+uncertainty, machine learning, and applications at a basic level.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Intelligent agents | Problem-solving, complexity metrics | Uninformed search (BFS, DFS, Uniform\par
+cost, depth-limited, iterative deepening) | Informed search (Greedy, A*) | Another search\par
+(simulated annealing, genetic algorithms) | Game playing (minimax, alpha-beta pruning,\par
+nondeterministic games) | Knowledge-based agents | Propositional logic, syntax, semantics,\par
+inference, limitations | First-order logic (including inference, unification, Goedel’s theorem,\par
+generalized modus ponens, resolution, forward chaining, backward chaining, situation calculus) |\par
+Building a knowledge base (ontologies, translation between English and FOL, difficult cases like\par
+events, substances, composite objects) | Logical reasoning systems (Implementing indexing,\par
+retrieval, and unification. Theorem provers. Frame systems and semantic networks) | Planning\par
+(including STRIPS) | Uncertainty | Decision Trees | Fuzzy logic | Neural networks (including\par
+Hopfield, perceptrons, backpropagation)\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Artificial Intelligence: a modern approach, S. Russell and P. Norvig, Prentice Hall.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Computer Architecture\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Pre-requisite:} Logic Circuits\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+This course aims to give an understanding of the mechanisms for implementing the programmer's
+idealized computer. It builds on the introduction to hardware and simple processors in the Digital
+Systems course. The Computer Architecture course aims to describe a broad range of architectural
+designs and to contrast them, highlighting the design decisions they incorporate, and how these
+design decisions impact program performance.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+C programming language; x86-64 assembly language; Machine representation of programs;\par
+Control structures for processors, register transfer level description of hardware; Hardware\par
+description languages and simulation in Verilog; Instruction set design, instruction formats,\par
+addressing modes, ISAs; A sequential x86-64 design; Processor pipelining, pipeline hazard\par
+detection, stalling and forwarding; Out-of-order execution and program performance optimization;\par
+RISC and CISC instruction sets (x86-64 and MIPS); Memory hierarchy and memory caches;\par
+Microcontrollers for embedded applications; Alternative architectures.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. D A Patterson \& J L Hennessy, Computer Organization and Design: The hardware/software\par
+interface, Morgan-Kaufmann (Fifth edition) 2013.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Machines and Language Theory\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+A presentation of the theory of computing, including coverage of the theory of formal languages
+and automata, compatibility, computational complexity, and deterministic parsing of context-free
+languages.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Sipser. Introduction to the Theory of Computation. PWS Publishing company, 1997.\par
+2. Linz, An Introduction to Formal Languages and Automata. 3rd edition ed., Jone,s and Bartlett\par
+Publishers, 2001.\par
+\vspace{4pt}
+
+\newpage
+\nopagebreak
+\textbf{Title of the Course:} Islamic Thought 2 (Prophethood and Imamat)\\
+\textbf{Number of Credits:} 2\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 32h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Becoming familiar with instructions in Islam, continuing "Islamic Thought I" discussions.
+Expanding students' knowledge about religion, prophethood, Islam, Imamat, and leadership,
+which is divided into three sections.\par\vspace{4pt}
+
+\par\vspace{14pt}
+\nopagebreak
+\textbf{Title of the Course:} English Language\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} General | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+General Language courses, offered at all levels of the Intensive Language Program, seek to
+improve students' Language skills in a great variety of discourse settings. Language skills
+addressed include listening, fluency development, oral intelligibility, reading, grammar, writing,
+and vocabulary development.\par\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Electrical Measurement and Circuit Laboratory\\
+\textbf{Number of Credits:} 1\\
+\textbf{Type of the Course:} Specialized | Practical\\
+\textbf{Pre-requisite:} Electric Circuits\\
+\textbf{Training hours:} 32h Practical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+In this laboratory, students are familiar with the electronic elements of resistors, capacitors, and
+inductors, and the operation of electrical measuring devices such as multimeters and oscilloscopes,
+as well as other devices used in electrical and electronic circuits such as power supply and signal
+generators, as well as measuring parameters such as current. They learn voltage, frequency,
+periodicity, phase difference, and power.\par\vspace{4pt}
+
+\newpage
+\vspace*{\fill}
+\begin{center}
+  {\fontsize{28pt}{34pt}\selectfont \textbf{SEMESTER 5}}\par\vspace{12pt}
+  {\fontsize{13pt}{17pt}\selectfont Academic Year 2026–2027 (1st Semester)}
+\end{center}
+\vspace*{\fill}
+
+\newpage
+\textbf{Title of the Course:} Operating Systems Laboratory\\
+\textbf{Number of Credits:} 1\\
+\textbf{Type of the Course:} Specialized | Practical\\
+\textbf{Training hours:} 32h Practical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The goal of this course is to create the right understanding and to learn the techniques of designing
+and implementing system programs and operating systems based on an open-source operating
+system. Students will get familiar with the implementation of basic design concepts of the
+operating system, such as file management, process management, kernel-level programming, and
+process synchronization in an open-source operating system, and learn to install and manage an
+open-source operating system.
+Upon successful completion of the course, students will be able to
+1. Compile, install, and manage an open-source operating system
+2. Implement the basic concepts of designing operating systems in an open-source operating
+system
+3. Program in kernel-level\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+1) Introduction: An overview of Linux including its history, versions, Posix, Graphical User\par
+Interface\par
+2) Install and compile a version of Linux: Disk partition, compile, boot load, and use the\par
+application menu and system.\par
+3) Linux file system\par
+4) Standard and advanced Shell\par
+5) Managing Processes and Threads\par
+6) Processor scheduling in Linux\par
+7) Deadlock synchronization\par
+8) Memory management\par\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Operating System\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Pre-requisite:} Computer Architecture\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+The course provides computer engineering students to understand the ways that applications
+interact with the computer hardware as well as different methods of resource management and
+their respective algorithms. Further, they will learn of basic mechanisms which are used in the
+low-level management of computer systems. Such a student will also learn how to design a system
+with the consideration of both hardware and software characteristics and limitations and improve
+the quality of programs. The course is a combination of both practice and theory.
+Upon successful completion of the course, students will have good insights
+1. in different types of computer systems and applications,
+2. to design, build, and manage system software,
+3. to better discover the reasons for the degraded performance of computer systems and solve the
+problem,
+4. to propose and implement resource management policies.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+1) Introduction (Basic terminologies and concepts as well as different computer systems\par
+architectures and software systems, Interrupts, Dual-mode, …)\par
+2) Operating system structures (Different architectures for operating systems, system calls, APIs,\par
+virtualization, and cloud computing)\par
+3) Processes (PCB, context switch, short-term, medium-term, and long-term schedulers, process\par
+creation and communication)\par
+4) Threads (Multithreading models, thread management)\par
+5) Process synchronization (Critical sections and respective solutions, semaphores, monitors,\par
+classic synchronization problems)\par
+6) CPU scheduling (Preemptive and non-preemptive scheduling, CPU scheduling algorithms,\par
+SMP, SMT, multicore scheduling, real-time scheduling)\par
+7) Deadlock handling (Necessary conditions for deadlock, resource-allocation graph, deadlock\par
+prevention, avoidance, detection, and recovery)\par
+8) Main memory management (Binding, physical and logical addresses, fragmentation, paging,\par
+TLB, shared pages, segmentation)\par
+9) Virtual memory management (Demand paging, page fault handling, copy-on-write, page\par
+replacement policies, Belady’s anomaly, frame allocation, thrashing, memory-mapped I/O and\par
+files, kernel memory management)\par
+10) Storage management (File system structure, virtual file system, storage allocation methods)\par
+11) I/O management (Interrupts, I/O subsystem, I/O management and performance aspects)\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. W. Stallings, Operating Systems, 4th Edition, Prentice Hall, 2001\par
+2. Silberschatz, J.L. Peterson, Operating Systems Concepts, Addison Wesley, 2000 Course\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Computer Aided Digital System\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Students in the Computer Aided Digital System course will implement and test digital circuits
+ranging in complexity from basic logic gates to state machines that perform useful functions like
+calculations, counting, timing, and a host of other applications.\par\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Signals and Systems\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Pre-requisite:} Engineering Mathematics\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Introduction to the fundamentals of continuous and discrete time signal and system analysis. This
+course will cover linear system analysis including impulse response and convolution, Fourier
+series, Fourier transforms, sampling, discrete-time signal and system analysis, and Z-transforms.
+The student is expected to demonstrate the ability to:
+- Apply the convolution theorem for continuous-time signals
+- Evaluate the Fourier Series of periodic signals
+- Determine the Fourier Transform of energy signals
+- Make use of Fourier Transform Properties
+- Analyze a discrete-time LTI system using discrete linear convolution
+- Use Z-transform for analyzing discrete-time signals and systems
+- Convert a continuous-time signal to the discrete-time domain and reconstruct using the
+sampling theorem\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+\vspace{2pt}\textbf{- Introduction}\par
+Motivation: Why signal processing is important, Mathematical preliminaries\par
+\vspace{2pt}\textbf{- Signal Basics}\par
+Types of signals, Elementary signals\par
+\vspace{2pt}\textbf{- Time-Domain Analysis of Continuous-Time Systems}\par
+Types of systems, Linear time-invariant (LTI) systems, Convolution\par
+\vspace{2pt}\textbf{- Continuous-Time Fourier Series (CTFS)}\par
+CTFS derivation, CTFS properties, Convergence\par
+\vspace{2pt}\textbf{- Continuous-Time Fourier Transform (CTFT)}\par
+CTFT derivation, CTFT properties, CTFT, convolution, and LTI systems, Convergence\par
+\vspace{2pt}\textbf{- Laplace Transform}\par
+Region of convergence, Implementing continuous-time systems\par
+\vspace{2pt}\textbf{- Time-Domain Analysis of Discrete-Time Systems}\par
+Types of systems, Linear time-invariant (LTI) systems, Convolution\par
+\vspace{2pt}\textbf{- Time-Domain Analysis of Discrete-Time Systems}\par
+Types of systems, Linear time-invariant (LTI) systems, Convolution\par
+\vspace{2pt}\textbf{- Discrete-Time Fourier Transform (DTFT)}\par
+DTFT derivation, DTFT properties, DTFT, convolution, and LTI systems, Convergence\par
+\vspace{2pt}\textbf{- Discrete Fourier Transform (DFT)}\par
+DFT, convolution, and LTI systems, Convergence, Fast Fourier Transform (FFT)\par
+\vspace{2pt}\textbf{- Sampling and Reconstruction}\par
+Sampling and the Nyquist theorem, Sinc interpolation, Practical reconstruction\par
+\vspace{2pt}\textbf{- Z-Transform}\par
+Region of convergence, Implementing discrete-time systems\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Alan V. Oppenheim, A. S. Willsky and S. Hamid Nawab, Signals and Systems, 2nd ed.,\par
+Prentice-Hall, 1996.\par
+2. S. Haykin and B. Van Veen, Signals and Systems, 2nd ed., Wiley, 2003.\par
+\vspace{4pt}
+
+\newpage
+\nopagebreak
+\textbf{Title of the Course:} Sport 1\\
+\textbf{Number of Credits:} 1\\
+\textbf{Type of the Course:} General | Practical\\
+\textbf{Training hours:} 32h Practical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+This course is designed for the prospective coach, physical education, and/or recreation
+professional.\par\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Compiler Design and Programming Languages\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Specialized | Theoretical\\
+\textbf{Pre-requisite:} Machines and Language Theory\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Designing and building compilers is one of the basic concepts of computer science. Although there
+is little variety in the way compilers are made, a wide variety of languages and machines can be
+used to make interpreters and translators. In this lesson, the subject of building compilers is
+introduced by describing the main components of a compiler, their tasks, and their relationship.
+After an introductory introduction to the components of a compiler and the types of grammar, the
+various stages of translation, such as lexical, syntactic, and semantic analysis, and code generation
+and payment, are described. Students who successfully pass this course will have a good insight
+into the following: Familiarity with compiler components and various techniques for their
+implementation, understanding of the implementation of programming language commands,
+gaining skills in producing optimal programs and fixing programming errors, familiarity and the
+use of automated tools in compiler production.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+An introduction to the design and implementation of programming language translators,\par
+Theoretical aspects of language design and translation are discussed, and practically demonstrated\par
+by developing a working compiler.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. A. Aho, M. Lam, R. Sethi, and J. Ullman, Compilers: Principles, Techniques, and Tools (2nd\par
+Edition), Prentice Hall, 2006.\par
+\vspace{4pt}
+
+\newpage
+\textbf{Title of the Course:} Basics of Machine Learning\\
+\textbf{Number of Credits:} 3\\
+\textbf{Type of the Course:} Elective | Theoretical\\
+\textbf{Training hours:} 48h Theoretical\par\vspace{4pt}
+\textbf{Course Objectives:}\par\vspace{2pt}
+Understanding fundamental concepts of machine learning and pattern recognition, including probabilistic modeling, statistical decision theory, parameter estimation, supervised and unsupervised learning. Developing the ability to formulate classification and regression problems, select and optimize learning models, and apply neural networks, feature selection, dimensionality reduction, and clustering methods.\par\vspace{4pt}
+\textbf{Syllabus of Courses:}\par\vspace{2pt}
+Introduction to machine learning concepts and fundamentals of data; Bayesian decision theory, Bayesian classifiers, risk minimization and decision boundaries; Naive Bayes classification; maximum likelihood estimation (MLE) and maximum a posteriori (MAP) estimation; optimization methods; linear, logistic and nonlinear regression; decision trees; support vector machines (SVM); introduction to neural networks and their applications; introduction to deep vision; principal component analysis (PCA), linear discriminant analysis (LDA), and feature selection; clustering and unsupervised learning.\par\vspace{4pt}
+\textbf{TextBooks:}\par\vspace{2pt}
+1. Christopher M. Bishop, Pattern Recognition and Machine Learning, Springer.\par
+2. Richard O. Duda, Peter E. Hart, and David G. Stork, Pattern Classification, Wiley, 2001.\par
+3. Sergios Theodoridis and Konstantinos Koutroumbas, Pattern Recognition, Academic Press, 2009.\par
+4. Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The Elements of Statistical Learning: Data Mining, Inference, and Prediction, Second Edition.\par
+\vspace{4pt}
+
+\end{document}

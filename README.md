@@ -256,3 +256,45 @@ If you prefer to edit raw LaTeX directly, `build.py` maintains `main.tex`. You c
 ```bash
 xelatex -interaction=nonstopmode main.tex
 ```
+
+---
+
+## 🧪 Automated Transcript Testing & Verification Suite
+
+The repository includes a dedicated test harness (`test_transcripts.py`) to validate transcript parsing across diverse transcript formats and detect missing courses.
+
+### Directory Organization
+Each test transcript lives in its own student folder under `tests/`:
+```
+tests/
+├── amir_barari/
+│   ├── transcript.pdf          # Input transcript
+│   ├── summary.json            # Structured answer (courses, credits, missing list)
+│   ├── main.tex                # Generated LaTeX
+│   └── CourseDescription.pdf   # Compiled PDF
+├── artin_tavasoli/
+├── daei/
+├── mani/
+└── test_report.md              # Overall test execution report
+```
+
+### Running Tests
+- **Run all tests (fast parsing validation without compiling PDFs):**
+  ```bash
+  ./test_transcripts.py --no-pdf
+  ```
+- **Run all tests and compile CourseDescription PDFs for visual inspection:**
+  ```bash
+  ./test_transcripts.py
+  ```
+- **Run a single test case (e.g. `amir_barari`):**
+  ```bash
+  ./test_transcripts.py amir_barari
+  ```
+- **Clean previous outputs before running:**
+  ```bash
+  ./test_transcripts.py --clean
+  ```
+- **View summary report:**
+  After each run, an executive summary table is printed to the terminal, and an exhaustive markdown report is written to `tests/test_report.md`.
+
