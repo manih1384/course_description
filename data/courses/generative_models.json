@@ -1,0 +1,14 @@
+{
+  "id": "generative_models",
+  "index": 60,
+  "title": "Generative Models",
+  "credits": "3",
+  "type": "Elective | Theoretical",
+  "prerequisites": null,
+  "hours": "48h Theoretical",
+  "objectives": "The purpose of this course is to introduce the theoretical foundations and major approaches to deep generative modeling. Students study probabilistic graphical models and approximate inference as foundations for learning complex data distributions. The course examines different families of generative models, including variational autoencoders, normalizing flows, generative adversarial networks, energy-based models, autoregressive models, and diffusion and score-based models. Students are introduced to methods for training, sampling from, and evaluating generative models, as well as more recent approaches based on stochastic differential equations and flow matching. The course also covers generative modeling for language and vision-language applications.",
+  "syllabus": "1. Introduction to Deep Generative Models\n2. Probabilistic Graphical Models: Directed graphical models (Bayesian networks), undirected graphical models (Markov random fields), variational inference\n3. Variational Autoencoders (VAE): VAE fundamentals and variants\n4. Flow-based Models: Normalizing flows\n5. Evaluation of Deep Generative Models\n6. Generative Adversarial Networks (GAN): GAN fundamentals and variants\n7. Energy-based Models\n8. Sampling Methods: Markov Chain Monte Carlo (MCMC)\n9. Autoregressive Models: MADE and NADE\n10. Generative Models for Natural Language Processing: Transformers and language models\n11. Diffusion Models: Denoising Diffusion Probabilistic Models (DDPM) and Denoising Diffusion Implicit Models (DDIM)\n12. Score-based Generative Models\n13. Ordinary and Stochastic Differential Equation Models (ODE/SDE)\n14. Flow Matching Models\n15. Vision-Language Models (VLM)",
+  "textbooks": "1. Jakub M. Tomczak, Deep Generative Modeling, Springer, 2022.\n2. Ian Goodfellow, Yoshua Bengio, and Aaron Courville, Deep Learning, MIT Press, 2016.\n3. David Foster, Generative Deep Learning: Teaching Machines to Paint, Write, Compose, and Play, 2nd Edition, O'Reilly Media, 2023.",
+  "layout": "standalone"
+}
+

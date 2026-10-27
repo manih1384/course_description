@@ -1,7 +1,7 @@
 # 📋 Transcript Verification & Test Suite Report
 
-**Generated On:** 2026-10-25 22:12:48  
-**Total Test Transcripts:** 6 | **Passed:** 4 | **Warnings:** 2 | **Failed:** 0  
+**Generated On:** 2026-10-27 17:47:52  
+**Total Test Transcripts:** 6 | **Passed:** 6 | **Warnings:** 0 | **Failed:** 0  
 **PDF Compilation Mode:** Skipped (--no-pdf)  
 **Graduation Planner Simulation:** Disabled (Raw Transcripts)
 
@@ -13,10 +13,10 @@
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- | :---: | :---: |
 | **[amir_barari](#amir-barari)** | Computer Engineering | 8 | 49 | 123 | — | None | ⏸️ Skipped | 🟢 PASS |
 | **[arash](#arash)** | Computer Engineering | 7 | 48 | 125 | — | None | ⏸️ Skipped | 🟢 PASS |
-| **[artin_tavasoli](#artin-tavasoli)** | Computer Engineering | 8 | 49 | 121 | — | 1 missing | ⏸️ Skipped | 🟡 WARNING |
+| **[artin_tavasoli](#artin-tavasoli)** | Computer Engineering | 8 | 49 | 121 | — | None | ⏸️ Skipped | 🟢 PASS |
 | **[daei](#daei)** | Computer Engineering | 5 | 33 | 85 | — | None | ⏸️ Skipped | 🟢 PASS |
 | **[hamid](#hamid)** | Computer Engineering | 7 | 44 | 111 | — | None | ⏸️ Skipped | 🟢 PASS |
-| **[mani](#mani)** | Computer Engineering | 8 | 49 | 124 | — | 1 missing | ⏸️ Skipped | 🟡 WARNING |
+| **[mani](#mani)** | Computer Engineering | 8 | 49 | 124 | — | None | ⏸️ Skipped | 🟢 PASS |
 
 ---
 
@@ -262,12 +262,8 @@
 - **Detected Academic Context:** Bachelor in Computer Engineering
 - **Total Registered/Passed Credits:** 121 credits across 8 terms (49 courses)
 
-#### ⚠️ Missing Courses Not Found in Catalog:
-| Missing Course Title | Credits | Academic Term | Suggested Catalog ID |
-| :--- | :---: | :--- | :--- |
-| **Generative Models** | 3 | Academic Year 2025–2026 (1st Semester) | `generative_models` |
-
-*To add these courses to the catalog, create `data/courses/<suggested_id>.json` or add an alias to `data/aliases.json`.*
+> [!NOTE]
+> **Catalog Match:** All courses were successfully matched against the syllabus catalog.
 
 #### 📚 Parsed Curriculum by Semester:
 <details><summary><b>Semester 1: Academic Year 2023–2024 (1st Semester)</b> *(17 credits)* — 6 course(s)</summary>
@@ -332,7 +328,7 @@
 | 3 | Operating System | 3 | `operating_system` | Specialized | Theoretical | ✅ Matched |
 | 4 | Computer Aided Digital System | 3 | `computer_aided_digital_system` | Specialized | Theoretical | ✅ Matched |
 | 5 | Family Schematization and Population | 2 | `family_schematization_and_population` | General | Theoretical | ✅ Matched |
-| 6 | Generative Models | 3 | `generative_models` | Specialized | Theoretical | ⚠️ Missing |
+| 6 | Generative Models | 3 | `generative_models` | Elective | Theoretical | ✅ Matched |
 | 7 | Basucs of Machine Learning | 3 | `basics_of_machine_learning` | Elective | Theoretical | ✅ Matched |
 
 </details>
@@ -577,12 +573,8 @@
 - **Detected Academic Context:** Bachelor in Computer Engineering
 - **Total Registered/Passed Credits:** 124 credits across 8 terms (49 courses)
 
-#### ⚠️ Missing Courses Not Found in Catalog:
-| Missing Course Title | Credits | Academic Term | Suggested Catalog ID |
-| :--- | :---: | :--- | :--- |
-| **Generative Models** | 3 | Academic Year 2026–2027 (1st Semester) | `generative_models` |
-
-*To add these courses to the catalog, create `data/courses/<suggested_id>.json` or add an alias to `data/aliases.json`.*
+> [!NOTE]
+> **Catalog Match:** All courses were successfully matched against the syllabus catalog.
 
 #### 📚 Parsed Curriculum by Semester:
 <details><summary><b>Semester 1: Academic Year 2023–2024 (1st Semester)</b> *(17 credits)* — 6 course(s)</summary>
@@ -686,7 +678,7 @@
 | 5 | Introduction to Software Testing | 3 | `introduction_to_software_testing` | Elective | Theoretical | ✅ Matched |
 | 6 | Thematic interpretation of the Quran | 2 | `thematic_interpretation_of_the_quran` | General | Theoretical | ✅ Matched |
 | 7 | Sport 1 | 1 | `sport_1` | General | Practical | ✅ Matched |
-| 8 | Generative Models | 3 | `generative_models` | Specialized | Theoretical | ⚠️ Missing |
+| 8 | Generative Models | 3 | `generative_models` | Elective | Theoretical | ✅ Matched |
 
 </details>
 

@@ -271,29 +271,28 @@ def run_single_test(student_dir: Path, transcript_pdf: Path, no_pdf: bool = Fals
         with open(summary_path, "w", encoding="utf-8") as f:
             json.dump(res_dict, f, indent=2, ensure_ascii=False)
 
-        # 4. Generate LaTeX and compile PDF (unless --no-pdf)
+        # Determine major and program
+        detected_major = (res_dict["major"] or "").lower()
+        major = "ee" if "electrical" in detected_major else "ce"
+        program_id = "electrical_engineering_bsc" if major == "ee" else "computer_engineering_bsc"
+
+        # Generate LaTeX
+        tex_file = build.generate_latex(
+            program_id=program_id,
+            semesters_data=semesters,
+            missing_courses=missing,
+            style=style,
+            omit_general=omit_general,
+            omit_religion=omit_religion,
+            major=major
+        )
+
+        # Copy main.tex to test directory
+        dest_tex = student_dir / "main.tex"
+        shutil.copy2(tex_file, dest_tex)
+
+        # 4. Compile PDF (unless --no-pdf)
         if not no_pdf:
-            # Determine major and program
-            detected_major = (res_dict["major"] or "").lower()
-            major = "ee" if "electrical" in detected_major else "ce"
-            program_id = "electrical_engineering_bsc" if major == "ee" else "computer_engineering_bsc"
-
-            # Generate LaTeX
-            tex_file = build.generate_latex(
-                program_id=program_id,
-                semesters_data=semesters,
-                missing_courses=missing,
-                style=style,
-                omit_general=omit_general,
-                omit_religion=omit_religion,
-                major=major
-            )
-
-            # Copy main.tex to test directory
-            dest_tex = student_dir / "main.tex"
-            shutil.copy2(tex_file, dest_tex)
-
-            # Compile PDF directly to student test folder
             dest_pdf = student_dir / "CourseDescription.pdf"
             compile_success = build.compile_pdf(tex_file=tex_file, output_pdf=dest_pdf)
             build.clean_artifacts()
