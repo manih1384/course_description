@@ -1,8 +1,27 @@
-# University of Tehran — Course Description Generator
+# 🎓 University of Tehran — Course Description Generator
 
-This project is a reverse-engineered, modular Course Description document system for the **University of Tehran, School of Electrical and Computer Engineering**.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-brightgreen.svg)](https://www.python.org/)
+[![LaTeX: XeLaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-orange.svg)](https://tug.org/xetex/)
+[![Platform: Linux](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg)](README.md)
 
-It allows you to **add, remove, edit, reorder, and filter courses and degree programs** while reproducing the original typography, visual styling, header/footer layout, emblems, watermarks, and pagination.
+An open-source, modular Course Description document generator reverse-engineered for the **University of Tehran, School of Electrical and Computer Engineering (ECE)**.
+
+Designed for undergraduate and graduate students applying to international MSc/Ph.D. programs who need official, high-quality, and personalized course description brochures that precisely match University of Tehran transcript records.
+
+---
+
+## ✨ Features
+
+- **🏛 Official Visual Identity & Typography:** Faithfully reproduces University of Tehran official emblem, School of ECE header logo, background watermark, margins, headers/footers, and page numbering.
+- **📄 Transcript-Driven Personalization:** Automatically parses official or unofficial UT English transcript PDFs and extracts all terms, courses, credits, and course categories.
+- **📅 Chronological Curriculum Overview:** Formats semester-by-semester study tables with accurate credit counts, handling both regular terms and summer sessions.
+- **🎓 Final Semester Graduation Planner:** Automatically identifies degree candidates close to finishing (140–142 credits) and lets you interactively or programmatically append planned graduation courses.
+- **🗂 Flexible Document Styles:**
+  - `semester` (default): Chronological term-by-term order with clean semester divider title pages.
+  - `category`: Grouped hierarchically by academic classification (*Basic* $\rightarrow$ *Major* $\rightarrow$ *Specialized* $\rightarrow$ *Elective* $\rightarrow$ *General* $\rightarrow$ *Workshop* $\rightarrow$ *Internship* $\rightarrow$ *Project*).
+- **✂️ Omission Filters:** Exclude non-technical coursework (`--omit-general`, `--omit-religion`) while preserving full credit totals on the overview table.
+- **🔌 Zero Mandatory Pip Dependencies:** Core generation and transcript matching run entirely on standard Python 3.8+.
 
 ---
 
@@ -10,341 +29,140 @@ It allows you to **add, remove, edit, reorder, and filter courses and degree pro
 
 ```
 course_description/
-├── build.py                  # CLI build manager (generate LaTeX & compile PDF)
+├── build.py                  # CLI build manager (generates LaTeX & compiles PDF)
 ├── transcript_parser.py      # Transcript parser & fuzzy catalog course matcher
-├── requirements.txt          # Python dependencies (standard library core + optional pypdf)
-├── main.tex                  # Active master LaTeX document (can also compile manually)
-├── CourseDescription.pdf     # Compiled PDF output
+├── test_transcripts.py       # Automated validation test suite
+├── main.tex                  # Active master LaTeX document (for XeLaTeX)
+├── CourseDescription.pdf     # Default compiled PDF output
+├── LICENSE                   # MIT License
+├── CONTRIBUTING.md           # Guide for adding/editing courses
 ├── templates/
-│   └── template.tex          # Master LaTeX template (margins, headers, footers, watermark)
+│   └── template.tex          # Master LaTeX template (watermark, headers, footers)
 ├── assets/
 │   ├── cover_logo.png        # University of Tehran coat of arms emblem
 │   ├── header_logo.png       # School of ECE header logo
 │   └── watermark.png         # Centered page background watermark
-└── data/
-    ├── programs.json         # Programs registry & curriculum course sequences
-    ├── courses.json          # Complete course catalog (CE & EE courses)
-    ├── course_filters.json   # Configurable religious and general course filters
-    ├── aliases.json          # Course title aliases for fuzzy matching
-    └── courses/              # Individual modular JSON files for each course
+├── data/
+│   ├── programs.json         # Degree programs (CE & EE sequences)
+│   ├── courses.json          # Master course catalog
+│   ├── course_filters.json   # General and religious course filter keywords
+│   ├── aliases.json          # Fuzzy match aliases for variant transcript titles
+│   └── courses/              # Modular JSON definitions for individual courses
+└── tests/
+    ├── sample_student/       # Public mock transcript fixture (transcript.txt)
+    └── test_report.md        # Comprehensive verification report
 ```
 
 ---
 
-## ⚙️ Prerequisites & Setup
+## 🐧 Linux Quick Setup (From Scratch)
 
-The tool is designed to work out-of-the-box on Linux, macOS, and Windows with **no hardcoded paths** and **no complex Python environments**.
+The system is tested and optimized for Linux out-of-the-box. Follow the instructions for your distribution below:
 
-### 1. Check Your Environment
-Run the built-in diagnostic tool to verify your system setup:
+### 1. Ubuntu / Debian / Pop!_OS / Linux Mint
+```bash
+sudo apt update
+sudo apt install -y python3 poppler-utils texlive-xetex texlive-fonts-recommended
+```
+
+### 2. Arch Linux / Manjaro
+```bash
+sudo pacman -Syu --needed python poppler texlive-xetex
+```
+
+### 3. Fedora / RHEL
+```bash
+sudo dnf install -y python3 poppler-utils texlive-scheme-medium
+```
+
+*(macOS: `brew install poppler && brew install --cask mactex-no-gui` | Windows: `choco install poppler miktex`)*
+
+### 4. Verify Your Environment
+Run the built-in diagnostic checker:
 ```bash
 ./build.py --check-env
 ```
-
-### 2. Requirements Overview
-| Component | Requirement | Details |
-| :--- | :--- | :--- |
-| **Python** | Python 3.8+ | Core scripts use **100% Python Standard Library** (zero mandatory pip packages). |
-| **PDF Extraction** | `pdftotext` *(Recommended)*<br>or `pypdf` *(Fallback)* | `pdftotext` (from Poppler) preserves transcript column layout.<br>If unavailable, run `pip install -r requirements.txt`. |
-| **LaTeX Engine** | `xelatex` *(Recommended)*<br>or `pdflatex` | XeLaTeX provides full UTF-8 Unicode, Liberation/Times typography, and microtype. |
-
-### 3. Quick OS Installation Commands
-
-#### Ubuntu / Debian:
-```bash
-sudo apt update
-sudo apt install -y poppler-utils texlive-xetex texlive-fonts-recommended
-```
-
-#### macOS (Homebrew):
-```bash
-brew install poppler
-brew install --cask mactex-no-gui   # or full MacTeX: brew install --cask mactex
-```
-
-#### Windows:
-Using Chocolatey or winget:
-```powershell
-# Using Chocolatey:
-choco install poppler miktex
-
-# Or using winget:
-winget install MiKTeX.MiKTeX
-```
-*(If you do not want to install Poppler on Windows, simply run: `pip install -r requirements.txt`)*
-
-#### Arch Linux / Fedora:
-```bash
-# Arch:
-sudo pacman -S poppler texlive-xetex
-
-# Fedora:
-sudo dnf install poppler-utils texlive-scheme-medium
-```
+You should see checkmarks ($\checkmark$) for Python, `pdftotext`, XeLaTeX, and all required assets.
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Build the Default Course Description PDF
-To generate `main.tex` and compile `CourseDescription.pdf`:
+### 1. Build the Complete Default Brochure (Computer Engineering)
 ```bash
 ./build.py
 ```
-*(Automatically detects your installed XeLaTeX compiler)*
+This generates `main.tex` and compiles `CourseDescription.pdf` containing the full curriculum brochure.
 
-### 2. View Programs and Courses
-- List all available degree programs:
-  ```bash
-  ./build.py --list-programs
-  ```
-- List all courses with credit counts and course types:
-  ```bash
-  ./build.py --list-courses
-  ```
-- List courses in a specific program:
-  ```bash
-  ./build.py --list-courses --program computer_engineering_bsc
-  ```
-
-### 3. Generate a Personalized Course Description from a Transcript
-To parse an official or unofficial University of Tehran transcript PDF and generate a personalized document:
+### 2. Build the Electrical Engineering Brochure
 ```bash
-./build.py --transcript unofficial_transcript.pdf
+./build.py --major ee --output EE_CourseDescription.pdf
 ```
-- **Semester-by-Semester Curriculum Overview:** Inserts a structured table breakdown of all semesters (Semester 1–6, Summer Semester, Semester 7, etc.), course types, and credits.
-- **Accurate Semester Numbering:** Summer semesters are labeled separately (e.g., `Summer Semester (2025–2026)`) and do not increment the regular semester count.
-- **Large Semester Divider Pages:** In semester style, a dedicated title page is inserted before each term's courses (`SEMESTER 1`, `SUMMER SEMESTER`, etc.).
-- **Missing Course Handling:** Identifies courses in the transcript that are missing from the catalog, prints a warning, marks them as `(Not Included in Syllabus)` in the overview, and skips generating empty course pages.
-- **Document Styles (`--style`):**
-  - `--style semester` (default for transcript): Chronological by semester with semester divider pages.
-  - `--style category`: Grouped by classification (`Basic` $\rightarrow$ `Major` $\rightarrow$ `Specialized` $\rightarrow$ `Elective` $\rightarrow$ `General` $\rightarrow$ `Workshop` $\rightarrow$ `Internship` $\rightarrow$ `Project`).
-- **Omission Filters:**
-  - `--omit-general`: Omits general education courses from description pages.
-  - `--omit-religion`: Omits religious courses from description pages.
-  - Omitted courses remain listed on the Curriculum Overview table marked as `(Omitted from Syllabus)` to keep credit totals consistent with official transcripts.
-  - Configurable and expandable via `data/course_filters.json`.
-- **Major Selector (`--major`):**
-  - `--major ce` (Computer Engineering): Cover Page sets program to *Computer Engineering*.
-  - `--major ee` (Electrical Engineering): Cover Page sets program to *Electrical Engineering*.
-  - School is uniformly set to *School of Electrical and Computer Engineering*.
-  - Auto-detected from transcript PDF when available, with CLI `--major` acting as an explicit override.
-- **Examples:**
-  ```bash
-  # Standard semester-by-semester build (auto-detects major)
-  ./build.py --transcript unofficial_transcript.pdf
 
-  # Build with explicit major switch (e.g. Electrical Engineering)
-  ./build.py --transcript karname_eng.pdf --major ee
+### 3. Generate a Personalized Brochure from Your Transcript
+Drop your official or unofficial transcript PDF (or plain text) into the project and run:
+```bash
+./build.py --transcript my_transcript.pdf
+```
+This creates a tailored course description document containing **only the courses you have completed**, sequenced semester by semester with large divider pages and credit totals.
 
-  # Build full Electrical Engineering brochure (43 courses)
-  ./build.py --major ee --output EE_CourseDescription.pdf
+### 4. Common CLI Options
 
-  # Category-based ordering omitting religious courses
-  ./build.py --transcript unofficial_transcript.pdf --style category --omit-religion
-
-  # Technical-only syllabus omitting all general courses
-  ./build.py --transcript unofficial_transcript.pdf --omit-general --output Technical_Syllabus.pdf
-  ```
+| Command | Description |
+| :--- | :--- |
+| `./build.py` | Build standard Computer Engineering brochure |
+| `./build.py --major ee` | Build standard Electrical Engineering brochure |
+| `./build.py --transcript t.pdf` | Build personalized brochure from transcript |
+| `./build.py --transcript t.pdf --style category` | Order courses by academic category instead of semester |
+| `./build.py --transcript t.pdf --omit-religion` | Omit religious courses from syllabus pages |
+| `./build.py --transcript t.pdf --omit-general` | Omit all general education courses (technical-only brochure) |
+| `./build.py --no-pdf` | Generate `main.tex` without invoking XeLaTeX |
+| `./build.py --list-courses` | List all 60+ courses in the catalog |
+| `./build.py --list-programs` | List registered academic programs |
 
 ---
 
-## 🎓 Final Semester Graduation Planner (Degree Completion)
+## 🎓 Final Semester Graduation Planner
 
-When applying for graduate programs or master's admissions, students who are finishing their studies in the upcoming semester often need a **complete Course Description document** that includes their planned final semester courses to reflect a finished bachelor's degree.
+When applying for Master's or Ph.D. programs before graduation, admission committees often require proof of a complete 140–142 credit undergraduate degree.
 
-### 📌 Eligibility & Credit Rules
-1. **Graduation Eligibility:** A student can register for up to **24 credits** in their final graduation semester (ترم فراغت از تحصیل). If remaining credits to reach 140 are $\le 24$, the graduation planner activates.
-2. **Degree Completion Window:** Total cumulative credits across all semesters must fall strictly in the **140–142 credit range** (anything $< 140$ is incomplete, anything $> 142$ exceeds degree requirements).
-3. **Mandatory Capstone:** If `B.Sc. Project` (3 cr) has not been taken in earlier semesters, it is **strictly forced** into the final semester.
-4. **0-Credit Internship Rule:** Industrial Training is a 0-credit graduation requirement and is excluded from regular semester load.
-5. **Seamless Styling:** The final semester is rendered seamlessly as a standard regular semester (e.g., `Semester 8: Academic Year 2026–2027 (2nd Semester)`) with identical divider pages and course description formatting.
-
-### 💻 Interactive Terminal Mode
-When running `./build.py --transcript transcript.pdf`, if the student is eligible, the tool prompts:
-```
-🎓 Final Semester Graduation Planner (Degree Completion)
-  • Current Passed Credits:    124 credits
-  • Degree Completion Window:  140–142 credits (Remaining: 16–18 cr)
-  • Max Final-Semester Cap:    24 credits
---------------------------------------------------------------------
-You are eligible to graduate next semester! In case you are applying
-for graduate programs, would you like to build your complete curriculum
-by adding your planned final semester?
-
-Build full curriculum including final semester? [y/N]: y
-```
-The user is then guided group-by-group through their untaken courses:
-- **Group 1/3: Practical Laboratories & Workshops** (e.g. Computer Networks Lab, Computer Architecture Lab)
-- **Group 2/3: General Education Courses** (e.g. Financial Literacy, Environmental Knowledge)
-- **Group 3/3: Specialized & Elective Theory Courses** (e.g. Distributed Systems, Internet Engineering, Real-Time Embedded Systems)
-
-### ⚡ Non-Interactive CLI Automation
-For scripts, CI/CD, or automated builds, you can pass planned courses directly:
-```bash
-# Add specific future courses to reach graduation
-./build.py --transcript tests/mani/transcript.pdf \
-  --future-courses project distributed_systems internet_engineering real_time_embedded_systems computer_networks_laboratory computer_architecture_laboratory research_and_technical_presentation
-
-# Force graduation planning prompt regardless of remaining credit check
-./build.py --transcript transcript.pdf --graduating
-
-# Disable prompts (for headless / batch usage)
-./build.py --transcript transcript.pdf --no-prompt
-```
-
----
-
-## 🛠 Adding, Removing, and Modifying Courses
-
-### Option A: Via the CLI
-
-1. **Add a new course**:
+If your transcript indicates that you are in your final academic year (remaining credits $\le 24$):
+1. **Interactive Prompt:** Running `./build.py --transcript my_transcript.pdf` will detect your status and offer to plan your final semester.
+2. **Category Selection:** You can interactively select your remaining required laboratories, general electives, and specialized courses.
+3. **Automated/CI Mode:** Specify future courses directly via flags:
    ```bash
-   ./build.py --add-course \
-     --id deep_learning \
-     --title "Deep Learning" \
-     --credits 3 \
-     --type "Elective | Theoretical" \
-     --hours "48h Theoretical" \
-     --prereq "Artificial Intelligence" \
-     --objectives "Introduction to deep neural networks, CNNs, RNNs, and transformers."
-   ```
-   *(This creates `data/courses/deep_learning.json` and adds it to the current program).*
-
-2. **Remove a course from a program**:
-   ```bash
-   ./build.py --remove-course physical_education
-   ```
-
-3. **Rebuild**:
-   ```bash
-   ./build.py
+   ./build.py --transcript my_transcript.pdf \
+     --future-courses project distributed_systems generative_models computer_networks_laboratory
    ```
 
 ---
 
-### Option B: Via JSON Files (Direct & Modular)
+## 🧪 Automated Testing & Validation
 
-Each course lives in its own simple JSON file under `data/courses/<course_id>.json`.
+The test harness validates catalog matching, semester parsing, and document generation:
 
-**Example Course JSON (`data/courses/physics_1.json`):**
-```json
-{
-  "id": "physics_1",
-  "title": "Physics 1",
-  "credits": "3",
-  "type": "Basic | Theoretical",
-  "prerequisites": null,
-  "hours": "48h Theoretical",
-  "objectives": "The main goal of fundamental courses in physics...",
-  "syllabus": "- Units, Physical Quantities, and Vectors:\n...\n- Motion along a Straight Line:\n...",
-  "textbooks": "1. Fundamentals of Physics, David Halliday, Jearl Walker, Robert Resnick, 10th edition",
-  "layout": "standalone"
-}
+```bash
+# Fast test run across all test fixtures (without PDF compilation)
+python3 test_transcripts.py --no-pdf
+
+# Test only the public sample fixture
+python3 test_transcripts.py --no-pdf sample_student
+
+# Full test with XeLaTeX compilation
+python3 test_transcripts.py
 ```
-
-- **Layout options:**
-  - `"layout": "standalone"`: Starts on a fresh page (`\newpage`), used for Basic, Major, and Specialized courses.
-  - `"layout": "compact"`: Flows together on pages (e.g. 3–4 courses per page), used for short General / Physical Education / Religion courses.
-
-- **To edit a course:** Open the JSON file in `data/courses/`, edit text, and run `./build.py`.
-- **To add a course:** Create a new `<new_course_id>.json` file in `data/courses/`, add its ID to `data/programs.json`, and run `./build.py`.
-- **To remove a course:** Remove its ID from `data/programs.json` and run `./build.py`.
-- **To reorder courses:** Simply change the order of IDs in the `"courses"` array in `data/programs.json`.
+Test results and coverage are tracked in [`tests/test_report.md`](tests/test_report.md).
 
 ---
 
-## 🎓 Managing Programs & Degrees
+## 🤝 Contributing
 
-Programs are configured in `data/programs.json`:
-```json
-{
-  "default_program": "computer_engineering_bsc",
-  "programs": {
-    "computer_engineering_bsc": {
-      "program_name": "Computer Engineering",
-      "degree": "Bachelor’s Degree",
-      "degree_type": "bachelor",
-      "courses": [
-        "physics_1",
-        "calculus_1",
-        ...
-      ]
-    }
-  }
-}
-```
-
-### Adding a New Program (e.g. Master's Degree)
-You can define a new program either by editing `data/programs.json` or running:
-```bash
-./build.py --add-program computer_engineering_msc --name "Computer Engineering" --degree "Master's Degree"
-```
-Then build that specific program:
-```bash
-./build.py --program computer_engineering_msc
-```
+Contributions of new course syllabi, textbooks, or degree programs are welcome!  
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines on the course schema, CLI scaffolding, and testing your changes.
 
 ---
 
-## 🎯 Generating Tailored Subsets of Courses
+## 📄 License
 
-If an application to a specific university only requires course descriptions for relevant core courses (e.g. Systems or AI courses), you can specify exactly which courses to include:
-```bash
-./build.py --courses data_structures algorithm_design_1 operating_system computer_networks database_design artificial_intelligence --output systems_ai_courses.pdf
-```
-
----
-
-## ⚙️ Manual Compilation with LaTeX
-If you prefer to edit raw LaTeX directly, `build.py` maintains `main.tex`. You can compile it anytime with:
-```bash
-xelatex -interaction=nonstopmode main.tex
-```
-
----
-
-## 🧪 Automated Transcript Testing & Verification Suite
-
-The repository includes a dedicated test harness (`test_transcripts.py`) to validate transcript parsing across diverse transcript formats and detect missing courses.
-
-### Directory Organization
-Each test transcript lives in its own student folder under `tests/`:
-```
-tests/
-├── amir_barari/
-│   ├── transcript.pdf          # Input transcript
-│   ├── summary.json            # Structured answer (courses, credits, missing list)
-│   ├── main.tex                # Generated LaTeX
-│   └── CourseDescription.pdf   # Compiled PDF
-├── artin_tavasoli/
-├── daei/
-├── mani/
-└── test_report.md              # Overall test execution report
-```
-
-### Running Tests
-- **Run all tests (fast parsing validation without compiling PDFs):**
-  ```bash
-  ./test_transcripts.py --no-pdf
-  ```
-- **Run all tests and compile CourseDescription PDFs for visual inspection:**
-  ```bash
-  ./test_transcripts.py
-  ```
-- **Run a single test case (e.g. `amir_barari`):**
-  ```bash
-  ./test_transcripts.py amir_barari
-  ```
-- **Run all tests and simulate degree completion for eligible students:**
-  ```bash
-  ./test_transcripts.py --simulate-graduation
-  ```
-- **Clean previous outputs before running:**
-  ```bash
-  ./test_transcripts.py --clean
-  ```
-- **View summary report:**
-  After each run, an executive summary table is printed to the terminal, and an exhaustive markdown report is written to `tests/test_report.md`.
-
+This project is licensed under the [MIT License](LICENSE).
+Emblems and university insignia are property of the University of Tehran and School of ECE and are provided solely for official academic student use.

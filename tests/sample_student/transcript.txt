@@ -1,0 +1,102 @@
+                                                                In The Name Of God
+                                                                 University of Tehran
+                                                           Transcript of University Grades
+                               Student No : 810100000                                                 Faculty : College of Engineering
+
+                                First Name : Sample
+
+                                Last Name : Student
+
+                                     ID.No : 0000000000                                                     GPA : 17.90
+
+                              Date of Birth : 2004/01/01
+
+Workshop Titles:           Workshop on life Skills Training and Prevention of Psychosocial Harm 1 in date 2024/02/03 - Workshop on Life Skills
+                           Training and Prevention of Psychosocial Harm 2 in date 2024/07/21
+
+Academic Year 2023-2024 1st. Semester                                             Academic Year 2023-2024 2nd. Semester           EXCELLENT IN TERM
+Semester Status : Normal                                                          Semester Status : Normal
+Course Title                                         Credit    Grade     Effect   Course Title                                      Credit     Grade     Effect
+Introduction to Computing Systems and                  4       16.25              Advanced Programming                                3        18.45
+Programming                                                                       Differential Equations                              3         16.5
+Physics 1                                              3       14.67              Physics 2                                           3        16.25
+Calculus 1                                             3        13                Calculus 2                                          3         17
+Analytical history of beginning Islam                  2       18.25              Discrete Mathematics                                3        17.56
+Thematic interpretation of the Quran                   2        17.5              Islamic Revolution in Iran                          2        17.75
+Persian Language                                       3        17
+
+  Semester       Registered     Semester Passed Total Passed Unit(s) Cumulative     Semester      Registered    Semester Passed Total Passed Unit(s) Cumulative
+    GPA             Unit(s)          Unit(s)                           GPA            GPA          Unit(s)          Unit(s)                            GPA
+   15.91              17               17               17             15.91         17.22            17              17               34              16.57
+
+Academic Year 2024-2025 1st. Semester             EXCELLENT IN TERM               Academic Year 2024-2025 2nd. Semester           EXCELLENT IN TERM
+Semester Status : Normal                                                          Semester Status : Normal
+Course Title                                         Credit    Grade     Effect   Course Title                                      Credit     Grade     Effect
+Engineering Probability and Statistics                 3        17.5              Logic Circuits Laboratory                           1         19.4
+Logic Circuits                                         3        15.4              Engineering Mathematics                             3        18.31
+Engineering Economy                                    3        18.5              Computer Workshop                                   1         20
+Electric Circuits                                      3       19.88              Artificial Intelligence                             3         18
+Islamic Thought 1 (Origins and Resurrection)           2        15                Computer Architecture                               3         17.8
+Islamic Ethics (Principles and concepts)               2        19                Machines and Language Theory                        3        16.81
+Data Structures and Algorithms                         3        18.5              Physical Education                                  1         20
+                                                                                  Electrical Measurment and Circuit Laboratory        1         18.9
+
+  Semester       Registered     Semester Passed Total Passed Unit(s) Cumulative     Semester      Registered    Semester Passed Total Passed Unit(s) Cumulative
+    GPA             Unit(s)          Unit(s)                           GPA            GPA          Unit(s)          Unit(s)                            GPA
+   17.75              19               19               53             16.99         18.19            16              16               69              17.27
+
+Academic Year 2025-2026 1st. Semester             EXCELLENT IN TERM               Academic Year 2025-2026 2nd. Semester           EXCELLENT IN TERM
+Semester Status : Normal                                                          Semester Status : Normal
+Course Title                                         Credit    Grade     Effect   Course Title                                      Credit     Grade     Effect
+Operating Systems Laboratory                           1        19.1              Systems Analysis and Design                         3         18
+Operating System                                       3        19.1              Database Design                                     3         18.3
+Computer Aided Digital System                          3        19.5              Family Schematization and Population                2         20
+Signals and Systems                                    3        19.5              Sport 1                                             1         18.5
+Islamic Thought 2 (Prophethood and Imamat)             2        19.5              Compiler design and programming languages           3        19.28
+English Language                                       3        20                Algorithm Design                                    3         17.6
+Basucs of Machine Learning                             3        20                Foundations of Data Science                         3        19.01
+  Semester     Registered   Semester Passed Total Passed Unit(s) Cumulative     Semester     Registered   Semester Passed Total Passed Unit(s) Cumulative
+    GPA         Unit(s)         Unit(s)                            GPA            GPA         Unit(s)         Unit(s)                            GPA
+   19.58          18              18               87              17.75         18.62            18             18              105             17.90
+
+Academic Year 2025-2026Summer Semester                                        Academic Year 2026-20271st. Semester
+Semester Status : Normal                                                      Semester Status : Normal
+Course Title                                    Credit     Grade     Effect   Course Title                                    Credit     Grade     Effect
+Industrial Training                               3          IC        3      Technical English                                 2         NR         3
+                                                                              Computer Networks                                 3         NR         3
+                                                                              Software Engineering                              3         NR         3
+                                                                              Database Laboratory                               1         NR         3
+                                                                              Information Technology Project Management         3         NR         3
+                                                                              Introduction to Software Testing                  3         NR         3
+                                                                              Foundations of Computer Vision                    3         NR         3
+
+  Semester     Registered   Semester Passed Total Passed Unit(s) Cumulative     Semester     Registered   Semester Passed Total Passed Unit(s) Cumulative
+    GPA         Unit(s)         Unit(s)                            GPA            GPA         Unit(s)         Unit(s)                            GPA
+                      0           0                105             17.90                          18             0               105             17.90
+                                 In The Name Of God
+                                  University of Tehran
+                           Transcript of University Grades
+Academic Status                                NOTE:
+
+
+Full mark is 20                                In "Effect" column:
+Last Status : Normal                           "1", Indicates that the total passed unit(s) is not affected by this course.
+                                               "2", Indicates that the cumulative gpa is not affected by this course.
+                                               "3", Indicates that the total passed unit(s) and cumulative gpa are not affected
+                                               by this course.
+                                               In "Grade" column the following abbreviations are used:
+                                               NR                          Not Reported
+                                               R                           Reported
+                                               IC                          Incomplete
+
+
+
+
+                       GENERAL DIRECTOR OF ACADEMIC AFFAIRS
+                              Seiyed Mossa Hosseini Ph.D
+
+                                     signed and sealed
+
+
+Date : 2026/10/19      NOT VALID WITHOUT SIGNATURE AND SEAL OF REGISTER                                    END OF TRANSCRIPT
+

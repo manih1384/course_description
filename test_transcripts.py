@@ -75,19 +75,27 @@ def find_test_directories(tests_dir: Path, requested_names=None):
             if d.name.lower().replace("-", "_") not in normalized_req:
                 continue
 
-        # Look for transcript PDF
-        pdf_path = d / "transcript.pdf"
-        if not pdf_path.exists():
-            # Check for any PDF in directory
-            pdfs = list(d.glob("*.pdf"))
-            # Exclude CourseDescription.pdf if present
-            candidates = [p for p in pdfs if p.name.lower() != "coursedescription.pdf"]
-            if candidates:
-                pdf_path = candidates[0]
-            else:
-                continue
+        # Look for transcript file (PDF or text)
+        transcript_path = None
+        for default_name in ["transcript.pdf", "transcript.txt"]:
+            if (d / default_name).exists():
+                transcript_path = d / default_name
+                break
 
-        test_dirs.append((d, pdf_path))
+        if not transcript_path:
+            # Check for any PDF in directory
+            pdfs = [p for p in d.glob("*.pdf") if p.name.lower() != "coursedescription.pdf"]
+            if pdfs:
+                transcript_path = pdfs[0]
+            else:
+                # Check for any TXT in directory
+                txts = [p for p in d.glob("*.txt") if not p.name.lower().startswith("summary")]
+                if txts:
+                    transcript_path = txts[0]
+                else:
+                    continue
+
+        test_dirs.append((d, transcript_path))
 
     return test_dirs
 
@@ -455,12 +463,12 @@ def generate_markdown_report(results: list, report_file: Path, no_pdf: bool, sim
     for r in results:
         tname = r["test_name"]
         lines.append(f"### 👤 Test Case: `{tname}`\n")
-        lines.append(f"- **Student Folder:** [`tests/{tname}/`](file://{TESTS_DIR / tname})")
-        lines.append(f"- **Input Transcript:** [`{r['transcript_file']}`](file://{BASE_DIR / r['transcript_file']})")
-        lines.append(f"- **Structured Answer JSON:** [`summary.json`](file://{TESTS_DIR / tname / 'summary.json'})")
+        lines.append(f"- **Student Folder:** [`tests/{tname}/`]({tname})")
+        lines.append(f"- **Input Transcript:** [`{r['transcript_file']}`]({r['transcript_file']})")
+        lines.append(f"- **Structured Answer JSON:** [`summary.json`]({tname}/summary.json)")
         if r["pdf_compiled"]:
-            lines.append(f"- **Generated Course Description:** [`CourseDescription.pdf`](file://{TESTS_DIR / tname / 'CourseDescription.pdf'})")
-            lines.append(f"- **Generated Master TeX:** [`main.tex`](file://{TESTS_DIR / tname / 'main.tex'})")
+            lines.append(f"- **Generated Course Description:** [`CourseDescription.pdf`]({tname}/CourseDescription.pdf)")
+            lines.append(f"- **Generated Master TeX:** [`main.tex`]({tname}/main.tex)")
         lines.append(f"- **Detected Academic Context:** {r['degree_level']} in {r['major']}")
         lines.append(f"- **Total Registered/Passed Credits:** {r['total_credits']} credits across {r['total_semesters']} terms ({r['total_courses']} courses)")
 
